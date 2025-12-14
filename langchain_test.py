@@ -110,10 +110,11 @@ class OllamaLLM(LLM):
         
         # 发送请求
         try:
+            # 多模态模型处理图片需要更长时间，设置 10 分钟超时
             response = requests.post(
                 f"{self.api_url}/api/chat",
                 json=payload,
-                timeout=300  # 5 分钟超时
+                timeout=(30, 600)  # 连接超时 30 秒，读取超时 600 秒（10 分钟）
             )
             
             # 如果出错，打印详细错误信息

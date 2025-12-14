@@ -1,3 +1,5 @@
 /.venv
 /Qwen3-VL-2B-Thinking-GGUF
 /__pycache__
+/Test
+/.cursor
