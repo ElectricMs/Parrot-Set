@@ -3,3 +3,5 @@
 /__pycache__
 /Test
 /.cursor
+/uploads
+/vector_db

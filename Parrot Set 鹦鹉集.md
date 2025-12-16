@@ -16,6 +16,25 @@ https://ollama.com/library/qwen3-vl:2b-thinking-q4_K_M
 
 
 
+| 英                            | 拉丁          | 中         |
+| ----------------------------- | ------------- | ---------- |
+| Old World Parrots             | Psittaculidae | 长尾鹦鹉科 |
+| New World and African Parrots | Psittacidae   | 鹦鹉科     |
+| Cockatoos                     | Cacatuidae    | 凤头鹦鹉科 |
+| New Zealand parrots           | Strigopidae   | 鸮鹦鹉科   |
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 现在请基于 进行ParrotSet项目的mvp原型开发：

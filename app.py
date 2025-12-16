@@ -30,6 +30,7 @@ Parrot Set 鹦鹉集 - FastAPI 后端服务
 import asyncio
 import json
 import logging
+import os
 from pathlib import Path
 from typing import List, Optional, Dict, Any
 
@@ -38,12 +39,78 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from langchain_test import OllamaLLM  # 复用已有包装器
+from parrot_db import get_database  # 导入数据库查询模块
+from knowledge_base import get_knowledge_base  # 导入本地知识库模块
+from kb_api_routes import kb_router  # 导入知识库API路由
 
 # ========== 日志配置 ==========
 # 配置日志系统，记录 INFO 级别及以上的日志信息
 # 日志会输出到控制台，包括请求处理、模型调用、错误信息等
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# ========== 配置文件加载 ==========
+CONFIG_FILE = Path("config.json")
+
+def load_config() -> Dict[str, Any]:
+    """
+    加载配置文件
+    如果文件不存在，使用默认配置并创建文件
+    """
+    default_config = {
+        "model_settings": {
+            "model_name": "qwen3-vl:2b-instruct-q4_K_M",
+            "temperature": 0.3,
+            "top_p": 0.9,
+            "max_tokens": 1024
+        },
+        "api_settings": {
+            "timeout": 600,
+            "host": "0.0.0.0",
+            "port": 8000
+        },
+        "parrot_knowledge_base": {
+            "蓝黄金刚鹦鹉": {
+                "features": ["体羽蓝色+黄色胸腹", "粗壮黑喙，脸部白色裸区", "尾羽长，热带雨林分布"],
+                "notes": "学名 Ara ararauna，常见于南美热带雨林。"
+            },
+            "玄凤鹦鹉": {
+                "features": ["头顶竖冠羽", "脸颊橙色斑，体羽灰/黄色", "中小型体型，常见宠物鸟"],
+                "notes": "学名 Nymphicus hollandicus，澳洲原生。"
+            },
+            "虎皮鹦鹉": {
+                "features": ["体型小，额部平滑无冠羽", "颈部黑色斑点，翅膀有波浪纹", "常见绿色/蓝色羽色"],
+                "notes": "学名 Melopsittacus undulatus，常见宠物鸟。"
+            }
+        }
+    }
+    
+    if not CONFIG_FILE.exists():
+        logger.info("配置文件不存在，创建默认配置")
+        save_config(default_config)
+        return default_config
+        
+    try:
+        config = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+        # 合并默认配置，确保新字段存在
+        # 这里只做简单的第一层合并，实际使用可能需要递归合并
+        for key, value in default_config.items():
+            if key not in config:
+                config[key] = value
+        return config
+    except Exception as e:
+        logger.error(f"加载配置文件失败: {e}，使用默认配置")
+        return default_config
+
+def save_config(config: Dict[str, Any]):
+    """保存配置到文件"""
+    try:
+        CONFIG_FILE.write_text(json.dumps(config, indent=2, ensure_ascii=False), encoding="utf-8")
+    except Exception as e:
+        logger.error(f"保存配置文件失败: {e}")
+
+# 加载配置
+APP_CONFIG = load_config()
 
 # ========== FastAPI 应用初始化 ==========
 # 创建 FastAPI 应用实例，设置标题和版本号
@@ -61,60 +128,23 @@ app.add_middleware(
     allow_headers=["*"],  # 允许所有请求头
 )
 
-# ---- 配置 ----
-# 模型配置：可以通过环境变量或直接修改这里来切换模型
-# 可用的模型示例：
-#   - "qwen3-vl:2b-thinking-q4_K_M"  (当前默认，2B 参数量，量化版本)
-#   - "qwen3-vl:2b-thinking-q8_0"    (更高精度，但更大)
-#   - "qwen3-vl:2b-thinking-f16"     (最高精度，最大)
-#   - "qwen3-vl-2b-local"            (如果使用本地 GGUF 文件创建的模型)
-# 查看已安装的模型：ollama list
-# 
-# 使用环境变量：export PARROT_MODEL_NAME="qwen3-vl:2b-thinking-q8_0"
-# Windows: set PARROT_MODEL_NAME=qwen3-vl:2b-thinking-q8_0
-import os
+# 注册知识库路由
+app.include_router(kb_router)
 
-MODEL_NAME = os.getenv("PARROT_MODEL_NAME", "qwen3-vl:2b-instruct-q4_K_M")
-LLM_TEMPERATURE = float(os.getenv("PARROT_TEMPERATURE", "0.3"))  # 温度参数：0-1，越低越确定，越高越随机
+# ---- 配置 ----
+# 从配置文件读取模型配置
+MODEL_NAME = APP_CONFIG["model_settings"].get("model_name", "qwen3-vl:2b-instruct-q4_K_M")
+LLM_TEMPERATURE = float(APP_CONFIG["model_settings"].get("temperature", 0.3))
+
+# 覆盖环境变量配置（如果存在）
+if os.getenv("PARROT_MODEL_NAME"):
+    MODEL_NAME = os.getenv("PARROT_MODEL_NAME")
+if os.getenv("PARROT_TEMPERATURE"):
+    LLM_TEMPERATURE = float(os.getenv("PARROT_TEMPERATURE"))
 
 # ========== 知识库配置 ==========
-# 简易“知识库”示例：使用字典存储鹦鹉品种的特征信息
-# 
-# 当前实现：简单的字典查找，根据候选品种名称匹配
-# 可扩展为：
-#   - Chroma/FAISS 向量数据库：支持语义相似度检索
-#   - 外部知识库 API：从专业鸟类数据库获取信息
-#   - 本地 Markdown 文件：批量加载鹦鹉百科知识
-#
-# 数据结构说明：
-#   - key: 鹦鹉品种的中文名称（需与模型返回的名称匹配）
-#   - value: 包含 features（特征列表）和 notes（备注信息）的字典
-PARROT_KB: Dict[str, Dict[str, Any]] = {
-    "蓝黄金刚鹦鹉": {
-        "features": [
-            "体羽蓝色+黄色胸腹",
-            "粗壮黑喙，脸部白色裸区",
-            "尾羽长，热带雨林分布"
-        ],
-        "notes": "学名 Ara ararauna，常见于南美热带雨林。",
-    },
-    "玄凤鹦鹉": {
-        "features": [
-            "头顶竖冠羽",
-            "脸颊橙色斑，体羽灰/黄色",
-            "中小型体型，常见宠物鸟"
-        ],
-        "notes": "学名 Nymphicus hollandicus，澳洲原生。",
-    },
-    "虎皮鹦鹉": {
-        "features": [
-            "体型小，额部平滑无冠羽",
-            "颈部黑色斑点，翅膀有波浪纹",
-            "常见绿色/蓝色羽色"
-        ],
-        "notes": "学名 Melopsittacus undulatus，常见宠物鸟。",
-    },
-}
+# 从配置文件读取知识库
+PARROT_KB = APP_CONFIG.get("parrot_knowledge_base", {})
 
 
 # ========== Pydantic 数据模型 ==========
@@ -129,20 +159,32 @@ class TopCandidate(BaseModel):
         name: 鹦鹉品种的中文名称
         score: 置信度分数（0-1 之间，1 表示完全确定）
         probability: 概率百分比（0-100，便于前端展示）
+        exists_in_db: 该种类是否存在于数据库中
+        db_info: 数据库中的详细信息（如果存在）
     
     示例：
-        TopCandidate(name="蓝黄金刚鹦鹉", score=0.87, probability=87.0)
+        TopCandidate(name="蓝黄金刚鹦鹉", score=0.87, probability=87.0, exists_in_db=True)
     """
     name: str  # 品种名称
     score: float  # 0-1 之间的置信度分数
     probability: float  # 百分比形式的概率（0-100），由 score * 100 计算得出
+    exists_in_db: bool = False  # 是否存在于数据库中
+    db_info: Optional[Dict[str, Any]] = None  # 数据库中的详细信息（目、科、学名等）
     
     class Config:
         json_schema_extra = {
             "example": {
                 "name": "蓝黄金刚鹦鹉",
                 "score": 0.87,
-                "probability": 87.0
+                "probability": 87.0,
+                "exists_in_db": True,
+                "db_info": {
+                    "chinese_name": "琉璃金刚鹦鹉",
+                    "english_name": "Blue-and-yellow Macaw",
+                    "scientific_name": "Ara ararauna",
+                    "order": "鹦形目 / Psittaciformes",
+                    "family": "鹦鹉科 / African and New World Parrots / Psittacidae"
+                }
             }
         }
 
@@ -304,7 +346,7 @@ def save_classified_image(
         species_name: 识别出的鹦鹉品种名称（用于创建文件夹）
         output_path: 输出根目录路径，默认为 "./dataset"
                     - 相对路径：相对于项目根目录
-                    - 绝对路径：如 "E:\Project\Parrot Set\dataset"
+                    - 绝对路径：如 "E:\\Project\\Parrot Set\\dataset"
     
     Returns:
         Dict[str, Any]: 包含保存信息的字典
@@ -523,15 +565,41 @@ def llm_classify_image(image_path: Path, llm: OllamaLLM) -> ClassificationResult
     # ========== 数据转换 ==========
     # 将解析后的字典数据转换为 Pydantic 模型对象
     
-    # 转换 top_candidates：列表推导式创建 TopCandidate 对象
-    candidates = [
+    # 获取数据库实例用于验证
+    db = get_database()
+    
+    # 转换 top_candidates：列表推导式创建 TopCandidate 对象，并验证是否存在于数据库
+    candidates = []
+    for c in data.get("top_candidates", []):  # 从数据中获取候选列表，默认为空列表
+        name = c.get("name", "").strip()
+        if not name:
+            continue
+        
+        # 查询数据库
+        record = db.find_by_name(name)
+        exists_in_db = record is not None
+        
+        # 构建数据库信息
+        db_info = None
+        if record:
+            db_info = {
+                "chinese_name": record['chinese_name'],
+                "english_name": record['english_name'],
+                "scientific_name": record['scientific_name'],
+                "order": record['order'],
+                "family": record['family'],
+                "link": record['link'],
+            }
+        
+        candidates.append(
         TopCandidate(
-            name=c.get("name", ""),  # 品种名称，默认为空字符串
+                name=name,  # 品种名称
             score=float(c.get("score", 0)),  # 置信度分数，转换为 float
-            probability=round(float(c.get("score", 0)) * 100, 2)  # 转换为百分比，保留2位小数
+                probability=round(float(c.get("score", 0)) * 100, 2),  # 转换为百分比，保留2位小数
+                exists_in_db=exists_in_db,  # 是否存在于数据库
+                db_info=db_info  # 数据库信息
         )
-        for c in data.get("top_candidates", [])  # 从数据中获取候选列表，默认为空列表
-    ]
+        )
     
     # 转换 visual_features：创建 VisualFeatures 对象
     vf = data.get("visual_features") or {}  # 获取视觉特征字典，如果不存在则使用空字典
@@ -556,15 +624,10 @@ def llm_classify_image(image_path: Path, llm: OllamaLLM) -> ClassificationResult
 
 def rag_lookup(candidates: List[TopCandidate]) -> Dict[str, Any]:
     """
-    简易 RAG 检索：根据候选品种名称查找知识库
+    RAG 检索：结合本地文件知识库和硬编码知识库
     
-    这是一个简化的 RAG（Retrieval-Augmented Generation）实现。
-    当前版本使用字典查找，根据候选品种的中文名称匹配知识库条目。
-    
-    工作流程：
-        1. 遍历 top3 候选品种
-        2. 检查每个品种名称是否在知识库中存在
-        3. 如果存在，添加到返回结果中
+    1. 根据候选品种名称查找硬编码知识库 (PARROT_KB)
+    2. 在本地向量数据库中进行语义搜索
     
     Args:
         candidates: 候选品种列表（通常来自分类结果）
@@ -572,28 +635,57 @@ def rag_lookup(candidates: List[TopCandidate]) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: 检索到的知识库片段
                        key: 品种名称
-                       value: 包含 features 和 notes 的字典
+                       value: 包含 features, notes, vector_results 的字典
     
     示例返回：
         {
             "蓝黄金刚鹦鹉": {
                 "features": ["体羽蓝色+黄色胸腹", ...],
-                "notes": "学名 Ara ararauna，常见于南美热带雨林。"
+                "notes": "学名 Ara ararauna，常见于南美热带雨林。",
+                "vector_docs": [
+                    {
+                        "content": "...",
+                        "source": "sample_parrot_info.txt",
+                        "score": 0.85
+                    }
+                ]
             }
         }
-    
-    扩展建议：
-        - 使用向量数据库（Chroma/FAISS）进行语义相似度检索
-        - 支持模糊匹配和同义词匹配
-        - 从外部 API 获取实时知识
     """
     hits = {}  # 存储检索到的知识库条目
     
-    # 遍历所有候选品种，查找匹配的知识库条目
+    # 获取本地知识库实例
+    kb = get_knowledge_base()
+    
+    # 遍历所有候选品种
     for cand in candidates:
+        entry = {}
+        
+        # 1. 查找硬编码知识库
         if cand.name in PARROT_KB:
-            # 找到匹配项，添加到结果中
-            hits[cand.name] = PARROT_KB[cand.name]
+            entry.update(PARROT_KB[cand.name])
+            
+        # 2. 向量数据库检索
+        # 搜索查询：品种名称 + 相关特征关键词
+        query = f"{cand.name} 特征 习性 分布"
+        try:
+            vector_results = kb.query(query, k=2)
+            
+            if vector_results:
+                entry["vector_docs"] = [
+                    {
+                        "content": res["content"],
+                        "source": res["metadata"].get("source", "unknown"),
+                        "score": res["score"]
+                    }
+                    for res in vector_results
+                ]
+        except Exception as e:
+            logger.warning(f"向量数据库检索失败: {e}")
+            # 如果向量数据库检索失败，继续使用硬编码知识库
+        
+        if entry:
+            hits[cand.name] = entry
     
     return hits
 
@@ -639,9 +731,22 @@ def llm_explain(
     )
     
     # 格式化知识库信息：将字典转换为字符串
-    kb_str = "\n".join(
-        [f"{k}: {v}" for k, v in knowledge_hits.items()]
-    ) or "无命中"  # 如果没有检索到知识，显示 "无命中"
+    kb_parts = []
+    for k, v in knowledge_hits.items():
+        # 处理硬编码特征
+        if "features" in v:
+            kb_parts.append(f"{k} 特征: {', '.join(v['features'])}")
+        if "notes" in v:
+            kb_parts.append(f"{k} 备注: {v['notes']}")
+            
+        # 处理向量检索结果
+        if "vector_docs" in v:
+            for doc in v["vector_docs"]:
+                # 截断过长的内容
+                content = doc['content'][:200] + "..." if len(doc['content']) > 200 else doc['content']
+                kb_parts.append(f"{k} 参考资料 ({doc['source']}): {content}")
+                
+    kb_str = "\n".join(kb_parts) or "无命中"
     
     # 格式化视觉特征：转换为 JSON 字符串
     vf = classification.visual_features
@@ -1047,6 +1152,157 @@ async def analyze(image: UploadFile = File(...)):
             logger.info(f"临时文件已删除: {tmp_path}")
 
 
+@app.get("/check_species")
+async def check_species(name: str):
+    """
+    检查鹦鹉种类是否存在
+    
+    根据提供的名称（支持中文名、英文名、学名）查询数据库中是否存在该种类。
+    
+    Args:
+        name: 鹦鹉名称（中文、英文或学名）
+    
+    Returns:
+        Dict: 包含以下信息：
+            - exists: 是否存在
+            - info: 详细信息（如果存在）
+            - suggestions: 模糊匹配建议（如果不存在）
+    
+    示例：
+        GET /check_species?name=蓝黄金刚鹦鹉
+        GET /check_species?name=Blue-and-yellow Macaw
+        GET /check_species?name=Ara ararauna
+    """
+    db = get_database()
+    
+    # 精确匹配
+    record = db.find_by_name(name)
+    if record:
+        return {
+            "exists": True,
+            "info": {
+                "chinese_name": record['chinese_name'],
+                "english_name": record['english_name'],
+                "scientific_name": record['scientific_name'],
+                "order": record['order'],
+                "family": record['family'],
+                "link": record['link'],
+                "image": record['image'],
+            },
+            "suggestions": []
+        }
+    
+    # 如果精确匹配失败，提供模糊搜索建议
+    suggestions = db.fuzzy_search(name, limit=5)
+    suggestion_list = [
+        {
+            "chinese_name": s['chinese_name'],
+            "english_name": s['english_name'],
+            "scientific_name": s['scientific_name'],
+        }
+        for s in suggestions
+    ]
+    
+    return {
+        "exists": False,
+        "info": None,
+        "suggestions": suggestion_list
+    }
+
+
+@app.get("/search_species")
+async def search_species(query: str, limit: int = 10):
+    """
+    模糊搜索鹦鹉种类
+    
+    根据关键词搜索匹配的鹦鹉种类（支持中文、英文、学名部分匹配）。
+    
+    Args:
+        query: 搜索关键词
+        limit: 返回结果数量限制（默认10）
+    
+    Returns:
+        Dict: 包含匹配结果列表
+    
+    示例：
+        GET /search_species?query=金刚鹦鹉
+        GET /search_species?query=Macaw&limit=5
+    """
+    db = get_database()
+    results = db.fuzzy_search(query, limit=limit)
+    
+    return {
+        "count": len(results),
+        "results": [
+            {
+                "chinese_name": r['chinese_name'],
+                "english_name": r['english_name'],
+                "scientific_name": r['scientific_name'],
+                "order": r['order'],
+                "family": r['family'],
+                "link": r['link'],
+            }
+            for r in results
+        ]
+    }
+
+
+@app.get("/stats/species")
+async def get_species_stats(output_path: str = "./dataset"):
+    """
+    获取品种统计信息
+    
+    返回所有已知品种（基于知识库）及其收集状态（基于文件系统）。
+    用于前端展示分类树。
+    """
+    stats = []
+    
+    # 1. 获取所有已知品种（从知识库）
+    known_species = list(PARROT_KB.keys())
+    
+    # 2. 扫描数据集目录，获取已收集的品种和数量
+    output_dir = Path(output_path).expanduser().resolve()
+    collected_data = {}
+    
+    if output_dir.exists():
+        for item in output_dir.iterdir():
+            if item.is_dir():
+                # 统计该目录下的图片数量
+                count = sum(1 for f in item.iterdir() if f.is_file() and f.suffix.lower() in ['.jpg', '.jpeg', '.png', '.webp'])
+                if count > 0:
+                    collected_data[item.name] = count
+    
+    # 3. 合并数据
+    # 先添加知识库中的品种
+    for species in known_species:
+        count = collected_data.get(species, 0)
+        stats.append({
+            "name": species,
+            "count": count,
+            "collected": count > 0,
+            "source": "knowledge_base"
+        })
+    
+    # 再添加知识库中没有但文件夹中存在的品种（可能是未知品种或新发现）
+    for species, count in collected_data.items():
+        if species not in known_species:
+            stats.append({
+                "name": species,
+                "count": count,
+                "collected": True,
+                "source": "dataset"
+            })
+    
+    # 按是否收集和名称排序
+    stats.sort(key=lambda x: (not x["collected"], x["name"]))
+    
+    return {
+        "total_species": len(stats),
+        "collected_species": len([s for s in stats if s["collected"]]),
+        "species_list": stats
+    }
+
+
 # ========== 主程序入口 ==========
 # 当直接运行此文件时（python app.py），启动 FastAPI 开发服务器
 if __name__ == "__main__":
@@ -1064,4 +1320,3 @@ if __name__ == "__main__":
     #   uvicorn app:app --host 0.0.0.0 --port 8000 --workers 4
     #   其中 --workers 4 表示启动 4 个工作进程，提高并发性能
     uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
-
