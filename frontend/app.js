@@ -58,7 +58,8 @@ const speciesTreeContainer = document.getElementById('species-tree');
 const collectedCountEl = document.getElementById('collected-count');
 const totalSpeciesCountEl = document.getElementById('total-species-count');
 
-// 知识库元素
+// 知识库元素 - 已移除
+/*
 const kbPathInput = document.getElementById('kb-path-input');
 const changeKbPathBtn = document.getElementById('change-kb-path-btn');
 const refreshKbBtn = document.getElementById('refresh-kb-btn');
@@ -69,6 +70,7 @@ const clearKbBtn = document.getElementById('clear-kb-btn');
 const kbDocCountEl = document.getElementById('kb-doc-count');
 const kbChunkCountEl = document.getElementById('kb-chunk-count');
 const kbSizeEl = document.getElementById('kb-size');
+*/
 
 // ========== 初始化 ==========
 document.addEventListener('DOMContentLoaded', () => {
@@ -77,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStatsUI(); // 初始化统计显示
     loadSpeciesStats(); // 加载分类树
     checkBackendHealth(); // 检查服务状态
-    loadKnowledgeBase(); // 加载知识库信息
+    // loadKnowledgeBase(); // 已移除
 });
 
 /**
@@ -158,12 +160,14 @@ function initEventListeners() {
     outputPathInput.addEventListener('blur', saveConfig);
     autoSaveCheckbox.addEventListener('change', saveConfig);
     
-    // 知识库事件
+    // 知识库事件 - 已移除
+    /*
     refreshKbBtn.addEventListener('click', loadKnowledgeBase);
     kbUploadBtn.addEventListener('click', () => kbFileInput.click());
     kbFileInput.addEventListener('change', handleKbFileUpload);
     changeKbPathBtn.addEventListener('click', handleChangeKbPath);
     clearKbBtn.addEventListener('click', handleClearKnowledgeBase);
+    */
 }
 
 /**

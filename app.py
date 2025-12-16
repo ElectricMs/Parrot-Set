@@ -40,8 +40,6 @@ from pydantic import BaseModel
 
 from langchain_test import OllamaLLM  # 复用已有包装器
 from parrot_db import get_database  # 导入数据库查询模块
-from knowledge_base import get_knowledge_base  # 导入本地知识库模块
-from kb_api_routes import kb_router  # 导入知识库API路由
 
 # ========== 日志配置 ==========
 # 配置日志系统，记录 INFO 级别及以上的日志信息
@@ -129,7 +127,7 @@ app.add_middleware(
 )
 
 # 注册知识库路由
-app.include_router(kb_router)
+# app.include_router(kb_router)  # 已移除本地知识库功能
 
 # ---- 配置 ----
 # 从配置文件读取模型配置
@@ -624,10 +622,9 @@ def llm_classify_image(image_path: Path, llm: OllamaLLM) -> ClassificationResult
 
 def rag_lookup(candidates: List[TopCandidate]) -> Dict[str, Any]:
     """
-    RAG 检索：结合本地文件知识库和硬编码知识库
+    RAG 检索：仅使用硬编码知识库
     
     1. 根据候选品种名称查找硬编码知识库 (PARROT_KB)
-    2. 在本地向量数据库中进行语义搜索
     
     Args:
         candidates: 候选品种列表（通常来自分类结果）
@@ -635,27 +632,9 @@ def rag_lookup(candidates: List[TopCandidate]) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: 检索到的知识库片段
                        key: 品种名称
-                       value: 包含 features, notes, vector_results 的字典
-    
-    示例返回：
-        {
-            "蓝黄金刚鹦鹉": {
-                "features": ["体羽蓝色+黄色胸腹", ...],
-                "notes": "学名 Ara ararauna，常见于南美热带雨林。",
-                "vector_docs": [
-                    {
-                        "content": "...",
-                        "source": "sample_parrot_info.txt",
-                        "score": 0.85
-                    }
-                ]
-            }
-        }
+                       value: 包含 features, notes 的字典
     """
     hits = {}  # 存储检索到的知识库条目
-    
-    # 获取本地知识库实例
-    kb = get_knowledge_base()
     
     # 遍历所有候选品种
     for cand in candidates:
@@ -665,25 +644,6 @@ def rag_lookup(candidates: List[TopCandidate]) -> Dict[str, Any]:
         if cand.name in PARROT_KB:
             entry.update(PARROT_KB[cand.name])
             
-        # 2. 向量数据库检索
-        # 搜索查询：品种名称 + 相关特征关键词
-        query = f"{cand.name} 特征 习性 分布"
-        try:
-            vector_results = kb.query(query, k=2)
-            
-            if vector_results:
-                entry["vector_docs"] = [
-                    {
-                        "content": res["content"],
-                        "source": res["metadata"].get("source", "unknown"),
-                        "score": res["score"]
-                    }
-                    for res in vector_results
-                ]
-        except Exception as e:
-            logger.warning(f"向量数据库检索失败: {e}")
-            # 如果向量数据库检索失败，继续使用硬编码知识库
-        
         if entry:
             hits[cand.name] = entry
     
