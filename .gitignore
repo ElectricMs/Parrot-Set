@@ -5,3 +5,6 @@
 /.cursor
 /uploads
 /vector_db
+/agent/__pycache__
+/agent/tools/__pycache__
+/embedding/Qwen3-Embedding-0.6B

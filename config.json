@@ -5,6 +5,16 @@
     "top_p": 0.9,
     "max_tokens": 1024
   },
+  "agent_settings": {
+    "default_model": "qwen3-vl:2b-instruct-q4_K_M",
+    "default_temperature": 0.3,
+    "tools": {
+      "classifier": {
+        "model_name": "qwen3-vl:2b-instruct-q4_K_M",
+        "temperature": 0.1
+      }
+    }
+  },
   "api_settings": {
     "timeout": 600,
     "host": "0.0.0.0",
@@ -77,10 +87,3 @@
     }
   }
 }
-
-
-
-
-
-
-
