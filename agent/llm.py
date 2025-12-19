@@ -1,5 +1,16 @@
 """
 LLM Wrapper for Ollama
+
+本模块提供一个最小可用的 Ollama /api/chat 封装（兼容 LangChain 的 LLM 基类）。
+
+关键点：
+- 支持纯文本与图片输入（images 参数）
+- 图片会被读取并 base64 编码后放入 payload.messages[0].images
+- 使用 /api/chat（非 stream）一次性返回
+
+注意：
+- 该实现的 _call 是同步网络请求；上层调用时通常用 asyncio.to_thread 包一层，避免阻塞事件循环。
+- 这不是完整的 LangChain ChatModel；我们只是复用 LLM 接口以方便调用。
 """
 from langchain_core.language_models.llms import LLM
 from langchain_core.callbacks import CallbackManagerForLLMRun
@@ -44,7 +55,15 @@ class OllamaLLM(LLM):
         **kwargs: Any,
     ) -> str:
         """
-        Call Ollama API.
+        调用 Ollama API（/api/chat）。
+
+        参数：
+        - prompt：用户输入（字符串）
+        - images：图片文件路径列表（可选）。注意：这里传的是路径，函数内部会读取并 base64 编码。
+        - stop/max_tokens/temperature：会转成 Ollama 的 options 字段
+
+        返回：
+        - 模型返回的 content 字符串（不保证是 JSON；JSON 由上层工具负责约束与解析）
         """
         content = prompt
         
@@ -113,6 +132,9 @@ class OllamaLLM(LLM):
             raise RuntimeError(f"Ollama API failed: {e}")
 
 def get_llm_instance(model_name: str, temperature: float = 0.7) -> OllamaLLM:
-    """Factory function to create LLM instance"""
+    """
+    工厂函数：创建一个 OllamaLLM 实例。
+    说明：目前只暴露 model_name/temperature 两个关键参数，其余参数可按需扩展。
+    """
     return OllamaLLM(model_name=model_name, temperature=temperature)
 

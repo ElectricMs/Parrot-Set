@@ -11,7 +11,9 @@ logger = logging.getLogger(__name__)
 
 class ClassifierTool:
     def __init__(self, config: Dict[str, Any]):
+        # 视觉模型名称（Ollama 中的模型 tag），需要支持 images 输入
         self.model_name = config.get("model_name", "qwen3-vl:2b-instruct-q4_K_M")
+        # temperature 越低越“稳定/保守”，适合结构化 JSON 输出
         self.temperature = config.get("temperature", 0.1)
         self.llm = get_llm_instance(self.model_name, self.temperature)
         logger.info(f"ClassifierTool initialized with model: {self.model_name}")
@@ -20,6 +22,13 @@ class ClassifierTool:
         """
         Classify parrot image using multimodal LLM.
         Returns classification, visual description, explanation and confidence.
+
+        输出约定：
+        - 通过 prompt 强制模型只输出 JSON
+        - JSON 字段会被解析并映射到 Pydantic 模型（ClassificationResult/TopCandidate/VisualFeatures）
+
+        稳健性：
+        - 如果模型输出不是合法 JSON，会返回一个 candidates 为空的 ClassificationResult，并保留 raw_text 以便排错。
         """
         prompt = """
 分析这张鹦鹉图片，输出 JSON 格式结果：
@@ -69,6 +78,7 @@ class ClassifierTool:
             )
 
         # Convert to models and enrich with DB info
+        # 说明：这里会尝试用 parrot_db 对齐物种名，补全英文名/学名/科目/链接等信息。
         db = get_database()
         candidates = []
         for c in data.get("top_candidates", []):
@@ -91,6 +101,7 @@ class ClassifierTool:
             candidates.append(TopCandidate(
                 name=name,
                 score=float(c.get("score", 0)),
+                # probability 为展示字段（百分比），便于 UI 直接显示
                 probability=round(float(c.get("score", 0)) * 100, 2),
                 exists_in_db=record is not None,
                 db_info=db_info
@@ -107,6 +118,7 @@ class ClassifierTool:
         )
         
         # Fallback for confidence level if not provided
+        # 如果模型未返回 confidence_level，则用 top1 score 推导一个档位
         confidence = data.get("confidence_level")
         if not confidence and candidates:
             score = candidates[0].score

@@ -110,6 +110,52 @@
                 <!-- 结果卡片会动态插入这里 -->
             </div>
 
+            <!-- 知识库管理区 -->
+            <section class="knowledge-base-section card">
+                <div class="section-header">
+                    <h3>知识库管理</h3>
+                    <div class="actions">
+                        <button id="refresh-kb-btn" class="btn icon-btn" title="刷新列表">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </button>
+                        <button id="reindex-kb-btn" class="btn btn-text warning" title="强制重建索引">重建索引</button>
+                    </div>
+                </div>
+                
+                <div class="kb-container">
+                    <!-- 知识库上传区 -->
+                    <div class="kb-upload-area" id="kb-upload-area">
+                        <input type="file" id="kb-file-input" multiple accept=".md,.txt,.pdf,.docx" hidden>
+                        <div class="kb-upload-content">
+                            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            <span>上传文档 (.md, .txt, .pdf, .docx)</span>
+                        </div>
+                    </div>
+
+                    <!-- 知识库列表 -->
+                    <div class="kb-list-container">
+                        <table class="kb-table">
+                            <thead>
+                                <tr>
+                                    <th>文件名</th>
+                                    <th>大小</th>
+                                    <th>修改时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="kb-list-body">
+                                <!-- 动态插入文档列表 -->
+                            </tbody>
+                        </table>
+                        <div id="kb-empty" class="kb-empty hidden">暂无文档</div>
+                    </div>
+                </div>
+            </section>
+
             <!-- 分类树展示区 -->
             <section class="species-tree-section card">
                 <div class="section-header">
@@ -153,7 +199,25 @@
                     </div>
                 </div>
 
+                <div id="chat-attachment-bar" class="chat-attachment-bar hidden">
+                    <div class="chat-attachment-left">
+                        <span class="chat-attachment-icon">🖼️</span>
+                        <span id="chat-attachment-name" class="chat-attachment-name"></span>
+                    </div>
+                    <button id="chat-attachment-clear" class="icon-btn" title="移除图片">
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
                 <div class="chat-input-area">
+                    <input type="file" id="chat-file-input" accept="image/*" hidden>
+                    <button id="chat-upload-btn" class="icon-btn" title="上传图片">
+                        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </button>
                     <textarea id="chat-input" placeholder="输入问题或指令... (例如：'刚才那只蓝色的鹦鹉吃什么？')" rows="1"></textarea>
                     <button id="send-btn" class="btn btn-primary">
                         <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">

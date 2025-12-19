@@ -37,6 +37,15 @@ const chatMessages = document.getElementById('chat-messages');
 const chatInput = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
 const clearChatBtn = document.getElementById('clear-chat-btn');
+const chatUploadBtn = document.getElementById('chat-upload-btn');
+const chatFileInput = document.getElementById('chat-file-input');
+const chatAttachmentBar = document.getElementById('chat-attachment-bar');
+const chatAttachmentName = document.getElementById('chat-attachment-name');
+const chatAttachmentClear = document.getElementById('chat-attachment-clear');
+
+let chatSelectedImageFile = null; // Agent 对话中选择的图片
+let lastAnalyzeResult = null; // 最近一次 analyze 的结果（用于“刚才那只...”类问题）
+let agentSessionId = localStorage.getItem('agentSessionId') || null;
 
 const progressSection = document.getElementById('progress-section');
 const progressFill = document.getElementById('progress-fill');
@@ -68,6 +77,14 @@ const galleryGrid = document.getElementById('galleryGrid');
 const galleryEmpty = document.getElementById('galleryEmpty');
 const openFolderBtn = document.getElementById('openFolderBtn');
 
+// Knowledge Base 元素
+const kbUploadArea = document.getElementById('kb-upload-area');
+const kbFileInput = document.getElementById('kb-file-input');
+const kbListBody = document.getElementById('kb-list-body');
+const kbEmpty = document.getElementById('kb-empty');
+const refreshKbBtn = document.getElementById('refresh-kb-btn');
+const reindexKbBtn = document.getElementById('reindex-kb-btn');
+
 // ========== 初始化 ==========
 document.addEventListener('DOMContentLoaded', () => {
     initEventListeners();
@@ -75,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStatsUI(); // 初始化统计显示
     loadSpeciesStats(); // 加载分类树
     checkBackendHealth(); // 检查服务状态
+    loadKnowledgeBase(); // 加载知识库列表
 });
 
 /**
@@ -149,6 +167,15 @@ function initEventListeners() {
         }
     });
     clearChatBtn.addEventListener('click', clearChat);
+
+    // Agent 图片上传（聊天区）
+    if (chatUploadBtn && chatFileInput) {
+        chatUploadBtn.addEventListener('click', () => chatFileInput.click());
+        chatFileInput.addEventListener('change', handleChatFileSelect);
+    }
+    if (chatAttachmentClear) {
+        chatAttachmentClear.addEventListener('click', clearChatAttachment);
+    }
     
     // 配置保存
     outputPathInput.addEventListener('change', saveConfig);
@@ -163,6 +190,32 @@ function initEventListeners() {
         }
     });
     openFolderBtn.addEventListener('click', openCurrentGalleryFolder);
+
+    // Knowledge Base 事件
+    kbUploadArea.addEventListener('click', () => kbFileInput.click());
+    kbFileInput.addEventListener('change', handleKbUpload);
+    refreshKbBtn.addEventListener('click', loadKnowledgeBase);
+    reindexKbBtn.addEventListener('click', handleKbReindex);
+}
+
+function handleChatFileSelect(e) {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    if (!file.type.startsWith('image/')) {
+        showNotification('请选择图片文件', 'warning');
+        return;
+    }
+    chatSelectedImageFile = file;
+    if (chatAttachmentName) chatAttachmentName.textContent = file.name;
+    if (chatAttachmentBar) chatAttachmentBar.classList.remove('hidden');
+    e.target.value = '';
+}
+
+function clearChatAttachment() {
+    chatSelectedImageFile = null;
+    if (chatAttachmentName) chatAttachmentName.textContent = '';
+    if (chatAttachmentBar) chatAttachmentBar.classList.add('hidden');
 }
 
 /**
@@ -609,6 +662,139 @@ function closeGallery() {
     currentGalleryPath = null;
 }
 
+// ========== Knowledge Base 逻辑 ==========
+
+async function loadKnowledgeBase() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/knowledge/list`);
+        if (!response.ok) throw new Error('Failed to list knowledge base');
+        
+        const data = await response.json();
+        renderKbList(data.documents);
+    } catch (error) {
+        console.error('加载知识库失败:', error);
+        showNotification('加载知识库列表失败', 'error');
+    }
+}
+
+function renderKbList(documents) {
+    if (!kbListBody) return;
+    kbListBody.innerHTML = '';
+    
+    if (!documents || documents.length === 0) {
+        kbEmpty.classList.remove('hidden');
+        return;
+    }
+    
+    kbEmpty.classList.add('hidden');
+    
+    documents.forEach(doc => {
+        const tr = document.createElement('tr');
+        const sizeStr = (doc.size / 1024).toFixed(1) + ' KB';
+        const dateStr = new Date(doc.mtime * 1000).toLocaleString();
+        
+        tr.innerHTML = `
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span>📄</span>
+                    <span title="${doc.name}">${doc.name}</span>
+                </div>
+            </td>
+            <td>${sizeStr}</td>
+            <td>${dateStr}</td>
+            <td>
+                <button class="btn-icon-small" onclick="deleteKnowledge('${doc.name}')" title="删除">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                </button>
+            </td>
+        `;
+        kbListBody.appendChild(tr);
+    });
+}
+
+async function handleKbUpload(e) {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    
+    // 显示处理中状态（这里简单用通知）
+    showNotification(`正在上传 ${files.length} 个文件...`, 'info');
+    
+    let successCount = 0;
+    
+    for (const file of files) {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        try {
+            const response = await fetch(`${API_BASE_URL}/knowledge/upload`, {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (!response.ok) {
+                const err = await response.json();
+                throw new Error(err.detail || 'Upload failed');
+            }
+            
+            successCount++;
+        } catch (error) {
+            console.error(`上传 ${file.name} 失败:`, error);
+            showNotification(`上传 ${file.name} 失败: ${error.message}`, 'error');
+        }
+    }
+    
+    if (successCount > 0) {
+        showNotification(`成功上传 ${successCount} 个文件`, 'success');
+        loadKnowledgeBase(); // 刷新列表
+    }
+    
+    e.target.value = ''; // 重置 input
+}
+
+// 暴露给全局以便 HTML 调用
+window.deleteKnowledge = async function(filename) {
+    if (!confirm(`确定要删除 "${filename}" 吗？`)) return;
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/knowledge/${encodeURIComponent(filename)}`, {
+            method: 'DELETE'
+        });
+        
+        if (!response.ok) throw new Error('Delete failed');
+        
+        showNotification(`已删除 ${filename}`, 'success');
+        loadKnowledgeBase(); // 刷新列表
+    } catch (error) {
+        console.error('删除失败:', error);
+        showNotification(`删除失败: ${error.message}`, 'error');
+    }
+};
+
+async function handleKbReindex() {
+    if (!confirm('重建索引可能需要一些时间，确定要继续吗？')) return;
+    
+    showNotification('正在重建索引，请稍候...', 'info');
+    reindexKbBtn.disabled = true;
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/knowledge/reindex`, {
+            method: 'POST'
+        });
+        
+        if (!response.ok) throw new Error('Reindex failed');
+        
+        showNotification('索引重建完成', 'success');
+        loadKnowledgeBase(); // 刷新列表
+    } catch (error) {
+        console.error('重建索引失败:', error);
+        showNotification(`重建索引失败: ${error.message}`, 'error');
+    } finally {
+        reindexKbBtn.disabled = false;
+    }
+}
+
 // ========== API 调用 ==========
 
 async function classifyImage(file) {
@@ -651,6 +837,34 @@ async function saveClassifiedImage(item) {
         throw new Error('保存失败');
     }
     return await response.json();
+}
+
+async function sendAgentMessage({ text = '', imageFile = null } = {}) {
+    const formData = new FormData();
+    if (agentSessionId) formData.append('session_id', agentSessionId);
+    if (text) formData.append('message', text);
+    if (imageFile) formData.append('image', imageFile);
+    
+    const response = await fetch(`${API_BASE_URL}/agent/message`, {
+        method: 'POST',
+        body: formData
+    });
+    
+    if (!response.ok) {
+        let msg = `HTTP ${response.status}`;
+        try {
+            const err = await response.json();
+            msg = err.detail || msg;
+        } catch(e) {}
+        throw new Error(msg);
+    }
+    
+    const result = await response.json();
+    if (result.session_id) {
+        agentSessionId = result.session_id;
+        localStorage.setItem('agentSessionId', agentSessionId);
+    }
+    return result;
 }
 
 // ========== UI 更新 ==========
@@ -770,30 +984,35 @@ function updateStatsUI() {
 
 // ========== 聊天功能 ==========
 
-function handleSendMessage() {
+async function handleSendMessage() {
     const text = chatInput.value.trim();
-    if (!text) return;
+    const hasImage = !!chatSelectedImageFile;
+    if (!text && !hasImage) return;
     
-    // 添加用户消息
-    addMessage(text, 'user');
+    // 用户消息
+    if (hasImage) {
+        addImageMessage(chatSelectedImageFile, 'user');
+    }
+    if (text) {
+        addMessage(text, 'user');
+    }
     chatInput.value = '';
-    
-    // 模拟 Agent 回复 (待接入后端)
-    setTimeout(() => {
-        let response = "抱歉，Agent 服务暂未接入后端。";
-        
-        if (text.includes('你好') || text.includes('hello')) {
-            response = "你好！我是鹦鹉集助手。有什么我可以帮你的吗？";
-        } else if (text.includes('识别') || text.includes('分类')) {
-            response = "请上传图片，我会自动识别鹦鹉品种。";
-        } else if (text.includes('保存') || text.includes('路径')) {
-            response = "你可以在上方设置栏修改保存路径，支持自动归档功能。";
-        } else {
-            response = "我还在学习中，暂时无法回答这个问题。建议你尝试上传鹦鹉图片进行识别。";
+
+    // 统一走 /agent/message，让后端路由决定 analyze/ask/prompt
+    const placeholder = addMessage(hasImage ? '正在处理…' : '正在思考…', 'agent');
+    try {
+        const resp = await sendAgentMessage({ text, imageFile: hasImage ? chatSelectedImageFile : null });
+        placeholder.textContent = resp.reply || '（无回复）';
+
+        // 若走 analyze，保留 artifacts 供后续展示/追问
+        if (resp.mode === 'analyze' && resp.artifacts) {
+            lastAnalyzeResult = resp.artifacts;
         }
-        
-        addMessage(response, 'agent');
-    }, 1000);
+    } catch (err) {
+        placeholder.textContent = `请求失败：${err.message || err}`;
+    } finally {
+        if (hasImage) clearChatAttachment();
+    }
 }
 
 function addMessage(text, type) {
@@ -808,6 +1027,36 @@ function addMessage(text, type) {
     chatMessages.appendChild(messageDiv);
     
     // 滚动到底部
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    return contentDiv;
+}
+
+function addImageMessage(file, type) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}`;
+    
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+    
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    img.alt = file.name;
+    img.style.maxWidth = '240px';
+    img.style.borderRadius = '12px';
+    img.style.display = 'block';
+    
+    const caption = document.createElement('div');
+    caption.textContent = file.name;
+    caption.style.marginTop = '0.5rem';
+    caption.style.fontSize = '0.8rem';
+    caption.style.opacity = '0.8';
+    
+    contentDiv.appendChild(img);
+    contentDiv.appendChild(caption);
+    messageDiv.appendChild(contentDiv);
+    chatMessages.appendChild(messageDiv);
+    
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 

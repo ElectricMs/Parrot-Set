@@ -1,34 +1,55 @@
 from typing import List, Dict, Any
+import logging
 from ..models import TopCandidate
+from ..rag import get_rag_engine
 
-# Hardcoded knowledge base (migrated from config)
-PARROT_KB = {
-    "蓝黄金刚鹦鹉": {
-        "features": ["体羽蓝色+黄色胸腹", "粗壮黑喙，脸部白色裸区", "尾羽长，热带雨林分布"],
-        "notes": "学名 Ara ararauna，常见于南美热带雨林。"
-    },
-    "玄凤鹦鹉": {
-        "features": ["头顶竖冠羽", "脸颊橙色斑，体羽灰/黄色", "中小型体型，常见宠物鸟"],
-        "notes": "学名 Nymphicus hollandicus，澳洲原生。"
-    },
-    "虎皮鹦鹉": {
-        "features": ["体型小，额部平滑无冠羽", "颈部黑色斑点，翅膀有波浪纹", "常见绿色/蓝色羽色"],
-        "notes": "学名 Melopsittacus undulatus，常见宠物鸟。"
-    }
-}
+logger = logging.getLogger(__name__)
 
 def search_knowledge(candidates: List[TopCandidate]) -> Dict[str, Any]:
     """
-    Search for knowledge about candidate species.
-    Currently uses hardcoded dictionary.
+    Search for knowledge about candidate species using RAG.
+
+    注意：
+    - 这是旧版 analyze 流水线使用的检索封装（agent/core.py::analyze 调用）。
+    - 新版 /agent/message 的图片低置信度增强检索在 agent/router.py::run_analyze 中实现。
+    - 这里的策略较简单：每个候选取 top_k=1，并做一个相似度阈值过滤（>0.4）。
+
+    返回结构：
+    {
+      "物种名": { "source": "...", "content": "...", "score": 0.52 },
+      ...
+    }
     """
+    rag = get_rag_engine()
     hits = {}
+    
     for cand in candidates:
-        entry = {}
-        if cand.name in PARROT_KB:
-            entry.update(PARROT_KB[cand.name])
+        logger.info(f"Searching knowledge for: {cand.name}")
         
-        if entry:
-            hits[cand.name] = entry
+        # 构造查询：直接用物种名，或者构造一个问题
+        query = f"{cand.name}的特征和习性是什么？"
+        
+        results = rag.retrieve(query, top_k=1)
+        
+        if results:
+            # 取最匹配的一条
+            best_match = results[0]
+            # 只有当相似度足够高时才采纳 (例如 > 0.4)
+            if best_match['score'] > 0.4:
+                source_text = best_match['source']
+                # 如果有切片信息，添加到来源中
+                if 'chunk_info' in best_match:
+                    info = best_match['chunk_info']
+                    source_text += f" (片段 {info['chunk_index'] + 1}/{info['total_chunks']})"
+                
+                hits[cand.name] = {
+                    "source": source_text,
+                    "content": best_match['content'],
+                    "score": float(best_match['score']) # 转换为 float 以便 JSON 序列化
+                }
+            else:
+                logger.info(f"Low confidence match for {cand.name}: {best_match['score']}")
+    
     return hits
+
 

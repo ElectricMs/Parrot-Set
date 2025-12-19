@@ -8,3 +8,7 @@
 /agent/__pycache__
 /agent/tools/__pycache__
 /embedding/Qwen3-Embedding-0.6B
+AviList-v2025-11Jun-extended.xlsx
+/data/chroma_db
+/embedding/cache
+AviList-v2025-11Jun-extended.xlsx
