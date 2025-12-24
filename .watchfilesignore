@@ -1,0 +1,17 @@
+data/chroma_db/**
+data/**/*.sqlite3
+data/**/chroma.sqlite3
+knowledge/**
+dataset/**
+
+
+
+
+
+
+
+
+
+
+
+

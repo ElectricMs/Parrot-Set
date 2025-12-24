@@ -10,6 +10,9 @@ import mimetypes
 import io
 import platform
 import subprocess
+import time
+import threading
+import queue
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
@@ -82,6 +85,32 @@ agent = get_agent()
 router = AgentRouter()
 session_store = SessionMemoryStore(ttl_seconds=3600, max_turns=10)
 
+# RAG Engine: 启动时初始化，提前暴露 torch 环境问题
+_rag_engine_initialized = False
+_rag_engine_error = None
+try:
+    rag_engine = get_rag_engine()
+    # 尝试预加载 embedding 模型（触发 torch 导入和模型加载）
+    # 使用一个空列表测试，不会真正向量化，只是触发模型加载
+    logger.info("Pre-loading RAG embedding model...")
+    try:
+        # 触发 _load_model，但不实际向量化
+        if hasattr(rag_engine.embedding_fn, '_load_model'):
+            rag_engine.embedding_fn._load_model()
+        logger.info("RAG embedding model pre-loaded successfully.")
+        _rag_engine_initialized = True
+    except Exception as e:
+        _rag_engine_error = str(e)
+        logger.error(f"Failed to pre-load RAG embedding model: {e}", exc_info=True)
+        logger.warning("RAG service will be unavailable. Vectorization will fail until torch environment is fixed.")
+        # 确保标志为 False，即使 RAGEngine 对象已创建
+        _rag_engine_initialized = False
+except Exception as e:
+    _rag_engine_error = str(e)
+    logger.error(f"Failed to initialize RAG engine: {e}", exc_info=True)
+    logger.warning("RAG service will be unavailable.")
+    _rag_engine_initialized = False
+
 def _json_dumps(obj: Any) -> str:
     try:
         return json.dumps(obj, ensure_ascii=False)
@@ -98,7 +127,13 @@ async def health():
         ollama_ok = True
     except:
         ollama_ok = False
-    return {"status": "ok", "ollama_available": ollama_ok, "model": MODEL_NAME}
+    return {
+        "status": "ok",
+        "ollama_available": ollama_ok,
+        "model": MODEL_NAME,
+        "rag_available": _rag_engine_initialized,
+        "rag_error": _rag_engine_error if not _rag_engine_initialized else None
+    }
 
 @app.post("/classify", response_model=ClassificationResult)
 async def classify(image: UploadFile = File(...)):
@@ -163,6 +198,59 @@ async def ask(req: AskRequest):
     answer, artifacts = await router.run_ask(req.question, top_k=req.top_k, species_hint=req.species_hint)
     return AskResponse(answer=answer, hits=artifacts.get("hits", []))
 
+# ---------- RAG Debug / Benchmark Endpoint ----------
+class RagRetrieveRequest(BaseModel):
+    query: str = Field(..., description="检索 query（建议中文自然语言）")
+    top_k: int = Field(3, ge=1, le=20, description="返回片段数")
+    force_rebuild: bool = Field(False, description="是否强制重建索引（用于测试构建耗时）")
+
+class RagRetrieveResponse(BaseModel):
+    query: str
+    top_k: int
+    elapsed_ms: int
+    index_rebuilt: bool
+    collection_count: int
+    hits: List[Dict[str, Any]]
+
+@app.post("/rag/retrieve", response_model=RagRetrieveResponse)
+async def rag_retrieve(req: RagRetrieveRequest):
+    """
+    直接调用 RAG 检索，用于测试“检索质量/速度”。\n
+    返回：命中片段（content/score/source/chunk_info）+ 耗时信息。\n
+    说明：\n
+    - 若 force_rebuild=true，会先强制 build_index，再执行 retrieve。\n
+    - retrieve/build_index 可能较耗时（embedding 模型加载/索引构建），这里用 to_thread 避免阻塞事件循环。\n
+    """
+    q = (req.query or "").strip()
+    if not q:
+        raise HTTPException(status_code=400, detail="query is required")
+
+    rag = get_rag_engine()
+    index_rebuilt = False
+    t0 = time.monotonic()
+
+    if req.force_rebuild:
+        index_rebuilt = True
+        await asyncio.to_thread(rag.build_index, True)
+
+    hits = await asyncio.to_thread(rag.retrieve, q, req.top_k)
+    elapsed_ms = int((time.monotonic() - t0) * 1000)
+
+    # collection_count 可能触发内部 build_index（retrieve 会在 count==0 时构建）
+    try:
+        collection_count = int(rag.collection.count())
+    except Exception:
+        collection_count = -1
+
+    return RagRetrieveResponse(
+        query=q,
+        top_k=req.top_k,
+        elapsed_ms=elapsed_ms,
+        index_rebuilt=index_rebuilt,
+        collection_count=collection_count,
+        hits=hits,
+    )
+
 # ---------- Unified Agent Router Endpoint ----------
 class AgentMessageResponse(BaseModel):
     session_id: str
@@ -170,6 +258,13 @@ class AgentMessageResponse(BaseModel):
     reply: str
     artifacts: Dict[str, Any] = {}
     debug: Optional[Dict[str, Any]] = None
+
+def _sse(event: str, data: Any) -> str:
+    """
+    SSE 格式化：每条事件以空行分隔。
+    data 统一序列化为 JSON 字符串（前端可 JSON.parse）。
+    """
+    return f"event: {event}\ndata: {_json_dumps(data)}\n\n"
 
 @app.post("/agent/message", response_model=AgentMessageResponse)
 async def agent_message(
@@ -257,6 +352,125 @@ async def agent_message(
         debug=debug
     )
 
+@app.post("/agent/message/stream")
+async def agent_message_stream(
+    session_id: Optional[str] = Form(None),
+    message: Optional[str] = Form(None),
+    image: Optional[UploadFile] = File(None),
+):
+    """
+    SSE 流式版本：逐步输出状态与 token。
+
+    事件类型：
+    - status: {"text": "..."}
+    - tool_start/tool_end: {"tool_name": "...", ...}
+    - token: {"delta": "..."}
+    - done: {session_id, mode, reply, artifacts, debug}
+    """
+
+    async def gen():
+        start_ts = time.monotonic()
+        yield _sse("status", {"text": "已收到请求，准备处理中…"})
+
+        # 流式逻辑：
+        # - 文本：路由(LLM) -> (可选)RAG -> 主 LLM token 流
+        # - 图片：ClassifierTool -> (低置信度)RAG -> 终判 LLM token 流（JSON）-> 汇总回复
+        st = session_store.get_or_create(session_id)
+        user_text = (message or "").strip()
+
+        if image is not None:
+            session_store.append(st, "user", "[image]")
+        if user_text:
+            session_store.append(st, "user", user_text)
+
+        used_species_hint = None
+        mode = "ask"
+        artifacts: Dict[str, Any] = {}
+        reply = ""
+
+        try:
+            if image is not None:
+                mode = "analyze"
+                tmp_path = None
+                try:
+                    tmp_path = save_upload_temp(image)
+                    async for ev in router.stream_analyze_events(tmp_path):
+                        if ev.get("event") == "final":
+                            reply = ev["data"]["reply"]
+                            artifacts = ev["data"]["artifacts"]
+                        else:
+                            yield _sse(ev.get("event", "status"), ev.get("data", {}))
+
+                    # 保存会话信息（用于追问绑定）
+                    species = None
+                    try:
+                        species = artifacts.get("classification", {}).get("top_candidates", [{}])[0].get("name")
+                    except Exception:
+                        species = None
+                    session_store.set_last_species(st, species)
+                    session_store.set_last_analyze_artifacts(st, artifacts)
+                finally:
+                    if tmp_path and tmp_path.exists():
+                        tmp_path.unlink(missing_ok=True)
+            else:
+                if not user_text:
+                    mode = "prompt"
+                    reply = "你可以直接提问，或上传一张鹦鹉图片让我进行识别。"
+                elif detect_needs_image(user_text):
+                    mode = "prompt"
+                    reply = "要进行识别/分类，请先上传一张清晰的鹦鹉图片（正面/侧面都可以）。"
+                else:
+                    mode = "ask"
+                    # 追问绑定与是否使用 RAG 的决策在 router.stream_ask_events 内完成（LLM few-shot + 兜底）
+                    async for ev in router.stream_ask_events(user_text, top_k=3, last_species=st.last_species):
+                        if ev.get("event") == "final":
+                            reply = ev["data"]["reply"]
+                            artifacts = ev["data"]["artifacts"]
+                            used_species_hint = artifacts.get("used_species_hint") if isinstance(artifacts, dict) else None
+                        else:
+                            yield _sse(ev.get("event", "status"), ev.get("data", {}))
+
+        except Exception as e:
+            logger.error(f"/agent/message/stream failed: {e}", exc_info=True)
+            mode = "prompt"
+            reply = f"处理失败：{str(e)}"
+            artifacts = {"error": str(e)}
+
+        # 写入会话历史
+        session_store.append(st, "agent", reply)
+
+        debug = {
+            "used_species_hint": used_species_hint,
+            "last_species": st.last_species,
+            "session_count": session_store.size(),
+            "history_len": len(st.history),
+            "elapsed_ms": int((time.monotonic() - start_ts) * 1000),
+        }
+        if mode == "ask":
+            try:
+                debug["hit_sources"] = [h.get("source") for h in artifacts.get("hits", [])] if isinstance(artifacts, dict) else []
+            except Exception:
+                pass
+
+        yield _sse(
+            "done",
+            {
+                "session_id": st.session_id,
+                "mode": mode,
+                "reply": reply,
+                "artifacts": artifacts,
+                "debug": debug,
+            },
+        )
+
+    headers = {
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+        # For some proxies (nginx) - harmless otherwise
+        "X-Accel-Buffering": "no",
+    }
+    return StreamingResponse(gen(), media_type="text/event-stream", headers=headers)
+
 # Knowledge Base Routes
 @app.post("/knowledge/upload")
 async def upload_knowledge(file: UploadFile = File(...)):
@@ -275,11 +489,7 @@ async def upload_knowledge(file: UploadFile = File(...)):
         save_path.write_bytes(content)
         
         logger.info(f"Saved uploaded file to {save_path}")
-        
-        # 触发索引重建
-        rag.build_index(force_rebuild=True)
-        
-        return {"status": "success", "message": f"Uploaded {file.filename}"}
+        return {"status": "success", "message": f"Uploaded {file.filename}. 请点击“重建索引/向量化”按钮使索引生效。"}
     except Exception as e:
         logger.error(f"Upload failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -296,19 +506,114 @@ async def delete_knowledge(filename: str):
     rag = get_rag_engine()
     success = rag.delete_document(filename)
     if success:
-        return {"status": "success", "message": f"Deleted {filename}"}
+        return {"status": "success", "message": f"Deleted {filename}. 请点击“重建索引/向量化”按钮使索引生效。"}
     else:
         raise HTTPException(status_code=404, detail="File not found or delete failed")
 
 @app.post("/knowledge/reindex")
-async def reindex_knowledge():
-    """Force rebuild the knowledge index."""
+async def reindex_knowledge(force_full: bool = False):
+    """
+    向量化/索引同步入口（手动触发）。
+
+    默认：增量同步（只向量化新增/变更文档，并删除已移除文档的向量）。
+    force_full=true：全量重建索引（更慢，但最干净）。
+    """
+    if not _rag_engine_initialized:
+        error_msg = f"RAG 服务未初始化。原因：{_rag_engine_error or '未知错误'}"
+        raise HTTPException(
+            status_code=503,
+            detail=error_msg + " 请检查 torch/transformers 环境是否正确安装。"
+        )
+    
     try:
         rag = get_rag_engine()
-        rag.build_index(force_rebuild=True)
-        return {"status": "success", "message": "Index rebuild triggered"}
+        result = await asyncio.to_thread(rag.sync_index, force_full)
+        return {"status": "success", "mode": result.get("mode"), "result": result}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/knowledge/reindex/stream")
+async def reindex_knowledge_stream(force_full: bool = False):
+    """
+    SSE 流式重建索引：后端会持续推送进度，前端可实时显示“向量化到哪一步了”。
+
+    事件类型：
+    - status: {"text": "..."}
+    - progress: {"phase": "...", ...}
+    - done: {"status":"success", "result": {...}}
+    - error: {"status":"error", "detail":"..."}
+    """
+    # 检查 RAG 是否已初始化
+    if not _rag_engine_initialized:
+        error_msg = f"RAG 服务未初始化。原因：{_rag_engine_error or '未知错误'}"
+        logger.error(error_msg)
+        
+        async def gen_error():
+            yield _sse("status", {"text": "RAG 服务未就绪"})
+            yield _sse("error", {
+                "status": "error",
+                "detail": error_msg,
+                "suggestion": "请检查 torch/transformers 环境是否正确安装。如果是在 Windows 上遇到 DLL 错误，请检查 VC++ 运行库和 torch 版本兼容性。"
+            })
+        
+        headers = {
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        }
+        return StreamingResponse(gen_error(), media_type="text/event-stream", headers=headers)
+    
+    rag = get_rag_engine()
+
+    q: "queue.Queue[Any]" = queue.Queue()
+    sentinel = object()
+
+    def on_progress(evt: Dict[str, Any]):
+        # evt 约定为 {"event": "...", "data": {...}}
+        q.put(evt)
+
+    def worker():
+        try:
+            result = rag.sync_index(force_full_rebuild=force_full, on_progress=on_progress)
+            q.put({"event": "done", "data": {"status": "success", "result": result}})
+        except Exception as e:
+            q.put({"event": "error", "data": {"status": "error", "detail": str(e)}})
+        finally:
+            q.put(sentinel)
+
+    threading.Thread(target=worker, daemon=True).start()
+
+    async def gen():
+        start = time.monotonic()
+        try:
+            yield _sse("status", {"text": "已开始向量化/同步索引…"})
+            # 心跳：避免长时间无输出时，前端看起来“卡住”
+            while True:
+                try:
+                    item = await asyncio.to_thread(q.get, True, 1.0)  # block=True, timeout=1s
+                except queue.Empty:
+                    elapsed = int((time.monotonic() - start) * 1000)
+                    yield _sse("status", {"text": f"向量化中…（已运行 {elapsed}ms）"})
+                    continue
+                if item is sentinel:
+                    break
+                if isinstance(item, dict) and item.get("event"):
+                    yield _sse(item["event"], item.get("data", {}))
+                    # 如果收到 error 事件，立即结束流
+                    if item.get("event") == "error":
+                        break
+                else:
+                    yield _sse("status", {"text": str(item)})
+        except Exception as e:
+            logger.error(f"SSE generator error: {e}", exc_info=True)
+            yield _sse("error", {"status": "error", "detail": f"流式输出异常：{str(e)}"})
+
+    headers = {
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+        "X-Accel-Buffering": "no",
+    }
+    return StreamingResponse(gen(), media_type="text/event-stream", headers=headers)
 
 @app.post("/save_classified")
 async def save_classified(
@@ -516,4 +821,14 @@ async def open_folder(path: str = Form(...)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    # 默认关闭 reload：向量化/索引会频繁写 data/ 与 knowledge/，在 --reload 模式下会触发热重载，
+    # 导致 SSE 连接中断、前端看不到进度。需要开发热重载时：设置 PARROT_RELOAD=1
+    reload = os.getenv("PARROT_RELOAD", "0") == "1"
+    # 注意：传入 "app:app" 会再次 import 本文件（第一次是 __main__，第二次是 module app），
+    # 导致顶层初始化逻辑（包括 RAG 预加载）重复执行，日志重复且在某些环境下可能引发意外退出。
+    # - 非 reload：直接传入 app 对象，避免二次 import。
+    # - 需要 reload：必须使用 import string（uvicorn 限制）。
+    if reload:
+        uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    else:
+        uvicorn.run(app, host="0.0.0.0", port=8000)

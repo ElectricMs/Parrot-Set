@@ -1,7 +1,7 @@
 """
 LLM Wrapper for Ollama
 
-本模块提供一个最小可用的 Ollama /api/chat 封装（兼容 LangChain 的 LLM 基类）。
+本模块提供一个最小可用的 Ollama /api/chat 封装（不依赖 LangChain）。
 
 关键点：
 - 支持纯文本与图片输入（images 参数）
@@ -10,47 +10,38 @@ LLM Wrapper for Ollama
 
 注意：
 - 该实现的 _call 是同步网络请求；上层调用时通常用 asyncio.to_thread 包一层，避免阻塞事件循环。
-- 这不是完整的 LangChain ChatModel；我们只是复用 LLM 接口以方便调用。
+- 这里故意不引入 langchain/transformers/torch 等重依赖，避免在 Windows 环境出现 torch DLL 失败时导致服务无法启动。
 """
-from langchain_core.language_models.llms import LLM
-from langchain_core.callbacks import CallbackManagerForLLMRun
-from typing import Optional, List, Any
+from typing import Optional, List, Any, Iterator
 import requests
 import base64
+import json
 from pathlib import Path
 
-class OllamaLLM(LLM):
+class OllamaLLM:
     """
-    LangChain wrapper for Ollama local model.
+    Minimal wrapper for Ollama local model.
     Supports text generation and multimodal inputs (images).
     """
-    
-    model_name: str = "qwen3-vl-2b"
-    api_url: str = "http://127.0.0.1:11434"
-    temperature: float = 0.7
-    max_tokens: Optional[int] = None
     
     def __init__(
         self,
         model_name: str = "qwen3-vl-2b",
         api_url: str = "http://127.0.0.1:11434",
         temperature: float = 0.7,
+        max_tokens: Optional[int] = None,
         **kwargs
     ):
-        super().__init__(**kwargs)
+        # kwargs kept for backward compatibility (call sites may pass extra args)
         self.model_name = model_name
         self.api_url = api_url.rstrip("/")
         self.temperature = temperature
-    
-    @property
-    def _llm_type(self) -> str:
-        return "ollama"
+        self.max_tokens = max_tokens
     
     def _call(
         self,
         prompt: str,
         stop: Optional[List[str]] = None,
-        run_manager: Optional[CallbackManagerForLLMRun] = None,
         images: Optional[List[str]] = None,
         **kwargs: Any,
     ) -> str:
@@ -79,7 +70,7 @@ class OllamaLLM(LLM):
                     img_data = base64.b64encode(f.read()).decode("utf-8")
                     image_data_list.append(img_data)
         
-        # Build payload
+        # Build payload 请求体
         payload = {
             "model": self.model_name,
             "messages": [
@@ -128,6 +119,91 @@ class OllamaLLM(LLM):
                 
         except requests.exceptions.RequestException as e:
             if hasattr(e, 'response') and e.response is not None:
+                raise RuntimeError(f"Ollama API failed: {e}, Detail: {e.response.text}")
+            raise RuntimeError(f"Ollama API failed: {e}")
+
+    def stream_chat(
+        self,
+        prompt: str,
+        images: Optional[List[str]] = None,
+        stop: Optional[List[str]] = None,
+        **kwargs: Any,
+    ) -> Iterator[str]:
+        """
+        流式调用 Ollama（/api/chat, stream=true）。
+
+        返回一个同步迭代器：每次 yield 一个增量文本片段（delta）。
+        上层通常会在单独线程中迭代，并把 delta 通过 SSE/WebSocket 推送到前端。
+
+        说明：
+        - Ollama 的 stream 响应通常是 NDJSON（每行一个 JSON 对象）
+        - 每个对象可能包含 message.content（增量），done=true 表示结束
+        """
+        content = prompt
+
+        # Handle images
+        image_data_list = []
+        if images:
+            for img_path in images:
+                img_path_obj = Path(img_path)
+                if not img_path_obj.exists():
+                    raise FileNotFoundError(f"Image not found: {img_path}")
+                with img_path_obj.open("rb") as f:
+                    img_data = base64.b64encode(f.read()).decode("utf-8")
+                    image_data_list.append(img_data)
+
+        # Build payload
+        payload = {
+            "model": self.model_name,
+            "messages": [{"role": "user", "content": content}],
+            "stream": True,
+            "options": {"temperature": self.temperature},
+        }
+        if image_data_list: # 如果有图片数据，则将其添加到用户消息中
+            payload["messages"][0]["images"] = image_data_list
+        if self.max_tokens: # 如果设置了最大令牌数，则将其添加到选项中
+            payload["options"]["num_predict"] = self.max_tokens
+        if stop: # 如果有停止标记，则将其添加到选项中
+            payload["options"]["stop"] = stop
+
+        try:
+            response = requests.post(
+                f"{self.api_url}/api/chat",
+                json=payload,
+                stream=True,
+                timeout=(30, 600),
+            )
+            if response.status_code != 200:
+                raise RuntimeError(
+                    f"Ollama API failed (Status {response.status_code}): {response.text}"
+                )
+            response.raise_for_status()
+
+            for line in response.iter_lines(decode_unicode=True): # 逐行读取响应内容，解码为 Unicode 字符串
+                if not line:
+                    continue
+                try:
+                    data = json.loads(line) # 尝试将每一行解析为 JSON 对象
+                except Exception:
+                    continue
+
+                # 提取和返回文本增量    
+                # Typical streaming shape:
+                # {"message":{"role":"assistant","content":"..."},"done":false,...}
+                delta = "" # 初始化一个空字符串，用于存储文本增量
+                if isinstance(data, dict):
+                    msg = data.get("message")
+                    if isinstance(msg, dict):
+                        delta = msg.get("content") or ""
+                    # Some variants use "response"
+                    if not delta and data.get("response"):
+                        delta = data.get("response") or ""
+                    if delta:
+                        yield delta
+                    if data.get("done") is True:
+                        break
+        except requests.exceptions.RequestException as e:
+            if hasattr(e, "response") and e.response is not None:
                 raise RuntimeError(f"Ollama API failed: {e}, Detail: {e.response.text}")
             raise RuntimeError(f"Ollama API failed: {e}")
 

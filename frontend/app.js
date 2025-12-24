@@ -42,6 +42,7 @@ const chatFileInput = document.getElementById('chat-file-input');
 const chatAttachmentBar = document.getElementById('chat-attachment-bar');
 const chatAttachmentName = document.getElementById('chat-attachment-name');
 const chatAttachmentClear = document.getElementById('chat-attachment-clear');
+const chatStatus = document.getElementById('chat-status');
 
 let chatSelectedImageFile = null; // Agent 对话中选择的图片
 let lastAnalyzeResult = null; // 最近一次 analyze 的结果（用于“刚才那只...”类问题）
@@ -84,6 +85,7 @@ const kbListBody = document.getElementById('kb-list-body');
 const kbEmpty = document.getElementById('kb-empty');
 const refreshKbBtn = document.getElementById('refresh-kb-btn');
 const reindexKbBtn = document.getElementById('reindex-kb-btn');
+const kbStatus = document.getElementById('kb-status');
 
 // ========== 初始化 ==========
 document.addEventListener('DOMContentLoaded', () => {
@@ -138,6 +140,17 @@ function showStatusAlert(type, message) {
 
 function hideStatusAlert() {
     if (statusAlert) statusAlert.classList.add('hidden');
+}
+
+function setKbStatus(text) {
+    if (!kbStatus) return;
+    if (!text) {
+        kbStatus.textContent = '';
+        kbStatus.classList.add('hidden');
+        return;
+    }
+    kbStatus.textContent = text;
+    kbStatus.classList.remove('hidden');
 }
 
 /**
@@ -775,22 +788,98 @@ window.deleteKnowledge = async function(filename) {
 async function handleKbReindex() {
     if (!confirm('重建索引可能需要一些时间，确定要继续吗？')) return;
     
-    showNotification('正在重建索引，请稍候...', 'info');
+    showNotification('正在向量化/同步索引（支持实时进度）…', 'info');
+    setKbStatus('正在连接后端进度流…');
     reindexKbBtn.disabled = true;
     
     try {
-        const response = await fetch(`${API_BASE_URL}/knowledge/reindex`, {
-            method: 'POST'
-        });
+        // SSE 流式获取进度
+        const response = await fetch(`${API_BASE_URL}/knowledge/reindex/stream`, { method: 'POST' });
+        if (!response.ok || !response.body) throw new Error('Reindex failed');
         
-        if (!response.ok) throw new Error('Reindex failed');
-        
-        showNotification('索引重建完成', 'success');
+        showProgress();
+        updateProgress(0, 100, '正在向量化/同步索引…');
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder('utf-8');
+        let buffer = '';
+
+        let lastTotalFiles = 0;
+        let lastFileIndex = 0;
+        let lastChunkDone = 0;
+        let lastChunkTotal = 0;
+        let doneResult = null;
+
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            const parsed = parseSseChunk(buffer);
+            buffer = parsed.rest;
+
+            for (const block of parsed.complete) {
+                const ev = parseSseEvent(block);
+                if (ev.event === 'status') {
+                    const text = ev.data && ev.data.text ? ev.data.text : String(ev.data || '');
+                    setKbStatus(text);
+                    continue;
+                }
+                if (ev.event === 'progress') {
+                    const d = ev.data || {};
+                    if (typeof d.total_files === 'number') lastTotalFiles = d.total_files;
+                    if (typeof d.file_index === 'number') lastFileIndex = d.file_index;
+                    if (typeof d.chunk_done === 'number') lastChunkDone = d.chunk_done;
+                    if (typeof d.chunk_total === 'number') lastChunkTotal = d.chunk_total;
+
+                    // 进度估算：按文件推进 + 文件内 chunk 推进
+                    let percent = 0;
+                    if (lastTotalFiles > 0) {
+                        const within = (lastChunkTotal > 0) ? (lastChunkDone / lastChunkTotal) : 0;
+                        const completedFiles = Math.max(0, (lastFileIndex - 1));
+                        percent = Math.floor(((completedFiles + within) / lastTotalFiles) * 100);
+                    } else if (typeof d.chunk_total_total === 'number' && typeof d.chunk_done_total === 'number' && d.chunk_total_total > 0) {
+                        // full rebuild: total chunks progress
+                        percent = Math.floor((d.chunk_done_total / d.chunk_total_total) * 100);
+                    }
+                    percent = Math.max(0, Math.min(100, percent));
+                    updateProgress(percent, 100, `正在向量化… ${percent}%`);
+
+                    if (d.file) {
+                        const fileText = (d.action === 'update') ? '更新' : (d.action === 'add') ? '新增' : '处理';
+                        const chunkText = (lastChunkTotal > 0) ? `（${lastChunkDone}/${lastChunkTotal}）` : '';
+                        setKbStatus(`${fileText}：${d.file} ${chunkText}`.trim());
+                    }
+                    continue;
+                }
+                if (ev.event === 'done') {
+                    doneResult = ev.data && ev.data.result ? ev.data.result : null;
+                }
+                if (ev.event === 'error') {
+                    const msg = ev.data && ev.data.detail ? ev.data.detail : '未知错误';
+                    throw new Error(msg);
+                }
+            }
+        }
+
+        hideProgress();
+        setKbStatus('');
+
+        if (doneResult && doneResult.mode === 'incremental') {
+            const added = (doneResult.added || []).length;
+            const modified = (doneResult.modified || []).length;
+            const removed = (doneResult.removed || []).length;
+            showNotification(`索引同步完成：新增${added}、更新${modified}、移除${removed}`, 'success');
+        } else {
+            showNotification('索引同步完成', 'success');
+        }
+
         loadKnowledgeBase(); // 刷新列表
     } catch (error) {
         console.error('重建索引失败:', error);
         showNotification(`重建索引失败: ${error.message}`, 'error');
     } finally {
+        hideProgress();
+        setKbStatus('');
         reindexKbBtn.disabled = false;
     }
 }
@@ -865,6 +954,68 @@ async function sendAgentMessage({ text = '', imageFile = null } = {}) {
         localStorage.setItem('agentSessionId', agentSessionId);
     }
     return result;
+}
+
+function setChatStatus(text) {
+    if (!chatStatus) return;
+    if (!text) {
+        chatStatus.textContent = '';
+        chatStatus.classList.add('hidden');
+        return;
+    }
+    chatStatus.textContent = text;
+    chatStatus.classList.remove('hidden');
+}
+
+async function sendAgentMessageStream({ text = '', imageFile = null } = {}) {
+    const formData = new FormData();
+    if (agentSessionId) formData.append('session_id', agentSessionId);
+    if (text) formData.append('message', text);
+    if (imageFile) formData.append('image', imageFile);
+
+    const response = await fetch(`${API_BASE_URL}/agent/message/stream`, {
+        method: 'POST',
+        body: formData
+    });
+
+    if (!response.ok || !response.body) {
+        let msg = `HTTP ${response.status}`;
+        try {
+            const err = await response.json();
+            msg = err.detail || msg;
+        } catch(e) {}
+        throw new Error(msg);
+    }
+
+    return response.body.getReader();
+}
+
+function parseSseChunk(buffer) {
+    // SSE events are separated by blank line
+    const parts = buffer.split('\n\n');
+    const complete = parts.slice(0, -1);
+    const rest = parts[parts.length - 1];
+    return { complete, rest };
+}
+
+function parseSseEvent(block) {
+    // Minimal SSE parse: event + data (JSON)
+    const lines = block.split('\n').filter(Boolean);
+    let eventName = 'message';
+    let dataLines = [];
+    for (const line of lines) {
+        if (line.startsWith('event:')) {
+            eventName = line.slice(6).trim();
+        } else if (line.startsWith('data:')) {
+            dataLines.push(line.slice(5).trim());
+        }
+    }
+    const dataStr = dataLines.join('\n');
+    let data = dataStr;
+    try {
+        data = JSON.parse(dataStr);
+    } catch(e) {}
+    return { event: eventName, data };
 }
 
 // ========== UI 更新 ==========
@@ -994,22 +1145,81 @@ async function handleSendMessage() {
         addImageMessage(chatSelectedImageFile, 'user');
     }
     if (text) {
-        addMessage(text, 'user');
+    addMessage(text, 'user');
     }
     chatInput.value = '';
-
+    
     // 统一走 /agent/message，让后端路由决定 analyze/ask/prompt
     const placeholder = addMessage(hasImage ? '正在处理…' : '正在思考…', 'agent');
     try {
-        const resp = await sendAgentMessage({ text, imageFile: hasImage ? chatSelectedImageFile : null });
-        placeholder.textContent = resp.reply || '（无回复）';
+        // 优先使用 SSE 流式；失败则回退非流式
+        setChatStatus('思考中…');
+        placeholder.textContent = '';
 
-        // 若走 analyze，保留 artifacts 供后续展示/追问
-        if (resp.mode === 'analyze' && resp.artifacts) {
-            lastAnalyzeResult = resp.artifacts;
+        let donePayload = null;
+        try {
+            const reader = await sendAgentMessageStream({ text, imageFile: hasImage ? chatSelectedImageFile : null });
+            const decoder = new TextDecoder('utf-8');
+            let buffer = '';
+
+            while (true) {
+                const { value, done } = await reader.read();
+                if (done) break;
+                buffer += decoder.decode(value, { stream: true });
+
+                const parsed = parseSseChunk(buffer);
+                buffer = parsed.rest;
+
+                for (const block of parsed.complete) {
+                    const { event, data } = parseSseEvent(block);
+
+                    if (event === 'status' && data?.text) {
+                        setChatStatus(data.text);
+                    } else if (event === 'tool_start') {
+                        const name = data?.tool_name || 'tool';
+                        setChatStatus(`正在调用 ${name}…`);
+                    } else if (event === 'tool_end') {
+                        const name = data?.tool_name || 'tool';
+                        setChatStatus(`已完成 ${name}`);
+                    } else if (event === 'token') {
+                        const delta = data?.delta ?? '';
+                        // internal channel tokens are for debugging (e.g. final_decision JSON); don't show to user
+                        if (data?.channel === 'internal') continue;
+                        if (delta) placeholder.textContent += delta;
+                    } else if (event === 'done') {
+                        donePayload = data;
+                        // Image analyze path does not stream visible tokens (final_decision tokens are internal),
+                        // so we must finalize the bubble with done.reply.
+                        if ((!placeholder.textContent || !placeholder.textContent.trim()) && data?.reply) {
+                            placeholder.textContent = data.reply;
+                        }
+                    }
+                }
+            }
+        } catch (streamErr) {
+            // Stream failed -> fallback
+            console.warn('SSE stream failed, fallback to /agent/message:', streamErr);
+            setChatStatus('（流式不可用，已回退普通模式）');
+            const resp = await sendAgentMessage({ text, imageFile: hasImage ? chatSelectedImageFile : null });
+            placeholder.textContent = resp.reply || '（无回复）';
+            donePayload = resp;
+        }
+        
+        // 处理 done：更新 session_id、清除状态、缓存 analyze artifacts
+        if (donePayload?.session_id) {
+            agentSessionId = donePayload.session_id;
+            localStorage.setItem('agentSessionId', agentSessionId);
+        }
+        setChatStatus('');
+
+        const mode = donePayload?.mode;
+        const artifacts = donePayload?.artifacts;
+        if (mode === 'analyze' && artifacts) {
+            lastAnalyzeResult = artifacts;
         }
     } catch (err) {
         placeholder.textContent = `请求失败：${err.message || err}`;
+        setChatStatus('');
     } finally {
         if (hasImage) clearChatAttachment();
     }

@@ -23,6 +23,8 @@ Agent 路由与编排层（核心逻辑）
 import logging
 import json
 import asyncio
+import time
+import threading
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, List
 
@@ -392,6 +394,262 @@ class AgentRouter:
         # artifacts 中返回：是否使用检索 + 最终 query + hits（便于前端展示与调试）
         artifacts = {"hits": hits, "rag_used": use_rag, "rag_query": search_query}
         return answer_text, artifacts
+
+    # -------------------------
+    # Streaming (SSE/Web) helper
+    # -------------------------
+    def _astream_llm(self, prompt: str, images: Optional[List[str]] = None) -> "asyncio.AsyncIterator[str]":
+        """
+        将同步的 LLM 流（OllamaLLM.stream_chat）包装为 async iterator。
+
+        实现方式：
+        - 在后台线程中迭代同步 generator
+        - 通过 loop.call_soon_threadsafe 将 delta 放入 asyncio.Queue
+        """
+        q: "asyncio.Queue[Optional[str]]" = asyncio.Queue()
+        loop = asyncio.get_running_loop()
+
+        def worker():
+            try:
+                stream_fn = getattr(self.agent.main_llm, "stream_chat", None)
+                if stream_fn is None:
+                    # 不支持流式：退回一次性 call
+                    text = self.agent.main_llm._call(prompt, images=images)
+                    loop.call_soon_threadsafe(q.put_nowait, text)
+                    loop.call_soon_threadsafe(q.put_nowait, None)
+                    return
+
+                for delta in stream_fn(prompt, images=images):
+                    if delta:
+                        loop.call_soon_threadsafe(q.put_nowait, delta)
+                loop.call_soon_threadsafe(q.put_nowait, None)
+            except Exception:
+                loop.call_soon_threadsafe(q.put_nowait, None)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+        async def gen():
+            while True:
+                item = await q.get()
+                if item is None:
+                    break
+                yield item
+
+        return gen()
+
+    async def stream_ask_events(
+        self,
+        question: str,
+        top_k: int = 3,
+        last_species: Optional[str] = None,
+    ):
+        """
+        文本问答的事件流编排（用于 SSE）。
+
+        事件规范（由上层 app.py 转成 SSE）：\n
+        - {"event":"status","data":{"text":"..."}}
+        - {"event":"tool_start","data":{...}}
+        - {"event":"tool_end","data":{...}}
+        - {"event":"token","data":{"delta":"..."}}
+        - {"event":"final","data":{"reply":..., "artifacts":...}}
+        """
+        q = (question or "").strip()
+        if not q:
+            yield {"event": "final", "data": {"reply": "请先输入问题。", "artifacts": {"hits": []}}}
+            return
+
+        t0 = time.monotonic()
+        yield {"event": "status", "data": {"text": "正在分析问题意图…"}}
+        yield {"event": "tool_start", "data": {"tool_name": "RouterLLM", "phase": "route"}}
+        route = await self.decide_text_routing(q, last_species=last_species)
+        yield {
+            "event": "tool_end",
+            "data": {
+                "tool_name": "RouterLLM",
+                "phase": "route",
+                "elapsed_ms": int((time.monotonic() - t0) * 1000),
+                "is_followup": bool(route.get("is_followup")),
+                "use_rag": bool(route.get("use_rag")),
+                "search_query": route.get("search_query"),
+            },
+        }
+
+        used_species_hint = last_species if bool(route.get("is_followup")) else None
+        use_rag = bool(route.get("use_rag"))
+        search_query = str(route.get("search_query") or (f"关于{used_species_hint}：{q}" if used_species_hint else q)).strip()
+
+        hits: List[Dict[str, Any]] = []
+        context = ""
+        if use_rag:
+            yield {"event": "status", "data": {"text": "正在检索知识库…"}}
+            yield {"event": "tool_start", "data": {"tool_name": "RAGEngine.retrieve", "query": search_query, "top_k": top_k}}
+            rag = get_rag_engine()
+            t_rag = time.monotonic()
+            hits = await asyncio.to_thread(rag.retrieve, search_query, top_k)
+            yield {
+                "event": "tool_end",
+                "data": {
+                    "tool_name": "RAGEngine.retrieve",
+                    "elapsed_ms": int((time.monotonic() - t_rag) * 1000),
+                    "hit_count": len(hits),
+                    "sources": [h.get("source") for h in hits],
+                },
+            }
+            context = "\n\n".join(
+                [f"[{h.get('source','unknown')}] {h.get('content','')}".strip() for h in hits if h.get("content")]
+            )
+
+        yield {"event": "status", "data": {"text": "正在生成回答…"}}
+        yield {"event": "tool_start", "data": {"tool_name": "MainLLM", "phase": "answer"}}
+        prompt = (
+            "你是 Parrot Set 的鹦鹉知识助手。请用中文回答用户问题。\n"
+            "规则：\n"
+            "1) 优先基于“资料”作答，不要编造。\n"
+            "2) 如果资料不足，请明确说明资料不足，并给出下一步建议（例如上传鹦鹉图片或补充知识库文档）。\n"
+            "3) 回答尽量简洁、可执行。\n\n"
+        )
+        if context:
+            prompt += f"资料：\n{context}\n\n"
+        prompt += f"问题：{q}\n\n回答："
+
+        t_llm = time.monotonic()
+        full = ""
+        async for delta in self._astream_llm(prompt):
+            full += delta
+            yield {"event": "token", "data": {"delta": delta}}
+        yield {"event": "tool_end", "data": {"tool_name": "MainLLM", "phase": "answer", "elapsed_ms": int((time.monotonic() - t_llm) * 1000)}}
+
+        if not full.strip():
+            if hits:
+                bullets = "\n".join([f"- {h.get('content','').strip()}" for h in hits if h.get("content")])
+                full = f"我在知识库中找到了以下相关内容（供参考）：\n{bullets}".strip()
+            else:
+                full = "我暂时无法从知识库中检索到直接相关的内容。你可以上传鹦鹉图片让我先识别物种，或补充知识库文档后再问。"
+
+        artifacts = {"hits": hits, "rag_used": use_rag, "rag_query": search_query, "used_species_hint": used_species_hint}
+        yield {"event": "final", "data": {"reply": full, "artifacts": artifacts}}
+
+    async def stream_analyze_events(self, image_path: Path):
+        """
+        图片分析的事件流编排（用于 SSE）。
+        目标：在 UI 里能展示“正在调用 ClassifierTool / RAG / 终判 LLM”等小字状态，并逐 token 输出终判解释。
+        """
+        yield {"event": "status", "data": {"text": "正在识别图片…"}}
+        yield {"event": "tool_start", "data": {"tool_name": "ClassifierTool", "phase": "classify"}}
+        t_cls = time.monotonic()
+        classification = await asyncio.to_thread(self.agent.classifier_tool.run, image_path)
+        yield {"event": "tool_end", "data": {"tool_name": "ClassifierTool", "phase": "classify", "elapsed_ms": int((time.monotonic() - t_cls) * 1000)}}
+
+        classification_dict = classification.model_dump() if hasattr(classification, "model_dump") else {}
+        top1 = (classification.top_candidates[0] if classification.top_candidates else None)
+        top_name = getattr(top1, "name", None) or "未知物种"
+        top_prob = getattr(top1, "probability", None)
+        top_score = getattr(top1, "score", None)
+        conf_level = getattr(classification, "confidence_level", None)
+        visual_desc = getattr(classification, "visual_features_description", None) or ""
+        explain = getattr(classification, "explanation", None) or ""
+
+        use_rag = _confidence_is_low(conf_level, top_score)
+        rag_hits: List[Dict[str, Any]] = []
+        decision: Dict[str, Any] = {"final_name": top_name, "reasoning": explain, "used_rag": False}
+
+        if use_rag:
+            yield {"event": "status", "data": {"text": "置信度较低，正在检索资料辅助判断…"}}
+            cand_names = [c.name for c in (classification.top_candidates or [])[:3] if getattr(c, "name", None)]
+            queries = []
+            if cand_names:
+                queries.append(f"{' / '.join(cand_names)} 这些鹦鹉的区别与识别要点是什么？")
+            if visual_desc:
+                queries.append(f"根据描述：{visual_desc}。这更可能是哪种鹦鹉？请给出判断依据。")
+            if top_name:
+                queries.append(f"{top_name} 的典型外观特征是什么？")
+
+            yield {"event": "tool_start", "data": {"tool_name": "RAGEngine.retrieve", "queries": queries[:3], "top_k_each": 2}}
+            t_rag = time.monotonic()
+            rag = get_rag_engine()
+            seen = set()
+            for q in queries[:3]:
+                results = await asyncio.to_thread(rag.retrieve, q, 2)
+                for h in results:
+                    key = (h.get("source"), (h.get("content") or "")[:80])
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    rag_hits.append(h)
+            yield {
+                "event": "tool_end",
+                "data": {
+                    "tool_name": "RAGEngine.retrieve",
+                    "elapsed_ms": int((time.monotonic() - t_rag) * 1000),
+                    "hit_count": len(rag_hits),
+                    "sources": [h.get("source") for h in rag_hits],
+                },
+            }
+
+            context = "\n\n".join([f"[{h.get('source','unknown')}] {h.get('content','')}".strip() for h in rag_hits if h.get("content")])
+            decide_prompt = (
+                "你是鸟类识别专家。我们对一张鹦鹉图片进行了初步分类，但置信度不高。\n"
+                "请在候选物种中做最终判定，或输出“无法确定”。\n"
+                "要求：只输出 JSON。\n"
+                "JSON 结构：\n"
+                "{\n"
+                '  \"final_name\": \"从候选中选择一个名称，或无法确定\",\n'
+                '  \"reasoning\": \"简要说明依据（结合视觉描述与资料）\",\n'
+                '  \"need_more_info\": true/false,\n'
+                '  \"followup\": \"如果无法确定，告诉用户应补充什么角度的照片/信息\"\n'
+                "}\n\n"
+                f"候选：{[{'name': c.name, 'score': c.score} for c in (classification.top_candidates or [])[:3]]}\n"
+                f"视觉描述：{visual_desc}\n"
+                f"初步解释：{explain}\n\n"
+            )
+            if context:
+                decide_prompt += f"资料：\n{context}\n\n"
+            decide_prompt += "输出："
+
+            yield {"event": "status", "data": {"text": "正在生成最终判定…"}}
+            yield {"event": "tool_start", "data": {"tool_name": "MainLLM", "phase": "final_decision"}}
+            t_dec = time.monotonic()
+            raw = ""
+            async for delta in self._astream_llm(decide_prompt):
+                raw += delta
+            yield {"event": "tool_end", "data": {"tool_name": "MainLLM", "phase": "final_decision", "elapsed_ms": int((time.monotonic() - t_dec) * 1000)}}
+
+            parsed = _safe_json_extract(raw)
+            if parsed and isinstance(parsed, dict):
+                decision = {
+                    "final_name": parsed.get("final_name") or top_name,
+                    "reasoning": parsed.get("reasoning") or explain,
+                    "need_more_info": bool(parsed.get("need_more_info")) if parsed.get("need_more_info") is not None else False,
+                    "followup": parsed.get("followup") or "",
+                    "used_rag": True,
+                }
+            else:
+                decision = {"final_name": top_name, "reasoning": explain, "used_rag": True}
+
+        final_name = decision.get("final_name") or top_name
+        reply = f"识别结果：{final_name}"
+        if top_prob is not None:
+            reply += f"（{top_prob}%）"
+        if decision.get("reasoning"):
+            reply += f"\n判定依据：{decision['reasoning']}"
+        if decision.get("need_more_info") and decision.get("followup"):
+            reply += f"\n\n为进一步确认：{decision['followup']}"
+
+        artifacts: Dict[str, Any] = {
+            "classification": classification_dict,
+            "rag_hits": rag_hits,
+            "decision": decision,
+        }
+
+        # 将“最终用户可见回复”按 chunk 流式输出（让图片问答也有逐字/逐段的体验）
+        # 前端会在 token 事件中把 delta 追加到当前气泡里。
+        yield {"event": "status", "data": {"text": "正在输出回答…"}}
+        chunk_size = 12
+        for i in range(0, len(reply), chunk_size):
+            yield {"event": "token", "data": {"delta": reply[i : i + chunk_size]}}
+            await asyncio.sleep(0)
+
+        yield {"event": "final", "data": {"reply": reply, "artifacts": artifacts}}
 
     @staticmethod
     def summarize_artifacts_for_debug(artifacts: Dict[str, Any]) -> Dict[str, Any]:

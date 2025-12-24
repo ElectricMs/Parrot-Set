@@ -34,8 +34,10 @@ def search_knowledge(candidates: List[TopCandidate]) -> Dict[str, Any]:
         if results:
             # 取最匹配的一条
             best_match = results[0]
+            # 阈值过滤：优先用向量粗排分数（rerank 分数尺度可能不在 0~1）
+            score_for_threshold = float(best_match.get("vector_score", best_match.get("score", 0.0)) or 0.0)
             # 只有当相似度足够高时才采纳 (例如 > 0.4)
-            if best_match['score'] > 0.4:
+            if score_for_threshold > 0.4:
                 source_text = best_match['source']
                 # 如果有切片信息，添加到来源中
                 if 'chunk_info' in best_match:
@@ -45,10 +47,12 @@ def search_knowledge(candidates: List[TopCandidate]) -> Dict[str, Any]:
                 hits[cand.name] = {
                     "source": source_text,
                     "content": best_match['content'],
-                    "score": float(best_match['score']) # 转换为 float 以便 JSON 序列化
+                    "score": float(best_match.get('score', 0.0)), # 最终排序分数（可能是 rerank）
+                    "vector_score": float(best_match.get("vector_score", 0.0)),
+                    "rerank_score": float(best_match.get("rerank_score", 0.0)) if best_match.get("rerank_score") is not None else None,
                 }
             else:
-                logger.info(f"Low confidence match for {cand.name}: {best_match['score']}")
+                logger.info(f"Low confidence match for {cand.name}: score={best_match.get('score')} vector_score={best_match.get('vector_score')}")
     
     return hits
 

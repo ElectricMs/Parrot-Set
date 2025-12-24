@@ -1,0 +1,3722 @@
+{
+  "statistics": {
+    "total_queries": 100,
+    "successful_queries": 100,
+    "failed_queries": 0,
+    "success_rate": 100.0,
+    "total_hits": 300,
+    "avg_score": 0.7824,
+    "max_score": 0.8862,
+    "min_score": 0.6507,
+    "avg_query_time_ms": 284.1,
+    "avg_query_time_trimmed_ms": 283.65,
+    "median_query_time_ms": 282.99,
+    "max_query_time_ms": 340.42,
+    "min_query_time_ms": 272.03,
+    "total_query_time_ms": 28409.99,
+    "trimmed_samples": 1,
+    "rag_init_time_ms": 269.68
+  },
+  "results": [
+    {
+      "query": "白额绿鹦哥",
+      "query_index": 1,
+      "query_time_ms": 292.17,
+      "hits": [
+        {
+          "score": 0.819,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "rican and New World Parrots / Psittacidae\n- **地理分布**：中美：墨西哥西北部至哥斯达黎加\n\n### 简介（摘录）\n\n![白额绿鹦哥 / White-fronted Amazon / Amazona albifrons](https://hn8i.7img.cn/images/a941123a56a977e2cca355267d3698ff.jpg) ...",
+          "chunk_info": {
+            "chunk_index": 14,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.8184,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ra albipectus](https://hn8i.7img.cn/images/20c793482b5ff72055c4227a18f759a2.jpg)\n\n白颈鹦哥（英文名：White-breasted Parakeet，学名：Pyrrhura albipectus），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。\n\n地理分布：南美：厄瓜多尔东南部\n\n---\n\n## 白额绿鹦哥 / White-fro...",
+          "chunk_info": {
+            "chunk_index": 12,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7653,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "属的鸟类。\n\n地理分布：南美：厄瓜多尔东南部\n\n---\n\n## 白额绿鹦哥 / White-fronted Amazon / Amazona albifrons\n\n- **来源链接**：`https://www.huaniao8.com/niao/82895.html`\n- **图片**：`https://hn8i.7img.cn/YTk0MTEyM2E1NmE5NzdlMmNjYTM1NTI2N...",
+          "chunk_info": {
+            "chunk_index": 13,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "毛里求斯灰鹦鹉",
+      "query_index": 2,
+      "query_time_ms": 294.83,
+      "hits": [
+        {
+          "score": 0.8305,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：印度洋：毛里求斯，拉丁美洲留尼汪\n\n### 简介（摘录）\n\n![毛里求斯灰鹦鹉 / Mascarene Grey Parakeet / Psittacula bensoni](https://hn8i.7img.cn/images/fe82b10fa50438e472fcf878369ebf2d...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 118,
+            "source": "huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.8305,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：印度洋：毛里求斯，拉丁美洲留尼汪\n\n### 简介（摘录）\n\n![毛里求斯灰鹦鹉 / Mascarene Grey Parakeet / Psittacula bensoni](https://hn8i.7img.cn/images/fe82b10fa50438e472fcf878369ebf2d...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "chunk_index": 118,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.8094,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "。\n\n地理分布：印度洋：毛里求斯\n\n---\n\n## 毛里求斯灰鹦鹉 / Mascarene Grey Parakeet / Psittacula bensoni\n\n- **来源链接**：`https://www.huaniao8.com/niao/56372.html`\n- **图片**：`https://hn8i.7img.cn/ZmU4MmIxMGZhNTA0MzhlNDcyZmNmODc4M...",
+          "chunk_info": {
+            "chunk_index": 117,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "金肩扇尾鹦鹉",
+      "query_index": 3,
+      "query_time_ms": 286.31,
+      "hits": [
+        {
+          "score": 0.8489,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "urus platurus](https://hn8i.7img.cn/images/a22abfa5a196f6083681a589b92d8eb3.jpg)\n\n金肩扇尾鹦鹉（英文名：Golden-mantled Racket-tail，学名：Prioniturus platurus），是鹦形目长尾鹦鹉科扇尾鹦鹉属的鸟类。\n\n地理分布：澳洲：印尼苏拉威西岛\n\n---\n\n## 金肩鹦鹉 / Gol...",
+          "chunk_info": {
+            "chunk_index": 31,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.8078,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：印尼苏拉威西岛\n\n### 简介（摘录）\n\n![金肩扇尾鹦鹉 / Golden-mantled Racket-tail / Prioniturus platurus](https://hn8i.7img.cn/images/a22abfa5a196f6083681a589b92d...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 30
+          }
+        },
+        {
+          "score": 0.776,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "可爱又安静的小型鹦鹉, 通体亮绿色羽毛，喙桔红色有腊质感。翅膀颜色比体羽深，上有一块醒目的金色斑状羽毛。  地理分布：南美：亚马孙雨林北部，中部\n\n### 正文\n\n![金翅斑鹦哥 / Golden-winged Parakeet / Brotogeris chrysoptera](https://hn8i.7img.cn/images/96d4cba27bfe56ce3a5f11f02507d3a...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 28,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "鳞头鹦哥",
+      "query_index": 4,
+      "query_time_ms": 276.81,
+      "hits": [
+        {
+          "score": 0.7607,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "ad38.jpg)\n\n鲁氏鹦鹉（英文名：Rüppell’s Parrot，学名：Poicephalus rueppellii），是鹦形目鹦鹉科大头鹦鹉属的鸟类。\n\n地理分布：非洲：安哥拉和纳米比亚\n\n---\n\n## 鳞头鹦哥 / Scaly-headed Parrot / Pionus maximiliani\n\n- **来源链接**：`https://www.huaniao8.com/niao/5...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 96,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7552,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "s maximiliani](https://hn8i.7img.cn/images/e1088495092287a33fa92d58757a9602.jpg)\n\n鳞头鹦哥（英文名：Scaly-headed Parrot，学名：Pionus maximiliani），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。鳞头鹦鹉，又被称为麦克希米伦鹦鹉，分布在亚马逊河流域鹦鹉。\n\n地理分布：南美：中南部，东南部，东部\n...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 98
+          }
+        },
+        {
+          "score": 0.7462,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "**科**：鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：中南部，东南部，东部\n\n### 简介（摘录）\n\n![鳞头鹦哥 / Scaly-headed Parrot / Pionus maximiliani](https://hn8i.7img.cn/images/e1088495092287a33fa92d58757...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 97,
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "纹背绿鹦鹉",
+      "query_index": 5,
+      "query_time_ms": 284.06,
+      "hits": [
+        {
+          "score": 0.7486,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": ".jpg)\n\n纵纹鹦鹉（英文名：Striated Lorikeet，学名：Charmosyna multistriata），是鹦形目长尾鹦鹉科棕榈鹦鹉属的鸟类。\n\n地理分布：澳洲：新几内亚\n\n---\n\n## 纹背绿鹦鹉 / Madarasz’s Tiger Parrot / Psittacella madaraszi\n\n- **来源链接**：`https://www.huaniao8.com/ni...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 6
+          }
+        },
+        {
+          "score": 0.7364,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "ttaciformes\n- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚\n\n### 简介（摘录）\n\n![纹背绿鹦鹉 / Madarasz\\'s Tiger Parrot / Psittacella madaraszi](https://hn8i.7img.cn/images/929eb0600973a96841...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "chunk_index": 7,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.7254,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "lla madaraszi](https://hn8i.7img.cn/images/929eb0600973a9684178b7657b4863f9.jpg)\n\n纹背绿鹦鹉（英文名：Madarasz’s Tiger Parrot，学名：Psittacella madaraszi），是鹦形目长尾鹦鹉科虎斑鹦鹉属的鸟类。\n\n地理分布：澳洲：新几内亚\n\n---\n\n## 细嘴鹦哥 / Slender-b...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 8
+          }
+        }
+      ]
+    },
+    {
+      "query": "中美红额鹦哥",
+      "query_index": 6,
+      "query_time_ms": 283.39,
+      "hits": [
+        {
+          "score": 0.7942,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "costaricensis](https://hn8i.7img.cn/images/8ad3fd9f5ac1e166dd44299ff0d4ccc8.jpg)\n\n中美红额鹦哥（英文名：Red-fronted Parrotlet，学名：Touit costaricensis），是鹦形目鹦鹉科图伊特鹦鹉属的鸟类。\n\n地理分布：中美：哥斯达黎加至巴拿马西部\n\n---\n\n## 乌嘴鹦哥 / Dusky-...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 6,
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.7942,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "costaricensis](https://hn8i.7img.cn/images/8ad3fd9f5ac1e166dd44299ff0d4ccc8.jpg)\n\n中美红额鹦哥（英文名：Red-fronted Parrotlet，学名：Touit costaricensis），是鹦形目鹦鹉科图伊特鹦鹉属的鸟类。\n\n地理分布：中美：哥斯达黎加至巴拿马西部\n\n---\n\n## 乌嘴鹦哥 / Dusky-...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 6
+          }
+        },
+        {
+          "score": 0.7851,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "frican and New World Parrots / Psittacidae\n- **地理分布**：中美：哥斯达黎加至巴拿马西部\n\n### 简介（摘录）\n\n![中美红额鹦哥 / Red-fronted Parrotlet / Touit costaricensis](https://hn8i.7img.cn/images/8ad3fd9f5ac1e166dd44299ff0d4ccc8.j...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 5,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "圣卢西亚鹦哥",
+      "query_index": 7,
+      "query_time_ms": 285.56,
+      "hits": [
+        {
+          "score": 0.8294,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：北美：圣卢西亚\n\n### 简介（摘录）\n\n![圣卢西亚鹦哥 / St. Lucia Amazon / Amazona versicolor](https://hn8i.7img.cn/images/bae2942ef48741f13b416abce9fc9937.jpg)  圣...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 83,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.8294,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：北美：圣卢西亚\n\n### 简介（摘录）\n\n![圣卢西亚鹦哥 / St. Lucia Amazon / Amazona versicolor](https://hn8i.7img.cn/images/bae2942ef48741f13b416abce9fc9937.jpg)  圣...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 83,
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.7642,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "ui Parakeet，学名：Brotogeris sanctithomae），是鹦形目鹦鹉科纯色鹦哥属的鸟类。图伊鹦哥\n\n地理分布：南美：亚马孙雨林\n\n---\n\n## 圣卢西亚鹦哥 / St. Lucia Amazon / Amazona versicolor\n\n- **来源链接**：`https://www.huaniao8.com/niao/59196.html`\n- **图片**：`htt...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 82,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "黑顶鹦鹉",
+      "query_index": 8,
+      "query_time_ms": 285.66,
+      "hits": [
+        {
+          "score": 0.8016,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "hura rupicola](https://hn8i.7img.cn/images/2669c573ebd09e25aaee4d4650476092.jpg)\n\n黑顶鹦哥（英文名：Black-capped Parakeet，学名：Pyrrhura rupicola），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。黑帽锥尾鹦鹉是鸟纲（Aves）、鹦形目、鹦鹉科、锥尾鹦鹉族动物，分布于秘鲁中部。\n\n地理分布：南...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 208,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7656,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "黑顶鹦鹉（英文名：Black-capped Lory，学名：Lorius lory），是鹦形目长尾鹦鹉科黑顶吸蜜鹦鹉属的鸟类。黑帽锥尾鹦鹉是Pyrrhura 小型锥尾鹦鹉里的一员，也是里面体型较娇小的种类，个性好玩活泼，价位不高，是很可爱的宠物鸟，也如同种小型锥尾鹦鹉一样不吵闹，是对鹦鹉有兴趣的初入门者良好的选择之一；黑帽锥尾鹦鹉有两个亚种，性别无法由外表判断。体长：25 cm (9.5 吋)分布...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 212
+          }
+        },
+        {
+          "score": 0.7605,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林西南部\n\n### 简介（摘录）\n\n![黑顶鹦哥 / Black-capped Parakeet / Pyrrhura rupicola](https://hn8i.7img.cn/images/2669c573ebd09e25aaee4d4650476092.jpg) ...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 207,
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "黑额鹦鹉",
+      "query_index": 9,
+      "query_time_ms": 292.69,
+      "hits": [
+        {
+          "score": 0.7843,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "s zealandicus](https://hn8i.7img.cn/images/3179d78415e57e0e45e6dd80765a77c1.jpg)\n\n黑额鹦鹉（英文名：Black-fronted Parakeet，学名：Cyanoramphus zealandicus），是鹦形目长尾鹦鹉科长尾鹦鹉属的鸟类。是塔希提岛特有及已灭绝的鹦鹉。其当地名称的意思是“数量很多的鹦鹉”。\n\n地理分...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 219
+          }
+        },
+        {
+          "score": 0.7638,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：太平洋：大溪地\n\n### 简介（摘录）\n\n![黑额鹦鹉 / Black-fronted Parakeet / Cyanoramphus zealandicus](https://hn8i.7img.cn/images/3179d78415e57e0e45e6dd80765a77...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 218,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7619,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "swindernianus](https://hn8i.7img.cn/images/deaee5c509f0e7ef0be8a482a176ace0.jpg)\n\n黑领牡丹鹦鹉（英文名：Black-collared Lovebird，学名：Agapornis swindernianus），是鹦形目长尾鹦鹉科牡丹鹦鹉属的鸟类。\n\n地理分布：非洲：西部，中部\n\n---\n\n## 黑额鹦鹉 / Black...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 216
+          }
+        }
+      ]
+    },
+    {
+      "query": "红耳鹦哥",
+      "query_index": 10,
+      "query_time_ms": 288.31,
+      "hits": [
+        {
+          "score": 0.7713,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红嘴鹦哥（英文名：Red-billed Parrot，学名：Pionus sordidus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。“Pionus”这个属名的字源，来自希腊字PIONOS，是“丰满”（plump）的意思。栖息于森林地带、沿海低地林区、树木稀少的平原、有时候也会前往农耕区觅食。通常成对或是以小群体活动，平常在树上休憩的时候难以察觉，因为其羽色提供了良好的掩蔽，觅食的时候相当安静，有时候甚至...",
+          "chunk_info": {
+            "chunk_index": 92,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7459,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "d47536a.jpg)\n\n红眼鹦哥（英文名：Red-lored Amazon，学名：Amazona autumnalis），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：中美，南美：墨西哥东部至厄瓜多尔西部\n\n---\n\n## 红翅鹦鹉 / Red-winged Parrot / Aprosmictus erythropterus",
+          "chunk_info": {
+            "chunk_index": 120,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7434,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "frican and New World Parrots / Psittacidae\n- **地理分布**：南美：秘鲁中部至阿根廷西北部\n\n### 简介（摘录）\n\n![红耳绿鹦哥 / Mitred Parakeet / Psittacara mitratus](https://hn8i.7img.cn/images/d69cce6bfcc00bea93ec0f7c339bbbcd.jpg)  红耳...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 128
+          }
+        }
+      ]
+    },
+    {
+      "query": "红喉鹦鹉",
+      "query_index": 11,
+      "query_time_ms": 278.94,
+      "hits": [
+        {
+          "score": 0.8181,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "rubritorquis](https://hn8i.7img.cn/images/18767725513392ba4f5e54991210520b.jpg)\n\n红喉鹦哥（英文名：Red-throated Parakeet，学名：Psittacara rubritorquis），是鹦形目鹦鹉科卡拉锥尾鹦鹉属的鸟类。红喉锥尾鹦鹉属于鹦鹉科，主要分布于危地马拉东部、萨尔瓦多和尼加拉瓜北部。\n\n地理分布...",
+          "chunk_info": {
+            "chunk_index": 86,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7895,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "s johnstoniae](https://hn8i.7img.cn/images/3026666134abf241e44db63f28edb762.jpg)\n\n红喉绿鹦鹉（英文名：Mindanao Lorikeet，学名：Trichoglossus johnstoniae），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：远东：菲律宾\n\n---\n\n## 红喉鹦哥 / Red-throated...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 83,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7688,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "can and New World Parrots / Psittacidae\n- **地理分布**：中美：危地马拉，洪都拉斯，尼加拉瓜\n\n### 简介（摘录）\n\n![红喉鹦哥 / Red-throated Parakeet / Psittacara rubritorquis](https://hn8i.7img.cn/images/18767725513392ba4f5e54991210520b...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 85,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "蓝纹鹦鹉",
+      "query_index": 12,
+      "query_time_ms": 276.12,
+      "hits": [
+        {
+          "score": 0.8014,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：塔宁巴尔群岛\n\n### 简介（摘录）\n\n![蓝纹鹦鹉 / Blue-streaked Lory / Eos reticulata](https://hn8i.7img.cn/images/4f7b817d8f5bae87af0ae839770d4b08.jpg)  蓝纹鹦鹉（...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 134,
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.767,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "s lucionensis](https://hn8i.7img.cn/images/9a13071da494c1e59101361cb3b0ef9f.jpg)\n\n蓝颈鹦鹉（英文名：Blue-naped Parrot，学名：Tanygnathus lucionensis），是鹦形目长尾鹦鹉科巨嘴鹦鹉属的鸟类。繁殖：一窝约产2颗蛋，孵化期约25-26天，羽毛长成60-65日幼鸟头顶的蓝羽较少，身躯颜...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 171
+          }
+        },
+        {
+          "score": 0.7303,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "新不列颠岛以及新爱尔兰岛。\n\n地理分布：澳洲：俾斯麦群岛\n\n---\n\n## 蓝纹鹦鹉 / Blue-streaked Lory / Eos reticulata\n\n- **来源链接**：`https://www.huaniao8.com/niao/54600.html`\n- **图片**：`https://hn8i.7img.cn/NGY3YjgxN2Q4ZjViYWU4N2FmMGFlODM5N...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "chunk_index": 133,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "秃鹦哥",
+      "query_index": 13,
+      "query_time_ms": 275.85,
+      "hits": [
+        {
+          "score": 0.7521,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：巴西中部\n\n### 简介（摘录）\n\n![秃鹦哥 / Bald Parrot / Pyrilia aurantiocephala](https://hn8i.7img.cn/images/98f34d0abded426b5ec5b6feb4495809.jpg)  秃鹦哥（...",
+          "chunk_info": {
+            "chunk_index": 32,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.6775,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "nus。\n\n地理分布：太平洋：法属波利尼西亚赖阿特阿岛\n\n---\n\n## 秃鹦哥 / Bald Parrot / Pyrilia aurantiocephala\n\n- **来源链接**：`https://www.huaniao8.com/niao/74562.html`\n- **图片**：`https://hn8i.7img.cn/OThmMzRkMGFiZGVkNDI2YjVlYzViNmZlY...",
+          "chunk_info": {
+            "chunk_index": 31,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.6624,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "hus ulietanus](https://hn8i.7img.cn/images/5377b35d9a9e93cc65cdea41fe5ddd85.jpg)\n\n社会岛鹦鹉（英文名：Raiatea Parakeet，学名：Cyanoramphus ulietanus），是鹦形目长尾鹦鹉科长尾鹦鹉属的鸟类。瑞俄特鹦鹉。小型攀禽，学名Cyanoramphus ulietanus。\n\n地理分布：太平洋...",
+          "chunk_info": {
+            "chunk_index": 30,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "蓝喉鹦哥",
+      "query_index": 14,
+      "query_time_ms": 273.67,
+      "hits": [
+        {
+          "score": 0.7968,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "s cyanopygius](https://hn8i.7img.cn/images/949daa504fbdbe6863c85ca4eb9054e9.jpg)\n\n蓝腰鹦哥（英文名：Mexican Parrotlet，学名：Forpus cyanopygius），是鹦形目鹦鹉科福普斯鹦哥属的鸟类。又叫蓝腰鹦鹉。这种鹦鹉鸟体为绿色，主要栖息于干燥、热带的低纬度森林地带，充满棘丛和树木的平原、以及纬度...",
+          "chunk_info": {
+            "chunk_index": 157,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7916,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "蓝头鹦哥（英文名：Blue-headed Parrot，学名：Pionus menstruus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。蓝头鹦鹉是 Pionus 这类鹦鹉中最常见的品种之一，共有3 种相近的亚种，主要差异是头部蓝色的深浅与分布面积多寡，这类鹦鹉十分安静，而手养鸟也很驯服与乖巧，这个属的鹦鹉在台湾岛内数量不多，幼鸟也少见，大部分人工繁殖的Pionus鹦鹉售价都不低，但Pionus鹦鹉比其它...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 122
+          }
+        },
+        {
+          "score": 0.7865,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：巴西东南部\n\n### 简介（摘录）\n\n![蓝喉鹦哥 / Ochre-marked Parakeet / Pyrrhura cruentata](https://hn8i.7img.cn/images/ee1aaa8d63bc1eb45d9309838b270d14.jpg)...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 115
+          }
+        }
+      ]
+    },
+    {
+      "query": "社会岛鹦鹉",
+      "query_index": 15,
+      "query_time_ms": 276.37,
+      "hits": [
+        {
+          "score": 0.7273,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "es\n- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：太平洋：法属波利尼西亚赖阿特阿岛\n\n### 简介（摘录）\n\n![社会岛鹦鹉 / Raiatea Parakeet / Cyanoramphus ulietanus](https://hn8i.7img.cn/images/5377b35d9a9e93cc65cdea41f...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 29,
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.6923,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "c.jpg)\n\n短尾鹦鹉（英文名：Vernal Hanging Parrot，学名：Loriculus vernalis），是鹦形目长尾鹦鹉科短尾鹦鹉属的鸟类。\n\n地理分布：远东：印度东部至东南亚，安达曼群岛\n\n---\n\n## 社会岛鹦鹉 / Raiatea Parakeet / Cyanoramphus ulietanus\n\n- **来源链接**：`https://www.huaniao8.co...",
+          "chunk_info": {
+            "chunk_index": 28,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.6507,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "hus ulietanus](https://hn8i.7img.cn/images/5377b35d9a9e93cc65cdea41fe5ddd85.jpg)\n\n社会岛鹦鹉（英文名：Raiatea Parakeet，学名：Cyanoramphus ulietanus），是鹦形目长尾鹦鹉科长尾鹦鹉属的鸟类。瑞俄特鹦鹉。小型攀禽，学名Cyanoramphus ulietanus。\n\n地理分布：太平洋...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 30
+          }
+        }
+      ]
+    },
+    {
+      "query": "金黄鹦哥",
+      "query_index": 16,
+      "query_time_ms": 276.09,
+      "hits": [
+        {
+          "score": 0.7894,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "ruba guarouba](https://hn8i.7img.cn/images/d49b5d2c35b8494d1b3ad044e99dee24.jpg)\n\n金鹦哥（英文名：Golden Parakeet，学名：Guaruba guarouba），是鹦形目鹦鹉科金鹦哥属的鸟类。金鹦鹉，它们的身体大部份呈黄色，栖息在巴西亚马逊盆地的一种最稀少的鹦鹉。\n\n地理分布：南美：巴西东北部\n\n---\n\n...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 41
+          }
+        },
+        {
+          "score": 0.7577,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "frican and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林东北部，东部\n\n### 简介（摘录）\n\n![金黄鹦哥 / Sun Parakeet / Aratinga solstitialis](https://hn8i.7img.cn/images/2171ab71b3bc9b79919b86976798f8ad.jpg)  金黄鹦哥...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 43
+          }
+        },
+        {
+          "score": 0.7326,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "geris chiriri](https://hn8i.7img.cn/images/6e272d7f038f7fa963395a80dc53a9a5.jpg)\n\n黄翅斑鹦哥（英文名：Yellow-chevroned Parakeet，学名：Brotogeris chiriri），是鹦形目鹦鹉科纯色鹦哥属的鸟类。\n\n地理分布：南美：东部，东南部\n\n---\n\n## 黄翅鹦哥 / Sulphur-wi...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 144,
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "非洲红额鹦鹉",
+      "query_index": 17,
+      "query_time_ms": 284.79,
+      "hits": [
+        {
+          "score": 0.8341,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：非洲：中部，西部\n\n### 简介（摘录）\n\n![非洲红额鹦鹉 / Red-fronted Parrot / Poicephalus gulielmi](https://hn8i.7img.cn/images/8c1545100975531ad7cb9ab279b532ad.jpg...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 77,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.789,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "，不善飞翔，具有较强的人语模仿能力和智能推理能力。  地理分布：非洲：科特迪瓦东南部至肯尼亚，肯尼亚，坦桑尼亚和安哥拉，和 群岛Gulf，几内亚\n\n### 正文\n\n![非洲灰鹦鹉 / Grey Parrot / Psittacus erithacus](https://hn8i.7img.cn/images/d167f27d4c0205cf83af277473acf4a4.jpg)\n\n非洲灰鹦鹉（...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 75
+          }
+        },
+        {
+          "score": 0.7779,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "桑尼亚和安哥拉，和 群岛Gulf，几内亚\n\n---\n\n## 非洲红额鹦鹉 / Red-fronted Parrot / Poicephalus gulielmi\n\n- **来源链接**：`https://www.huaniao8.com/niao/61456.html`\n- **图片**：`https://hn8i.7img.cn/OGMxNTQ1MTAwOTc1NTMxYWQ3Y2I5YWIyN...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 76,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "西地鹦鹉",
+      "query_index": 18,
+      "query_time_ms": 280.81,
+      "hits": [
+        {
+          "score": 0.7999,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：澳大利亚西南部\n\n### 简介（摘录）\n\n![西地鹦鹉 / Western Ground Parrot / Pezoporus flaviventris](https://hn8i.7img.cn/images/9b53b7a376f43222c39782cc58aaae5d....",
+          "chunk_info": {
+            "chunk_index": 205,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7872,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "颈鹦鹉（英文名：Cape Parrot，学名：Poicephalus robustus），是鹦形目鹦鹉科大头鹦鹉属的鸟类。\n\n地理分布：非洲：南非东部\n\n---\n\n## 西地鹦鹉 / Western Ground Parrot / Pezoporus flaviventris\n\n- **来源链接**：`https://www.huaniao8.com/niao/76805.html`\n- **图片...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 204
+          }
+        },
+        {
+          "score": 0.7652,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "flaviventris](https://hn8i.7img.cn/images/9b53b7a376f43222c39782cc58aaae5d.jpg)\n\n西地鹦鹉（英文名：Western Ground Parrot，学名：Pezoporus flaviventris），是鹦形目长尾鹦鹉科地鹦鹉属的鸟类。\n\n地理分布：澳洲：澳大利亚西南部\n\n---\n\n## 西蓝帽鹦鹉 / Naretha B...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 206,
+            "total_chunks": 225
+          }
+        }
+      ]
+    },
+    {
+      "query": "红脸鹦鹉",
+      "query_index": 19,
+      "query_time_ms": 278.21,
+      "hits": [
+        {
+          "score": 0.8398,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "nis pullarius](https://hn8i.7img.cn/images/6a4a4c255205407056ce7356700a3d90.jpg)\n\n红脸牡丹鹦鹉（英文名：Red-headed Lovebird，学名：Agapornis pullarius），是鹦形目长尾鹦鹉科牡丹鹦鹉属的鸟类。在希腊语中“Agape”是爱的意思，而“Ornis”则是雀鸟的意思，故又称为“爱情鸟”。由...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 162
+          }
+        },
+        {
+          "score": 0.8355,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "aef.jpg)\n\n红脸鹦哥（英文名：Red-faced Parrot，学名：Hapalopsittaca pyrrhops），是鹦形目鹦鹉科红脸鹦哥属的鸟类。\n\n地理分布：南美：厄瓜多尔西南部，秘鲁西北部\n\n---\n\n## 红脸鹦鹉 / Red-cheeked Parrot / Geoffroyus geoffroyi\n\n- **来源链接**：`https://www.huaniao8.com/...",
+          "chunk_info": {
+            "chunk_index": 165,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.811,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ican and New World Parrots / Psittacidae\n- **地理分布**：南美：厄瓜多尔西南部，秘鲁西北部\n\n### 简介（摘录）\n\n![红脸鹦哥 / Red-faced Parrot / Hapalopsittaca pyrrhops](https://hn8i.7img.cn/images/2aabb5b44e2f95d369a3245a5d5d8aef.jpg)...",
+          "chunk_info": {
+            "chunk_index": 164,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        }
+      ]
+    },
+    {
+      "query": "长尾鹦鹉",
+      "query_index": 20,
+      "query_time_ms": 283.44,
+      "hits": [
+        {
+          "score": 0.8434,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "la longicauda](https://hn8i.7img.cn/images/6524d6827ab43310c979e8e8e999732f.jpg)\n\n长尾鹦鹉（英文名：Long-tailed Parakeet，学名：Psittacula longicauda），是鹦形目长尾鹦鹉科鹦鹉属的鸟类。长尾鹦鹉，是指大约115种体型较瘦小，尾巴尖而长，食植物种子的鹦鹉。共分30多个属。长尾鹦鹉...",
+          "chunk_info": {
+            "chunk_index": 59,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7922,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "d World Parrots / Psittaculidae\n- **地理分布**：远东：安达曼群岛，马来半岛，印尼苏门答腊岛，婆罗洲\n\n### 简介（摘录）\n\n![长尾鹦鹉 / Long-tailed Parakeet / Psittacula longicauda](https://hn8i.7img.cn/images/6524d6827ab43310c979e8e8e999732f.jp...",
+          "chunk_info": {
+            "chunk_index": 57,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7353,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "类。\n\n地理分布：澳洲：澳大利亚西南部\n\n---\n\n## 长尾鹦鹉 / Long-tailed Parakeet / Psittacula longicauda\n\n- **来源链接**：`https://www.huaniao8.com/niao/78631.html`\n- **图片**：`https://hn8i.7img.cn/NjUyNGQ2ODI3YWI0MzMxMGM5NzllOGU4Z...",
+          "chunk_info": {
+            "chunk_index": 56,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "蓝耳鹦鹉",
+      "query_index": 21,
+      "query_time_ms": 285.87,
+      "hits": [
+        {
+          "score": 0.7876,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：印尼摩鹿加群岛\n\n### 简介（摘录）\n\n![蓝耳鹦鹉 / Blue-eared Lory / Eos semilarvata](https://hn8i.7img.cn/images/043d402016e2fb6b70593d31b1b3dfb8.jpg)  蓝耳鹦鹉（英文...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 145,
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7603,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "鹉栖息於各种不同的地形，树木茂密的草原、草地、开垦过的地区、开阔的森林、农耕区、果园、沙丘和含盐的沼泽区等处。  地理分布：澳洲：澳大利亚东南部\n\n### 正文\n\n![蓝翅鹦鹉 / Blue-winged Parrot / Neophema chrysostoma](https://hn8i.7img.cn/images/3c0d278500f253543fcdc15c84cf7a89.jpg)\n...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 143
+          }
+        },
+        {
+          "score": 0.7455,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "s lucionensis](https://hn8i.7img.cn/images/9a13071da494c1e59101361cb3b0ef9f.jpg)\n\n蓝颈鹦鹉（英文名：Blue-naped Parrot，学名：Tanygnathus lucionensis），是鹦形目长尾鹦鹉科巨嘴鹦鹉属的鸟类。繁殖：一窝约产2颗蛋，孵化期约25-26天，羽毛长成60-65日幼鸟头顶的蓝羽较少，身躯颜...",
+          "chunk_info": {
+            "chunk_index": 171,
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "彩冠凤头鹦鹉",
+      "query_index": 22,
+      "query_time_ms": 290.23,
+      "hits": [
+        {
+          "score": 0.7955,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "橙冠凤头鹦鹉（英文名：Salmon-crested Cockatoo，学名：Cacatua moluccensis），是鹦形目凤头鹦鹉科白凤头鹦鹉属的鸟类。物种名称：橙冠凤头鹦鹉又 名：鲑色凤头鹦鹉、摩鹿加凤头鹦鹉拉丁名称：Cacatua moluccensis英文名称：Salmon-crested Cockatoo科属分类：鸟纲（Aves）、鹦形目（Psittaciformes）、凤头鹦鹉科（C...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222,
+            "chunk_index": 81
+          }
+        },
+        {
+          "score": 0.7955,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "橙冠凤头鹦鹉（英文名：Salmon-crested Cockatoo，学名：Cacatua moluccensis），是鹦形目凤头鹦鹉科白凤头鹦鹉属的鸟类。物种名称：橙冠凤头鹦鹉又 名：鲑色凤头鹦鹉、摩鹿加凤头鹦鹉拉丁名称：Cacatua moluccensis英文名称：Salmon-crested Cockatoo科属分类：鸟纲（Aves）、鹦形目（Psittaciformes）、凤头鹦鹉科（C...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "chunk_index": 81
+          }
+        },
+        {
+          "score": 0.7607,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "长嘴凤头鹦鹉（英文名：Long-billed Corella，学名：Cacatua tenuirostris），是鹦形目凤头鹦鹉科白凤头鹦鹉属的鸟类。是原产于澳洲东南部的凤头鹦鹉，体格粗壮，外型特殊，牠们的外表与一般凤头鹦鹉不同，冠羽较小，眼圈呈蓝灰色裸面，上喙部很长，也是牠们最大的特色；在世界各地的鹦鹉养殖界中是很稀少的种类，数量远比一般巴丹少的多，市场上不容易见的到(主要是与一般澳洲种的 凤头...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 50
+          }
+        }
+      ]
+    },
+    {
+      "query": "蓝脸鹦鹉",
+      "query_index": 23,
+      "query_time_ms": 280.75,
+      "hits": [
+        {
+          "score": 0.799,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "yna placentis](https://hn8i.7img.cn/images/99784b455714865e9a01bec842aee0ee.jpg)\n\n蓝脸鹦鹉（英文名：Red-flanked Lorikeet，学名：Charmosyna placentis），是鹦形目长尾鹦鹉科棕榈鹦鹉属的鸟类。\n\n地理分布：澳洲：印尼摩鹿加群岛，新几内亚，俾斯麦群岛\n\n---\n\n## 蓝腰短尾鹦鹉 ...",
+          "chunk_info": {
+            "chunk_index": 151,
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.7701,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "s cyanopygius](https://hn8i.7img.cn/images/949daa504fbdbe6863c85ca4eb9054e9.jpg)\n\n蓝腰鹦哥（英文名：Mexican Parrotlet，学名：Forpus cyanopygius），是鹦形目鹦鹉科福普斯鹦哥属的鸟类。又叫蓝腰鹦鹉。这种鹦鹉鸟体为绿色，主要栖息于干燥、热带的低纬度森林地带，充满棘丛和树木的平原、以及纬度...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 157
+          }
+        },
+        {
+          "score": 0.7621,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "us sumatranus](https://hn8i.7img.cn/images/b9f229bb6a162c3f63e3bc6a17832941.jpg)\n\n蓝背鹦鹉（英文名：Blue-backed Parrot，学名：Tanygnathus sumatranus），是鹦形目长尾鹦鹉科巨嘴鹦鹉属的鸟类。\n\n地理分布：远东，澳洲：菲律宾南部，印尼苏拉威西岛\n\n---\n\n## 蓝脸鹦鹉 / Re...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 148,
+            "total_chunks": 225
+          }
+        }
+      ]
+    },
+    {
+      "query": "红脸牡丹鹦鹉",
+      "query_index": 24,
+      "query_time_ms": 290.16,
+      "hits": [
+        {
+          "score": 0.8414,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "nis pullarius](https://hn8i.7img.cn/images/6a4a4c255205407056ce7356700a3d90.jpg)\n\n红脸牡丹鹦鹉（英文名：Red-headed Lovebird，学名：Agapornis pullarius），是鹦形目长尾鹦鹉科牡丹鹦鹉属的鸟类。在希腊语中“Agape”是爱的意思，而“Ornis”则是雀鸟的意思，故又称为“爱情鸟”。由...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 162
+          }
+        },
+        {
+          "score": 0.7791,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：非洲：西部，中部\n\n### 简介（摘录）\n\n![红脸牡丹鹦鹉 / Red-headed Lovebird / Agapornis pullarius](https://hn8i.7img.cn/images/6a4a4c255205407056ce7356700a3d90.jpg)...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 161
+          }
+        },
+        {
+          "score": 0.7575,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "地理分布：澳洲：新几内亚，澳大利亚东北部\n\n---\n\n## 红脸牡丹鹦鹉 / Red-headed Lovebird / Agapornis pullarius\n\n- **来源链接**：`https://www.huaniao8.com/niao/83016.html`\n- **图片**：`https://hn8i.7img.cn/NmE0YTRjMjU1MjA1NDA3MDU2Y2U3MzU2N...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 160
+          }
+        }
+      ]
+    },
+    {
+      "query": "细嘴鹦哥",
+      "query_index": 25,
+      "query_time_ms": 276.4,
+      "hits": [
+        {
+          "score": 0.7642,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "leptorhynchus](https://hn8i.7img.cn/images/ab9c143f7d1ff56618e4cb6636418da2.jpg)\n\n细嘴鹦哥（英文名：Slender-billed Parakeet，学名：Enicognathus leptorhynchus），是鹦形目鹦鹉科南鹦哥属的鸟类。\n\n地理分布：南美：智利中部\n\n---\n\n## 绣眼蓝翅鹦哥 / Cobalt...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 11
+          }
+        },
+        {
+          "score": 0.741,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "理分布：澳洲：新几内亚\n\n---\n\n## 细嘴鹦哥 / Slender-billed Parakeet / Enicognathus leptorhynchus\n\n- **来源链接**：`https://www.huaniao8.com/niao/81279.html`\n- **图片**：`https://hn8i.7img.cn/YWI5YzE0M2Y3ZDFmZjU2NjE4ZTRjYjY2M...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 9,
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7382,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：智利中部\n\n### 简介（摘录）\n\n![细嘴鹦哥 / Slender-billed Parakeet / Enicognathus leptorhynchus](https://hn8i.7img.cn/images/ab9c143f7d1ff56618e4cb66364...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "chunk_index": 10,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "摩鹿加短尾鹦鹉",
+      "query_index": 26,
+      "query_time_ms": 296.58,
+      "hits": [
+        {
+          "score": 0.8196,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "ulus amabilis](https://hn8i.7img.cn/images/1c4c9c9961fcc9be294aeb4560806572.jpg)\n\n摩鹿加短尾鹦鹉（英文名：Moluccan Hanging Parrot，学名：Loriculus amabilis），是鹦形目长尾鹦鹉科短尾鹦鹉属的鸟类。摩鹿加短尾鹦鹉，体型纤小，尾部较短，体长约13厘米左右。通常栖息于平原、低山地带林...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 213,
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.8196,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "ulus amabilis](https://hn8i.7img.cn/images/1c4c9c9961fcc9be294aeb4560806572.jpg)\n\n摩鹿加短尾鹦鹉（英文名：Moluccan Hanging Parrot，学名：Loriculus amabilis），是鹦形目长尾鹦鹉科短尾鹦鹉属的鸟类。摩鹿加短尾鹦鹉，体型纤小，尾部较短，体长约13厘米左右。通常栖息于平原、低山地带林...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 213,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.8137,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：印尼摩鹿加群岛\n\n### 简介（摘录）\n\n![摩鹿加短尾鹦鹉 / Moluccan Hanging Parrot / Loriculus amabilis](https://hn8i.7img.cn/images/1c4c9c9961fcc9be294aeb4560806572...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 212,
+            "total_chunks": 217
+          }
+        }
+      ]
+    },
+    {
+      "query": "穆加鹦鹉",
+      "query_index": 27,
+      "query_time_ms": 284.3,
+      "hits": [
+        {
+          "score": 0.7781,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "*：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：南部，澳大利亚西南部\n\n### 简介（摘录）\n\n![穆加鹦鹉 / Mulga Parrot / Psephotellus varius](https://hn8i.7img.cn/images/5296109728b02e52c7648695e5ee1b83.jpg)  穆加鹦鹉（英...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 34
+          }
+        },
+        {
+          "score": 0.7368,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "tation）、农耕区、牧地、沿著水流经过的树林或是草地等处。以昆虫级植物果实为食。主要分布于南澳地区。  地理分布：澳洲：南部，澳大利亚西南部\n\n### 正文\n\n![穆加鹦鹉 / Mulga Parrot / Psephotellus varius](https://hn8i.7img.cn/images/5296109728b02e52c7648695e5ee1b83.jpg)\n\n穆加鹦鹉（英...",
+          "chunk_info": {
+            "chunk_index": 35,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7217,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "英文名：Bald Parrot，学名：Pyrilia aurantiocephala），是鹦形目鹦鹉科番红头鹦哥属的鸟类。\n\n地理分布：南美：巴西中部\n\n---\n\n## 穆加鹦鹉 / Mulga Parrot / Psephotellus varius\n\n- **来源链接**：`https://www.huaniao8.com/niao/79745.html`\n- **图片**：`https://...",
+          "chunk_info": {
+            "chunk_index": 33,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        }
+      ]
+    },
+    {
+      "query": "西长嘴凤头鹦鹉",
+      "query_index": 28,
+      "query_time_ms": 290.04,
+      "hits": [
+        {
+          "score": 0.8463,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "西长嘴凤头鹦鹉（英文名：Western Corella，学名：Cacatua pastinator），是鹦形目凤头鹦鹉科白凤头鹦鹉属的鸟类。体羽主要为白色，雪白漂亮，西长嘴凤头鹦鹉最明确的特征就是眼睛周围为裸皮，以及鼻子附近两眼之间有鲜红或者是较浅的橘色。食物包括种子、壳类、浆果、坚果、水果、嫩芽、花朵、昆虫等。语言能力一般。喙的力量强大，需要养在金属笼子中。同许多凤头鹦鹉一样，作为宠物饲养需要主...",
+          "chunk_info": {
+            "chunk_index": 212,
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.843,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "iformes\n- **科**：凤头鹦鹉科 / Cockatoos / Cacatuidae\n- **地理分布**：澳洲：澳大利亚西南部\n\n### 简介（摘录）\n\n![西长嘴凤头鹦鹉 / Western Corella / Cacatua pastinator](https://hn8i.7img.cn/images/ba0b5fbf28ff112063ee619124c83d77.jpg)  西...",
+          "chunk_info": {
+            "chunk_index": 210,
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.7991,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "多，需要定期沐浴。叫声嘈杂。野外分布于澳大利亚和新西兰。裸眼凤头鹦鹉：（又名：西长嘴凤头鹦鹉、长喙裸眼凤头鹦鹉、裸眼可瑞巴丹鹦鹉）拉丁文名称：C\n\n### 正文\n\n![西长嘴凤头鹦鹉 / Western Corella / Cacatua pastinator](https://hn8i.7img.cn/images/ba0b5fbf28ff112063ee619124c83d77.jpg)",
+          "chunk_info": {
+            "chunk_index": 211,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        }
+      ]
+    },
+    {
+      "query": "白嘴基鹦哥",
+      "query_index": 29,
+      "query_time_ms": 287.68,
+      "hits": [
+        {
+          "score": 0.8003,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：南美：巴西亚马孙雨林\n\n### 简介（摘录）\n\n![白嘴基鹦哥 / Kawall\\'s Amazon / Amazona kawalli](https://hn8i.7img.cn/images/d22ee84b117e8e90b222e07633a8cee1.jpg)  白嘴基鹦哥（...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 210,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.8003,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：南美：巴西亚马孙雨林\n\n### 简介（摘录）\n\n![白嘴基鹦哥 / Kawall\\'s Amazon / Amazona kawalli](https://hn8i.7img.cn/images/d22ee84b117e8e90b222e07633a8cee1.jpg)  白嘴基鹦哥（...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "chunk_index": 210
+          }
+        },
+        {
+          "score": 0.7741,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "地理分布：澳洲：印尼摩鹿加群岛北部\n\n---\n\n## 白嘴基鹦哥 / Kawall’s Amazon / Amazona kawalli\n\n- **来源链接**：`https://www.huaniao8.com/niao/85004.html`\n- **图片**：`https://hn8i.7img.cn/ZDIyZWU4NGIxMTdlOGU5MGIyMjJlMDc2MzNhOGNlZTEvM...",
+          "chunk_info": {
+            "chunk_index": 209,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "红腹鹦哥",
+      "query_index": 30,
+      "query_time_ms": 274.28,
+      "hits": [
+        {
+          "score": 0.8406,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "aca manilatus](https://hn8i.7img.cn/images/a2e025f25d9024d495a615e49f5b481a.jpg)\n\n红腹金刚鹦鹉（英文名：Red-bellied Macaw，学名：Orthopsittaca manilatus），是鹦形目鹦鹉科红腰金刚鹦鹉属的鸟类。是小型金刚鹦鹉中最大的的种类之一，产于美洲热带地区，是色彩很漂亮的绿鹦鹉，面部无羽毛，...",
+          "chunk_info": {
+            "chunk_index": 174,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.823,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红嘴鹦哥（英文名：Red-billed Parrot，学名：Pionus sordidus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。“Pionus”这个属名的字源，来自希腊字PIONOS，是“丰满”（plump）的意思。栖息于森林地带、沿海低地林区、树木稀少的平原、有时候也会前往农耕区觅食。通常成对或是以小群体活动，平常在树上休憩的时候难以察觉，因为其羽色提供了良好的掩蔽，觅食的时候相当安静，有时候甚至...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 92
+          }
+        },
+        {
+          "score": 0.8102,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ura frontalis](https://hn8i.7img.cn/images/0a13be863f2147998e242bae554d43ed.jpg)\n\n红腹鹦哥（英文名：Maroon-bellied Parakeet，学名：Pyrrhura frontalis），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。红腹鹦哥，所分布于巴西东南部。\n\n地理分布：南美：东南部\n\n---\n\n## 红腹鹦鹉 / ...",
+          "chunk_info": {
+            "chunk_index": 177,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        }
+      ]
+    },
+    {
+      "query": "橙冠凤头鹦鹉",
+      "query_index": 31,
+      "query_time_ms": 283.43,
+      "hits": [
+        {
+          "score": 0.8862,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "橙冠凤头鹦鹉（英文名：Salmon-crested Cockatoo，学名：Cacatua moluccensis），是鹦形目凤头鹦鹉科白凤头鹦鹉属的鸟类。物种名称：橙冠凤头鹦鹉又 名：鲑色凤头鹦鹉、摩鹿加凤头鹦鹉拉丁名称：Cacatua moluccensis英文名称：Salmon-crested Cockatoo科属分类：鸟纲（Aves）、鹦形目（Psittaciformes）、凤头鹦鹉科（C...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 81,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.8862,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "橙冠凤头鹦鹉（英文名：Salmon-crested Cockatoo，学名：Cacatua moluccensis），是鹦形目凤头鹦鹉科白凤头鹦鹉属的鸟类。物种名称：橙冠凤头鹦鹉又 名：鲑色凤头鹦鹉、摩鹿加凤头鹦鹉拉丁名称：Cacatua moluccensis英文名称：Salmon-crested Cockatoo科属分类：鸟纲（Aves）、鹦形目（Psittaciformes）、凤头鹦鹉科（C...",
+          "chunk_info": {
+            "chunk_index": 81,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7721,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "s capistratus](https://hn8i.7img.cn/images/2a23bcfbdf34102daddc8a0e3d218de9.jpg)\n\n橘黄彩虹鹦鹉（英文名：Marigold Lorikeet，学名：Trichoglossus capistratus），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：澳洲：小巽他群岛东部\n\n---\n\n## 橙冠凤头鹦鹉 / Salmo...",
+          "chunk_info": {
+            "chunk_index": 77,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "红胸侏鹦鹉",
+      "query_index": 32,
+      "query_time_ms": 280.41,
+      "hits": [
+        {
+          "score": 0.8087,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：印尼摩鹿加群岛南部至所罗门群岛\n\n### 简介（摘录）\n\n![红胸侏鹦鹉 / Red-breasted Pygmy Parrot / Micropsitta bruijnii](https://hn8i.7img.cn/images/76e4fdf7774d3f9e0325c3c60cd5c0...",
+          "chunk_info": {
+            "chunk_index": 147,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.8019,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "itta bruijnii](https://hn8i.7img.cn/images/76e4fdf7774d3f9e0325c3c60cd5c00b.jpg)\n\n红胸侏鹦鹉（英文名：Red-breasted Pygmy Parrot，学名：Micropsitta bruijnii），是鹦形目长尾鹦鹉科侏鹦鹉属的鸟类。红胸侏鹦鹉，鸟纲 、鹦形目 、鹦鹉科 、侏鹦鹉属动物，分布于新几内亚。\n\n地理分...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 148,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7795,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "：印尼苏拉群岛和印尼邦盖群岛\n\n---\n\n## 红胸侏鹦鹉 / Red-breasted Pygmy Parrot / Micropsitta bruijnii\n\n- **来源链接**：`https://www.huaniao8.com/niao/46726.html`\n- **图片**：`https://hn8i.7img.cn/NzZlNGZkZjc3NzRkM2Y5ZTAzMjVjM2M2M...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 146
+          }
+        }
+      ]
+    },
+    {
+      "query": "乌嘴鹦哥",
+      "query_index": 33,
+      "query_time_ms": 272.03,
+      "hits": [
+        {
+          "score": 0.747,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林\n\n### 简介（摘录）\n\n![乌嘴鹦哥 / Dusky-billed Parrotlet / Forpus modestus](https://hn8i.7img.cn/images/3c23eb0046757b9b705d20dce1acc6a8.jpg)  ...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 8,
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.747,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林\n\n### 简介（摘录）\n\n![乌嘴鹦哥 / Dusky-billed Parrotlet / Forpus modestus](https://hn8i.7img.cn/images/3c23eb0046757b9b705d20dce1acc6a8.jpg)  ...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 8
+          }
+        },
+        {
+          "score": 0.6863,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "costaricensis](https://hn8i.7img.cn/images/8ad3fd9f5ac1e166dd44299ff0d4ccc8.jpg)\n\n中美红额鹦哥（英文名：Red-fronted Parrotlet，学名：Touit costaricensis），是鹦形目鹦鹉科图伊特鹦鹉属的鸟类。\n\n地理分布：中美：哥斯达黎加至巴拿马西部\n\n---\n\n## 乌嘴鹦哥 / Dusky-...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 6,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "牛顿鹦鹉",
+      "query_index": 34,
+      "query_time_ms": 273.55,
+      "hits": [
+        {
+          "score": 0.7537,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "çois Leguat的难民身份。最后是于1875年观察到它们，目前只余下两组完整的标本及数个亚化石。  地理分布：印度洋：毛里求斯罗德里格斯岛\n\n### 正文\n\n![牛顿鹦鹉 / Newton\\'s Parakeet / Psittacula exsul](https://hn8i.7img.cn/images/1d47186e1a7369c80e1a26b5c5069d74.jpg)\n\n牛顿鹦...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 182,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.7537,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "çois Leguat的难民身份。最后是于1875年观察到它们，目前只余下两组完整的标本及数个亚化石。  地理分布：印度洋：毛里求斯罗德里格斯岛\n\n### 正文\n\n![牛顿鹦鹉 / Newton\\'s Parakeet / Psittacula exsul](https://hn8i.7img.cn/images/1d47186e1a7369c80e1a26b5c5069d74.jpg)\n\n牛顿鹦...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222,
+            "chunk_index": 182
+          }
+        },
+        {
+          "score": 0.75,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：印度洋：毛里求斯罗德里格斯岛\n\n### 简介（摘录）\n\n![牛顿鹦鹉 / Newton\\'s Parakeet / Psittacula exsul](https://hn8i.7img.cn/images/1d47186e1a7369c80e1a26b5c5069d74.jpg)  牛顿鹦...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222,
+            "chunk_index": 181
+          }
+        }
+      ]
+    },
+    {
+      "query": "尼安鹦鹉",
+      "query_index": 35,
+      "query_time_ms": 281.08,
+      "hits": [
+        {
+          "score": 0.7848,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "New World Parrots / Psittacidae\n- **地理分布**：非洲：喀麦隆和乍得至苏丹南部和刚果民主共和国东北部\n\n### 简介（摘录）\n\n![尼安鹦鹉 / Niam-niam Parrot / Poicephalus crassus](https://hn8i.7img.cn/images/ee1cd61c8c8a5ef65a92370518eb2d98.jpg)  尼安...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 155
+          }
+        },
+        {
+          "score": 0.7848,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "New World Parrots / Psittacidae\n- **地理分布**：非洲：喀麦隆和乍得至苏丹南部和刚果民主共和国东北部\n\n### 简介（摘录）\n\n![尼安鹦鹉 / Niam-niam Parrot / Poicephalus crassus](https://hn8i.7img.cn/images/ee1cd61c8c8a5ef65a92370518eb2d98.jpg)  尼安...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 155
+          }
+        },
+        {
+          "score": 0.7311,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "鸟类。\n\n地理分布：中美：墨西哥南部至尼加拉瓜北部\n\n---\n\n## 尼安鹦鹉 / Niam-niam Parrot / Poicephalus crassus\n\n- **来源链接**：`https://www.huaniao8.com/niao/64541.html`\n- **图片**：`https://hn8i.7img.cn/ZWUxY2Q2MWM4YzhhNWVmNjVhOTIzNzA1M...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 154,
+            "total_chunks": 217
+          }
+        }
+      ]
+    },
+    {
+      "query": "绿额短尾鹦鹉",
+      "query_index": 36,
+      "query_time_ms": 297.83,
+      "hits": [
+        {
+          "score": 0.8421,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "rhura molinae](https://hn8i.7img.cn/images/ee25b65e73917e07a833232a916b3380.jpg)\n\n绿颊鹦哥（英文名：Green-cheeked Parakeet，学名：Pyrrhura molinae），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。又名绿颊太阳鹦哥、绿颊小太阳。生长在玻利维亚东部的高地，因此又被称作玻利维亚绿颊锥尾鹦鹉。它们个...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 51
+          }
+        },
+        {
+          "score": 0.818,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "iculus exilis](https://hn8i.7img.cn/images/88361c1cf3015a1d24c9211c64759297.jpg)\n\n绿短尾鹦鹉（英文名：Pygmy Hanging Parrot，学名：Loriculus exilis），是鹦形目长尾鹦鹉科短尾鹦鹉属的鸟类。绿短尾鹦鹉这种鹦鹉体型纤小，通常栖息于平原、低山地带林木及耕地植物丛地带，喜集成小群活动，一次通...",
+          "chunk_info": {
+            "chunk_index": 33,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.8007,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "、西沙群岛、中沙群岛、南沙群岛以及菲律宾、文莱、马来西亚、新加坡、印度尼西亚的苏门答腊、爪哇岛以及巴布亚新几内亚。  地理分布：澳洲：俾斯麦群岛\n\n### 正文\n\n![绿额短尾鹦鹉 / Bismarck Hanging Parrot / Loriculus tener](https://hn8i.7img.cn/images/7239e657cc10379941772bc145085244.jpg...",
+          "chunk_info": {
+            "chunk_index": 54,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        }
+      ]
+    },
+    {
+      "query": "西蓝帽鹦鹉",
+      "query_index": 37,
+      "query_time_ms": 286.73,
+      "hits": [
+        {
+          "score": 0.8062,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "/ Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：西澳大利亚东南部，南澳大利亚西南部\n\n### 简介（摘录）\n\n![西蓝帽鹦鹉 / Naretha Bluebonnet / Northiella narethae](https://hn8i.7img.cn/images/ca4b94bdd3671117c225eeff226f8d2d.jpg)  ...",
+          "chunk_info": {
+            "chunk_index": 208,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7661,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "flaviventris](https://hn8i.7img.cn/images/9b53b7a376f43222c39782cc58aaae5d.jpg)\n\n西地鹦鹉（英文名：Western Ground Parrot，学名：Pezoporus flaviventris），是鹦形目长尾鹦鹉科地鹦鹉属的鸟类。\n\n地理分布：澳洲：澳大利亚西南部\n\n---\n\n## 西蓝帽鹦鹉 / Naretha B...",
+          "chunk_info": {
+            "chunk_index": 206,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7366,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "属的鸟类。\n\n地理分布：澳洲：澳大利亚西南部\n\n---\n\n## 西蓝帽鹦鹉 / Naretha Bluebonnet / Northiella narethae\n\n- **来源链接**：`https://www.huaniao8.com/niao/76269.html`\n- **图片**：`https://hn8i.7img.cn/Y2E0Yjk0YmRkMzY3MTExN2MyMjVlZWZmM...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "chunk_index": 207,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "黄额鹦鹉",
+      "query_index": 38,
+      "query_time_ms": 283.71,
+      "hits": [
+        {
+          "score": 0.8323,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新西兰\n\n### 简介（摘录）\n\n![黄额鹦鹉 / Yellow-crowned Parakeet / Cyanoramphus auriceps](https://hn8i.7img.cn/images/78f4c1d0d1db6b9019fa9e9fdadbbd9c....",
+          "chunk_info": {
+            "chunk_index": 175,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.8291,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "eps【英文名称】Yellow-frontedParakeet【科属分类】鸟纲（Aves）、鹦形目、鹦鹉科、纽澳鹦鹉族  地理分布：澳洲：新西兰\n\n### 正文\n\n![黄额鹦鹉 / Yellow-crowned Parakeet / Cyanoramphus auriceps](https://hn8i.7img.cn/images/78f4c1d0d1db6b9019fa9e9fdadbbd9c...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 176,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.764,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "itta xanthops](https://hn8i.7img.cn/images/9def66c603865da4320ca23b59bc1e39.jpg)\n\n黄头鹦哥（英文名：Yellow-faced Parrot，学名：Alipiopsitta xanthops），是鹦形目鹦鹉科黄头鹦哥属的鸟类。\n\n地理分布：南美：巴西中东部和东南部至玻利维亚东部\n\n---\n\n## 黄头鹦鹉 / Yell...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 130,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "红胁鹦鹉",
+      "query_index": 39,
+      "query_time_ms": 275.94,
+      "hits": [
+        {
+          "score": 0.8071,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：澳大利亚南部\n\n### 简介（摘录）\n\n![红胁鹦鹉 / Scarlet-chested Parrot / Neophema splendida](https://hn8i.7img.cn/images/d3b1d9d94723ccccb7e3abfdab906773.jpg...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 142,
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7574,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红翅鹦鹉（英文名：Red-winged Parrot，学名：Aprosmictus erythropterus），是鹦形目长尾鹦鹉科红翅鹦鹉属的鸟类。红翅鹦鹉除了在其原生地澳洲外，在国际间的养鸟业中是十分少见的种类，为相当美丽的澳洲长尾鹦鹉，公母可由外表轻易地分辨，公鸟翅膀的红羽及背上整片的黑色十分明显，母鸟的翅膀边缘则只有少部分的红色羽毛，背上也没有黑色的羽毛，且母鸟身上的绿色毛色与腰际的蓝色毛...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 124,
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7545,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "400.jpg)\n\n红肩鹦哥（英文名：Fuertes’s Parrot，学名：Hapalopsittaca fuertesi），是鹦形目鹦鹉科红脸鹦哥属的鸟类。\n\n地理分布：南美：哥伦比亚中部\n\n---\n\n## 红胁绿鹦鹉 / Eclectus Parrot / Eclectus roratus\n\n- **来源链接**：`https://www.huaniao8.com/niao/78304.ht...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 139,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "翠绿鹦鹉",
+      "query_index": 40,
+      "query_time_ms": 276.17,
+      "hits": [
+        {
+          "score": 0.7665,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "us pullicauda](https://hn8i.7img.cn/images/fd8921e2e4a71baab8fba285e8e4e8bd.jpg)\n\n翠绿鹦鹉（英文名：Orange-billed Lorikeet，学名：Neopsittacus pullicauda），是鹦形目长尾鹦鹉科黄嘴吸蜜鹦鹉属的鸟类。\n\n地理分布：澳洲：新几内亚\n\n---\n\n## 翠蓝鹦鹉 / Ultrama...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 67
+          }
+        },
+        {
+          "score": 0.7171,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚\n\n### 简介（摘录）\n\n![翠绿鹦鹉 / Orange-billed Lorikeet / Neopsittacus pullicauda](https://hn8i.7img.cn/images/fd8921e2e4a71baab8fba285e8e4e8b...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "chunk_index": 66,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.7092,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "边的峭壁。纯绿鹦鹉：（又名：反极绿鹦鹉）纯绿鹦鹉.拉丁文名称：Cyanoramphus unicolor  地理分布：澳洲：新西兰安蒂波德斯群岛\n\n### 正文\n\n![纯绿鹦鹉 / Antipodes Parakeet / Cyanoramphus unicolor](https://hn8i.7img.cn/images/891dd26f027b8ead044ddfa86739784c.jpg)...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 219
+          }
+        }
+      ]
+    },
+    {
+      "query": "红眶鹦哥",
+      "query_index": 41,
+      "query_time_ms": 274.44,
+      "hits": [
+        {
+          "score": 0.8144,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "7166.jpg)\n\n红眉鹦哥（英文名：Red-browed Amazon，学名：Amazona rhodocorytha），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：南美：巴西东部，东南部\n\n---\n\n## 红眶鹦哥 / Red-spectacled Amazon / Amazona pretrei\n\n- **来源链接**：`https://www.huaniao8.com/niao/78...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 116
+          }
+        },
+        {
+          "score": 0.799,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：巴西南部\n\n### 简介（摘录）\n\n![红眶鹦哥 / Red-spectacled Amazon / Amazona pretrei](https://hn8i.7img.cn/images/4d02278fa8e8a038e23936d6d19173e2.jpg)  红...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 117,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7736,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "d47536a.jpg)\n\n红眼鹦哥（英文名：Red-lored Amazon，学名：Amazona autumnalis），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：中美，南美：墨西哥东部至厄瓜多尔西部\n\n---\n\n## 红翅鹦鹉 / Red-winged Parrot / Aprosmictus erythropterus",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 120,
+            "total_chunks": 220
+          }
+        }
+      ]
+    },
+    {
+      "query": "帝汶红翅鹦鹉",
+      "query_index": 42,
+      "query_time_ms": 283.66,
+      "hits": [
+        {
+          "score": 0.8271,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：小巽他群岛\n\n### 简介（摘录）\n\n![帝汶红翅鹦鹉 / Jonquil Parrot / Aprosmictus jonquillaceus](https://hn8i.7img.cn/images/d57e8bcc942710ea387cf9858e8d0b0d.jpg...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 185,
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.8271,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：小巽他群岛\n\n### 简介（摘录）\n\n![帝汶红翅鹦鹉 / Jonquil Parrot / Aprosmictus jonquillaceus](https://hn8i.7img.cn/images/d57e8bcc942710ea387cf9858e8d0b0d.jpg...",
+          "chunk_info": {
+            "chunk_index": 185,
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.802,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "jonquillaceus](https://hn8i.7img.cn/images/d57e8bcc942710ea387cf9858e8d0b0d.jpg)\n\n帝汶红翅鹦鹉（英文名：Jonquil Parrot，学名：Aprosmictus jonquillaceus），是鹦形目长尾鹦鹉科红翅鹦鹉属的鸟类。帝汶红翅鹦鹉，鹦鹉科，纽澳鹦鹉族，分布于印尼的帝汶岛\n\n地理分布：澳洲：小巽他群岛\n\n-...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 186,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "棕榈鹦鹉",
+      "query_index": 43,
+      "query_time_ms": 278.86,
+      "hits": [
+        {
+          "score": 0.7695,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：瓦努阿图\n\n### 简介（摘录）\n\n![棕榈鹦鹉 / Palm Lorikeet / Charmosyna palmarum](https://hn8i.7img.cn/images/bba1512b3c4cb05d239ffbc2a3350ed0.jpg)  棕榈鹦鹉（...",
+          "chunk_info": {
+            "chunk_index": 62,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7695,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：瓦努阿图\n\n### 简介（摘录）\n\n![棕榈鹦鹉 / Palm Lorikeet / Charmosyna palmarum](https://hn8i.7img.cn/images/bba1512b3c4cb05d239ffbc2a3350ed0.jpg)  棕榈鹦鹉（...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 62,
+            "source": "huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.7457,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "ger aterrimus](https://hn8i.7img.cn/images/2de5d4deb8353ea751f760a82efb5801.jpg)\n\n棕树凤头鹦鹉（英文名：Palm Cockatoo，学名：Probosciger aterrimus），是鹦形目凤头鹦鹉科棕树凤头鹦鹉属的鸟类。又名棕树巴丹（旦）、椰子凤头鹦鹉，是澳大利亚最大的鹦鹉，分布在印度尼西亚阿鲁岛、新几内亚、澳大...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222,
+            "chunk_index": 60
+          }
+        }
+      ]
+    },
+    {
+      "query": "彩鹦鹉",
+      "query_index": 44,
+      "query_time_ms": 281.67,
+      "hits": [
+        {
+          "score": 0.7813,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "yrrhura picta](https://hn8i.7img.cn/images/a03125588614619f1bc648d4261902e7.jpg)\n\n彩鹦哥（英文名：Painted Parakeet，学名：Pyrrhura picta），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。彩绘锥尾鹦鹉，所属动物界，属鹦鹉科，分布于内瑞拉、巴西、圭亚那、苏利南、法属圭亚等地。\n\n地理分布：南美：巴拿马东...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 199
+          }
+        },
+        {
+          "score": 0.7813,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "yrrhura picta](https://hn8i.7img.cn/images/a03125588614619f1bc648d4261902e7.jpg)\n\n彩鹦哥（英文名：Painted Parakeet，学名：Pyrrhura picta），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。彩绘锥尾鹦鹉，所属动物界，属鹦鹉科，分布于内瑞拉、巴西、圭亚那、苏利南、法属圭亚等地。\n\n地理分布：南美：巴拿马东...",
+          "chunk_info": {
+            "chunk_index": 199,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.7545,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚\n\n### 简介（摘录）\n\n![彩鹦鹉 / Painted Tiger Parrot / Psittacella picta](https://hn8i.7img.cn/images/3fb366e63e490398aef2fdb66dc74176.jpg)  彩...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 201
+          }
+        }
+      ]
+    },
+    {
+      "query": "红脸鹦哥",
+      "query_index": 45,
+      "query_time_ms": 319.02,
+      "hits": [
+        {
+          "score": 0.8384,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "aef.jpg)\n\n红脸鹦哥（英文名：Red-faced Parrot，学名：Hapalopsittaca pyrrhops），是鹦形目鹦鹉科红脸鹦哥属的鸟类。\n\n地理分布：南美：厄瓜多尔西南部，秘鲁西北部\n\n---\n\n## 红脸鹦鹉 / Red-cheeked Parrot / Geoffroyus geoffroyi\n\n- **来源链接**：`https://www.huaniao8.com/...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 165
+          }
+        },
+        {
+          "score": 0.8359,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "nis pullarius](https://hn8i.7img.cn/images/6a4a4c255205407056ce7356700a3d90.jpg)\n\n红脸牡丹鹦鹉（英文名：Red-headed Lovebird，学名：Agapornis pullarius），是鹦形目长尾鹦鹉科牡丹鹦鹉属的鸟类。在希腊语中“Agape”是爱的意思，而“Ornis”则是雀鸟的意思，故又称为“爱情鸟”。由...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 162,
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.8215,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ican and New World Parrots / Psittacidae\n- **地理分布**：南美：厄瓜多尔西南部，秘鲁西北部\n\n### 简介（摘录）\n\n![红脸鹦哥 / Red-faced Parrot / Hapalopsittaca pyrrhops](https://hn8i.7img.cn/images/2aabb5b44e2f95d369a3245a5d5d8aef.jpg)...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 164
+          }
+        }
+      ]
+    },
+    {
+      "query": "眼镜鹦哥",
+      "query_index": 46,
+      "query_time_ms": 277.29,
+      "hits": [
+        {
+          "score": 0.7073,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "n and New World Parrots / Psittacidae\n- **地理分布**：中美，南美：巴拿马，哥伦比亚，委内瑞拉\n\n### 简介（摘录）\n\n![眼镜鹦哥 / Spectacled Parrotlet / Forpus conspicillatus](https://hn8i.7img.cn/images/5e8b185ebd4a56b22eb5d48aa7d8eda9.jp...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 18
+          }
+        },
+        {
+          "score": 0.6938,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "onspicillatus](https://hn8i.7img.cn/images/5e8b185ebd4a56b22eb5d48aa7d8eda9.jpg)\n\n眼镜鹦哥（英文名：Spectacled Parrotlet，学名：Forpus conspicillatus），是鹦形目鹦鹉科福普斯鹦哥属的鸟类。\n\n地理分布：中美，南美：巴拿马，哥伦比亚，委内瑞拉\n\n---\n\n## 短嘴黑凤头鹦鹉 /...",
+          "chunk_info": {
+            "chunk_index": 19,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.6636,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "：Caica Parrot，学名：Pyrilia caica），是鹦形目鹦鹉科番红头鹦哥属的鸟类。\n\n地理分布：南美：委内瑞拉东部，圭亚那和巴西东北部\n\n---\n\n## 眼镜鹦哥 / Spectacled Parrotlet / Forpus conspicillatus\n\n- **来源链接**：`https://www.huaniao8.com/niao/75575.html`\n- **图片**...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 17,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "黑耳鹦哥",
+      "query_index": 47,
+      "query_time_ms": 275.21,
+      "hits": [
+        {
+          "score": 0.7818,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "：Black-winged Lory，学名：Eos cyanogenia），是鹦形目长尾鹦鹉科红蓝鹦鹉属的鸟类。\n\n地理分布：澳洲：群岛北部，新几内亚\n\n---\n\n## 黑耳鹦哥 / Black-winged Parrot / Hapalopsittaca melanotis\n\n- **来源链接**：`https://www.huaniao8.com/niao/84101.html`\n- **图片...",
+          "chunk_info": {
+            "chunk_index": 200,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7791,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "aca melanotis](https://hn8i.7img.cn/images/5736a5f22b17ee841d2ca1b47f2b4cbe.jpg)\n\n黑耳鹦哥（英文名：Black-winged Parrot，学名：Hapalopsittaca melanotis），是鹦形目鹦鹉科红脸鹦哥属的鸟类。\n\n地理分布：南美：秘鲁中部至玻利维亚中西部\n\n---\n\n## 黑脸牡丹鹦鹉 / Bla...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 202,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7695,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "rican and New World Parrots / Psittacidae\n- **地理分布**：南美：秘鲁中部至玻利维亚中西部\n\n### 简介（摘录）\n\n![黑耳鹦哥 / Black-winged Parrot / Hapalopsittaca melanotis](https://hn8i.7img.cn/images/5736a5f22b17ee841d2ca1b47f2b4cbe....",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 201
+          }
+        }
+      ]
+    },
+    {
+      "query": "红耳绿鹦哥",
+      "query_index": 48,
+      "query_time_ms": 282.89,
+      "hits": [
+        {
+          "score": 0.7829,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "frican and New World Parrots / Psittacidae\n- **地理分布**：南美：秘鲁中部至阿根廷西北部\n\n### 简介（摘录）\n\n![红耳绿鹦哥 / Mitred Parakeet / Psittacara mitratus](https://hn8i.7img.cn/images/d69cce6bfcc00bea93ec0f7c339bbbcd.jpg)  红耳...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 128,
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7783,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "bbbcd.jpg)\n\n红耳绿鹦哥（英文名：Mitred Parakeet，学名：Psittacara mitratus），是鹦形目鹦鹉科卡拉锥尾鹦鹉属的鸟类。\n\n地理分布：南美：秘鲁中部至阿根廷西北部\n\n---\n\n## 红耳绿鹦鹉 / Musk Lorikeet / Glossopsitta concinna\n\n- **来源链接**：`https://www.huaniao8.com/niao/...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 129,
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.741,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红嘴鹦哥（英文名：Red-billed Parrot，学名：Pionus sordidus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。“Pionus”这个属名的字源，来自希腊字PIONOS，是“丰满”（plump）的意思。栖息于森林地带、沿海低地林区、树木稀少的平原、有时候也会前往农耕区觅食。通常成对或是以小群体活动，平常在树上休憩的时候难以察觉，因为其羽色提供了良好的掩蔽，觅食的时候相当安静，有时候甚至...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 92
+          }
+        }
+      ]
+    },
+    {
+      "query": "红颈鹦哥",
+      "query_index": 49,
+      "query_time_ms": 272.87,
+      "hits": [
+        {
+          "score": 0.8091,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：北美：多米尼克\n\n### 简介（摘录）\n\n![红颈鹦哥 / Red-necked Amazon / Amazona arausiaca](https://hn8i.7img.cn/images/4111c2e5f0e0ac5b7a2ad1a4b5674b74.jpg)  红颈鹦...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 195,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.8054,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红嘴鹦哥（英文名：Red-billed Parrot，学名：Pionus sordidus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。“Pionus”这个属名的字源，来自希腊字PIONOS，是“丰满”（plump）的意思。栖息于森林地带、沿海低地林区、树木稀少的平原、有时候也会前往农耕区觅食。通常成对或是以小群体活动，平常在树上休憩的时候难以察觉，因为其羽色提供了良好的掩蔽，觅食的时候相当安静，有时候甚至...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 92,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7887,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "布：非洲，远东：非洲西部，中部，东部，巴基斯坦至缅甸\n\n---\n\n## 红颈鹦哥 / Red-necked Amazon / Amazona arausiaca\n\n- **来源链接**：`https://www.huaniao8.com/niao/78912.html`\n- **图片**：`https://hn8i.7img.cn/NDExMWMyZTVmMGUwYWM1YjdhMmFkMWE0Y...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 194,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "澳西玫瑰鹦鹉",
+      "query_index": 50,
+      "query_time_ms": 282.5,
+      "hits": [
+        {
+          "score": 0.8345,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：澳大利亚西南部\n\n### 简介（摘录）\n\n![澳西玫瑰鹦鹉 / Western Rosella / Platycercus icterotis](https://hn8i.7img.cn/images/036b45feb26ed9b4f7e79413a3a20a07.jpg) ...",
+          "chunk_info": {
+            "chunk_index": 153,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.8345,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：澳大利亚西南部\n\n### 简介（摘录）\n\n![澳西玫瑰鹦鹉 / Western Rosella / Platycercus icterotis](https://hn8i.7img.cn/images/036b45feb26ed9b4f7e79413a3a20a07.jpg) ...",
+          "chunk_info": {
+            "chunk_index": 153,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.8154,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "cus icterotis](https://hn8i.7img.cn/images/036b45feb26ed9b4f7e79413a3a20a07.jpg)\n\n澳西玫瑰鹦鹉（英文名：Western Rosella，学名：Platycercus icterotis），是鹦形目长尾鹦鹉科玫瑰鹦鹉属的鸟类。澳西玫瑰鹦鹉，所属动物界，（学名：Platycercus icterotis），又名九重鹦鹉，...",
+          "chunk_info": {
+            "chunk_index": 154,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "毛里求斯冕鹦鹉",
+      "query_index": 51,
+      "query_time_ms": 303.72,
+      "hits": [
+        {
+          "score": 0.7958,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：印度洋：毛里求斯\n\n### 简介（摘录）\n\n毛里求斯冕鹦鹉（英文名：Broad-billed Parrot，学名：Lophopsittacus mauritianus），是鹦形目长尾鹦鹉科毛里求斯冕鹦鹉属的鸟类。又名阔嘴鹦鹉、鸦嘴鹦鹉，是毛里求斯特有的一种鹦鹉，但已灭绝。  地理分...",
+          "chunk_info": {
+            "chunk_index": 116,
+            "total_chunks": 222,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.7958,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：印度洋：毛里求斯\n\n### 简介（摘录）\n\n毛里求斯冕鹦鹉（英文名：Broad-billed Parrot，学名：Lophopsittacus mauritianus），是鹦形目长尾鹦鹉科毛里求斯冕鹦鹉属的鸟类。又名阔嘴鹦鹉、鸦嘴鹦鹉，是毛里求斯特有的一种鹦鹉，但已灭绝。  地理分...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "chunk_index": 116
+          }
+        },
+        {
+          "score": 0.7238,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "jpg)\n\n比亚克彩虹鹦鹉（英文名：Biak Lorikeet，学名：Trichoglossus rosenbergii），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：澳洲：印尼比亚克岛\n\n---\n\n## 毛里求斯冕鹦鹉 / Broad-billed Parrot / Lophopsittacus mauritianus\n\n- **来源链接**：`https://www.huaniao8.c...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 115,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "波多黎各鹦哥",
+      "query_index": 52,
+      "query_time_ms": 301.06,
+      "hits": [
+        {
+          "score": 0.8155,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：北美：波多黎各\n\n### 简介（摘录）\n\n![波多黎各鹦哥 / Puerto Rican Amazon / Amazona vittata](https://hn8i.7img.cn/images/0998f5303eb45b7108d205f393913cfd.jpg)  波...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "chunk_index": 125,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.8155,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：北美：波多黎各\n\n### 简介（摘录）\n\n![波多黎各鹦哥 / Puerto Rican Amazon / Amazona vittata](https://hn8i.7img.cn/images/0998f5303eb45b7108d205f393913cfd.jpg)  波...",
+          "chunk_info": {
+            "chunk_index": 125,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.8058,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：北美：波多黎各，莫纳岛\n\n### 简介（摘录）\n\n![波多黎各鹦鹉 / Puerto Rican Parakeet / Psittacara maugei](https://hn8i.7img.cn/images/c8c71b1bf757de8e10726b769f3cfe40.jpg...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "chunk_index": 127
+          }
+        }
+      ]
+    },
+    {
+      "query": "红额金刚鹦鹉",
+      "query_index": 53,
+      "query_time_ms": 284.31,
+      "hits": [
+        {
+          "score": 0.8169,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ra rubrogenys](https://hn8i.7img.cn/images/bfdec8136b5e03031af667a617da3614.jpg)\n\n红额金刚鹦鹉（英文名：Red-fronted Macaw，学名：Ara rubrogenys），是鹦形目鹦鹉科金刚鹦鹉属的鸟类。是大型金刚鹦鹉中体型最小的。体长60厘米。头、面颊、肩分布有橘红色羽毛，生活在玻利维亚，数量稀少，语言能力强...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 201
+          }
+        },
+        {
+          "score": 0.8046,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "rubrigularis](https://hn8i.7img.cn/images/44ef6cde6bba1858247a7ff5f693c255.jpg)\n\n红颏鹦鹉（英文名：Red-chinned Lorikeet，学名：Charmosyna rubrigularis），是鹦形目长尾鹦鹉科棕榈鹦鹉属的鸟类。\n\n地理分布：澳洲：俾斯麦群岛\n\n---\n\n## 红额金刚鹦鹉 / Red-front...",
+          "chunk_info": {
+            "chunk_index": 198,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.8029,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：玻利维亚中部\n\n### 简介（摘录）\n\n![红额金刚鹦鹉 / Red-fronted Macaw / Ara rubrogenys](https://hn8i.7img.cn/images/bfdec8136b5e03031af667a617da3614.jpg)  红额金刚...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 200,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "辉凤头鹦鹉",
+      "query_index": 54,
+      "query_time_ms": 280.36,
+      "hits": [
+        {
+          "score": 0.8089,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "nchus lathami](https://hn8i.7img.cn/images/bfc055e2686783ec1c6a062534054da8.jpg)\n\n辉凤头鹦鹉（英文名：Glossy Black Cockatoo，学名：Calyptorhynchus lathami），是鹦形目凤头鹦鹉科黑凤头鹦鹉属的鸟类。\n\n地理分布：澳洲：澳大利亚东部\n\n---\n\n## 辉翅鹦哥 / Blaze-...",
+          "chunk_info": {
+            "chunk_index": 12,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7314,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "7.jpg)\n\n赤额鹦哥（英文名：Rose-fronted Parakeet，学名：Pyrrhura roseifrons），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。\n\n地理分布：南美：亚马孙雨林西部\n\n---\n\n## 辉凤头鹦鹉 / Glossy Black Cockatoo / Calyptorhynchus lathami\n\n- **来源链接**：`https://www.huaniao8.com...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 10,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7307,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "ciformes\n- **科**：凤头鹦鹉科 / Cockatoos / Cacatuidae\n- **地理分布**：澳洲：澳大利亚东部\n\n### 简介（摘录）\n\n![辉凤头鹦鹉 / Glossy Black Cockatoo / Calyptorhynchus lathami](https://hn8i.7img.cn/images/bfc055e2686783ec1c6a062534054da...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 11,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "蓝额鹦哥",
+      "query_index": 55,
+      "query_time_ms": 278.5,
+      "hits": [
+        {
+          "score": 0.7911,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "蓝头鹦哥（英文名：Blue-headed Parrot，学名：Pionus menstruus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。蓝头鹦鹉是 Pionus 这类鹦鹉中最常见的品种之一，共有3 种相近的亚种，主要差异是头部蓝色的深浅与分布面积多寡，这类鹦鹉十分安静，而手养鸟也很驯服与乖巧，这个属的鹦鹉在台湾岛内数量不多，幼鸟也少见，大部分人工繁殖的Pionus鹦鹉售价都不低，但Pionus鹦鹉比其它...",
+          "chunk_info": {
+            "chunk_index": 122,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7855,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "s cyanopygius](https://hn8i.7img.cn/images/949daa504fbdbe6863c85ca4eb9054e9.jpg)\n\n蓝腰鹦哥（英文名：Mexican Parrotlet，学名：Forpus cyanopygius），是鹦形目鹦鹉科福普斯鹦哥属的鸟类。又叫蓝腰鹦鹉。这种鹦鹉鸟体为绿色，主要栖息于干燥、热带的低纬度森林地带，充满棘丛和树木的平原、以及纬度...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 157
+          }
+        },
+        {
+          "score": 0.779,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "dilectissimus](https://hn8i.7img.cn/images/6ce8077f25857b05cad8b99e8ebbdcb8.jpg)\n\n蓝额鹦哥（英文名：Blue-fronted Parrotlet，学名：Touit dilectissimus），是鹦形目鹦鹉科图伊特鹦鹉属的鸟类。\n\n地理分布：中美，南美：巴拿马东部至委内瑞拉和厄瓜多尔西北部\n\n---\n\n## 蓝额鹦鹉...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 177
+          }
+        }
+      ]
+    },
+    {
+      "query": "巴拉望扇尾鹦鹉",
+      "query_index": 56,
+      "query_time_ms": 281.91,
+      "hits": [
+        {
+          "score": 0.7988,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：远东：菲律宾\n\n### 简介（摘录）\n\n![巴拉望扇尾鹦鹉 / Blue-headed Racket-tail / Prioniturus platenae](https://hn8i.7img.cn/images/60063cb242d2eb560cfeecf760232cc...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 172
+          }
+        },
+        {
+          "score": 0.7988,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：远东：菲律宾\n\n### 简介（摘录）\n\n![巴拉望扇尾鹦鹉 / Blue-headed Racket-tail / Prioniturus platenae](https://hn8i.7img.cn/images/60063cb242d2eb560cfeecf760232cc...",
+          "chunk_info": {
+            "chunk_index": 172,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.7968,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "urus platenae](https://hn8i.7img.cn/images/60063cb242d2eb560cfeecf760232cc8.jpg)\n\n巴拉望扇尾鹦鹉（英文名：Blue-headed Racket-tail，学名：Prioniturus platenae），是鹦形目长尾鹦鹉科扇尾鹦鹉属的鸟类。\n\n地理分布：远东：菲律宾\n\n---\n\n## 布岛扇尾鹦鹉 / Buru Ra...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 173
+          }
+        }
+      ]
+    },
+    {
+      "query": "诺福克啄羊鹦鹉",
+      "query_index": 57,
+      "query_time_ms": 293.74,
+      "hits": [
+        {
+          "score": 0.8477,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "- **科**：鸮鹦鹉科 / New Zealand Parrots / Strigopidae\n- **地理分布**：澳洲：诺福克岛\n\n### 简介（摘录）\n\n![诺福克啄羊鹦鹉 / Norfolk Kaka / Nestor productus](https://hn8i.7img.cn/images/3f68df092c4af98132a4eff69d052674.jpg)  诺福克啄羊鹦鹉...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 217
+          }
+        },
+        {
+          "score": 0.8387,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "tor productus](https://hn8i.7img.cn/images/3f68df092c4af98132a4eff69d052674.jpg)\n\n诺福克啄羊鹦鹉（英文名：Norfolk Kaka，学名：Nestor productus），是鹦形目鸮鹦鹉科啄羊鹦鹉属的鸟类。诺福克啄羊鹦鹉，鹦鹉的一种，是鸟纲、鹦形目、鹦鹉科动物。分布于诺幅克岛。现已灭绝。\n\n地理分布：澳洲：诺福克岛...",
+          "chunk_info": {
+            "chunk_index": 218,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.8048,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "地理分布：澳洲：澳大利亚西南部\n\n---\n\n## 诺福克啄羊鹦鹉 / Norfolk Kaka / Nestor productus\n\n- **来源链接**：`https://www.huaniao8.com/niao/82390.html`\n- **图片**：`https://hn8i.7img.cn/M2Y2OGRmMDkyYzRhZjk4MTMyYTRlZmY2OWQwNTI2NzQvMjU...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 216
+          }
+        }
+      ]
+    },
+    {
+      "query": "红喉鹦哥",
+      "query_index": 58,
+      "query_time_ms": 276.29,
+      "hits": [
+        {
+          "score": 0.816,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "rubritorquis](https://hn8i.7img.cn/images/18767725513392ba4f5e54991210520b.jpg)\n\n红喉鹦哥（英文名：Red-throated Parakeet，学名：Psittacara rubritorquis），是鹦形目鹦鹉科卡拉锥尾鹦鹉属的鸟类。红喉锥尾鹦鹉属于鹦鹉科，主要分布于危地马拉东部、萨尔瓦多和尼加拉瓜北部。\n\n地理分布...",
+          "chunk_info": {
+            "chunk_index": 86,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.815,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红嘴鹦哥（英文名：Red-billed Parrot，学名：Pionus sordidus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。“Pionus”这个属名的字源，来自希腊字PIONOS，是“丰满”（plump）的意思。栖息于森林地带、沿海低地林区、树木稀少的平原、有时候也会前往农耕区觅食。通常成对或是以小群体活动，平常在树上休憩的时候难以察觉，因为其羽色提供了良好的掩蔽，觅食的时候相当安静，有时候甚至...",
+          "chunk_info": {
+            "chunk_index": 92,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7914,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "s johnstoniae](https://hn8i.7img.cn/images/3026666134abf241e44db63f28edb762.jpg)\n\n红喉绿鹦鹉（英文名：Mindanao Lorikeet，学名：Trichoglossus johnstoniae），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：远东：菲律宾\n\n---\n\n## 红喉鹦哥 / Red-throated...",
+          "chunk_info": {
+            "chunk_index": 83,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "萨氏果鹦鹉",
+      "query_index": 59,
+      "query_time_ms": 283.12,
+      "hits": [
+        {
+          "score": 0.7586,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚西北部\n\n### 简介（摘录）\n\n![萨氏果鹦鹉 / Salvadori\\'s Fig Parrot / Psittaculirostris salvadorii](https://hn8i.7img.cn/images/b2055a437415b7478696eea5...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 96
+          }
+        },
+        {
+          "score": 0.7111,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "is salvadorii](https://hn8i.7img.cn/images/b2055a437415b7478696eea5c02a139e.jpg)\n\n萨氏果鹦鹉（英文名：Salvadori’s Fig Parrot，学名：Psittaculirostris salvadorii），是鹦形目长尾鹦鹉科果鹦鹉属的鸟类。\n\n地理分布：澳洲：新几内亚西北部\n\n---\n\n## 葵花鹦鹉 / S...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "chunk_index": 97,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.6933,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "它通常在树林间笔直快速的飞行，在森林边缘可以看到它飞翔时迷人的光彩。食物主要是浆果类、蔬果、嫩芽、草本种子等。分布于菲律宾。\n\n地理分布：远东：菲律宾\n\n---\n\n## 萨氏果鹦鹉 / Salvadori’s Fig Parrot / Psittaculirostris salvadorii\n\n- **来源链接**：`https://www.huaniao8.com/niao/42624.html...",
+          "chunk_info": {
+            "chunk_index": 95,
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "蓝领鹦鹉",
+      "query_index": 60,
+      "query_time_ms": 273.82,
+      "hits": [
+        {
+          "score": 0.7678,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚\n\n### 简介（摘录）\n\n![蓝领鹦鹉 / Blue-collared Parrot / Geoffroyus simplex](https://hn8i.7img.cn/images/fa970c6a3f9f1dea1ade518616fda8e4.jpg) ...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 167
+          }
+        },
+        {
+          "score": 0.7544,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "s lucionensis](https://hn8i.7img.cn/images/9a13071da494c1e59101361cb3b0ef9f.jpg)\n\n蓝颈鹦鹉（英文名：Blue-naped Parrot，学名：Tanygnathus lucionensis），是鹦形目长尾鹦鹉科巨嘴鹦鹉属的鸟类。繁殖：一窝约产2颗蛋，孵化期约25-26天，羽毛长成60-65日幼鸟头顶的蓝羽较少，身躯颜...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 171
+          }
+        },
+        {
+          "score": 0.736,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "s cyanopygius](https://hn8i.7img.cn/images/949daa504fbdbe6863c85ca4eb9054e9.jpg)\n\n蓝腰鹦哥（英文名：Mexican Parrotlet，学名：Forpus cyanopygius），是鹦形目鹦鹉科福普斯鹦哥属的鸟类。又叫蓝腰鹦鹉。这种鹦鹉鸟体为绿色，主要栖息于干燥、热带的低纬度森林地带，充满棘丛和树木的平原、以及纬度...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 157
+          }
+        }
+      ]
+    },
+    {
+      "query": "彩鹦哥",
+      "query_index": 61,
+      "query_time_ms": 281.25,
+      "hits": [
+        {
+          "score": 0.7651,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "yrrhura picta](https://hn8i.7img.cn/images/a03125588614619f1bc648d4261902e7.jpg)\n\n彩鹦哥（英文名：Painted Parakeet，学名：Pyrrhura picta），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。彩绘锥尾鹦鹉，所属动物界，属鹦鹉科，分布于内瑞拉、巴西、圭亚那、苏利南、法属圭亚等地。\n\n地理分布：南美：巴拿马东...",
+          "chunk_info": {
+            "chunk_index": 199,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.7651,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "yrrhura picta](https://hn8i.7img.cn/images/a03125588614619f1bc648d4261902e7.jpg)\n\n彩鹦哥（英文名：Painted Parakeet，学名：Pyrrhura picta），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。彩绘锥尾鹦鹉，所属动物界，属鹦鹉科，分布于内瑞拉、巴西、圭亚那、苏利南、法属圭亚等地。\n\n地理分布：南美：巴拿马东...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 199
+          }
+        },
+        {
+          "score": 0.7347,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "rican and New World Parrots / Psittacidae\n- **地理分布**：南美：巴拿马东南部至亚马孙雨林\n\n### 简介（摘录）\n\n![彩鹦哥 / Painted Parakeet / Pyrrhura picta](https://hn8i.7img.cn/images/a03125588614619f1bc648d4261902e7.jpg)  彩鹦哥（英文名：...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 198,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "新喀鹦鹉",
+      "query_index": 62,
+      "query_time_ms": 273.02,
+      "hits": [
+        {
+          "score": 0.7968,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新喀里多尼亚\n\n### 简介（摘录）\n\n![新喀鹦鹉 / New Caledonian Lorikeet / Charmosyna diadema](https://hn8i.7img.cn/images/4abf904ff9b1c053044935715bf6c351.jp...",
+          "chunk_info": {
+            "chunk_index": 11,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.7968,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新喀里多尼亚\n\n### 简介（摘录）\n\n![新喀鹦鹉 / New Caledonian Lorikeet / Charmosyna diadema](https://hn8i.7img.cn/images/4abf904ff9b1c053044935715bf6c351.jp...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222,
+            "chunk_index": 11
+          }
+        },
+        {
+          "score": 0.7569,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "鸟类。\n\n地理分布：澳洲：新喀里多尼亚\n\n---\n\n## 新喀鹦鹉 / New Caledonian Lorikeet / Charmosyna diadema\n\n- **来源链接**：`https://www.huaniao8.com/niao/80846.html`\n- **图片**：`https://hn8i.7img.cn/NGFiZjkwNGZmOWIxYzA1MzA0NDkzNTcxN...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 10,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "古巴白额鹦哥",
+      "query_index": 63,
+      "query_time_ms": 287.38,
+      "hits": [
+        {
+          "score": 0.8662,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "frican and New World Parrots / Psittacidae\n- **地理分布**：北美：古巴，巴哈马和开曼群岛\n\n### 简介（摘录）\n\n![古巴白额鹦哥 / Cuban Amazon / Amazona leucocephala](https://hn8i.7img.cn/images/83430d8ebd1a682eac62ee1999b32796.jpg)  古巴白...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 59
+          }
+        },
+        {
+          "score": 0.8662,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "frican and New World Parrots / Psittacidae\n- **地理分布**：北美：古巴，巴哈马和开曼群岛\n\n### 简介（摘录）\n\n![古巴白额鹦哥 / Cuban Amazon / Amazona leucocephala](https://hn8i.7img.cn/images/83430d8ebd1a682eac62ee1999b32796.jpg)  古巴白...",
+          "chunk_info": {
+            "chunk_index": 59,
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.8425,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "一级保育名单。\n\n地理分布：中美：墨西哥南部，伯利兹\n\n---\n\n## 古巴白额鹦哥 / Cuban Amazon / Amazona leucocephala\n\n- **来源链接**：`https://www.huaniao8.com/niao/72900.html`\n- **图片**：`https://hn8i.7img.cn/ODM0MzBkOGViZDFhNjgyZWFjNjJlZTE5O...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 58,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "白顶啄羊鹦鹉",
+      "query_index": 64,
+      "query_time_ms": 290.46,
+      "hits": [
+        {
+          "score": 0.7948,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "s leucogaster](https://hn8i.7img.cn/images/58fc68de8112759988e63bfd44851676.jpg)\n\n白腹鹦哥（英文名：White-bellied Parrot，学名：Pionites leucogaster），是鹦形目鹦鹉科白腹鹦哥属的鸟类。白腹鹦哥属于鹦鹉科动物，主要分布于亚马逊河流域，巴西、玻利维亚北部、厄瓜多东部、秘鲁都是它们的...",
+          "chunk_info": {
+            "chunk_index": 3,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7802,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "繁殖界鲜少见到他们的踪迹。由于他们体型硕大，动作并不灵活，加上对人类戒心不强，因此一直以来都是毛利人最重要的食物来源。  地理分布：澳洲：新西兰\n\n### 正文\n\n![白顶啄羊鹦鹉 / New Zealand Kaka / Nestor meridionalis](https://hn8i.7img.cn/images/62aad7e58df9769fcda96263607d2120.jpg)\n\n...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 6
+          }
+        },
+        {
+          "score": 0.7543,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "s\n- **科**：鸮鹦鹉科 / New Zealand Parrots / Strigopidae\n- **地理分布**：澳洲：新西兰\n\n### 简介（摘录）\n\n![白顶啄羊鹦鹉 / New Zealand Kaka / Nestor meridionalis](https://hn8i.7img.cn/images/62aad7e58df9769fcda96263607d2120.jpg)  ...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 5
+          }
+        }
+      ]
+    },
+    {
+      "query": "叶华丽鹦鹉",
+      "query_index": 65,
+      "query_time_ms": 279.81,
+      "hits": [
+        {
+          "score": 0.7814,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：弗洛勒斯岛\n\n### 简介（摘录）\n\n![叶华丽鹦鹉 / Leaf Lorikeet / Trichoglossus weberi](https://hn8i.7img.cn/images/4287c5497c2314d38010ab3c43758937.jpg)  叶华丽鹦...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 67
+          }
+        },
+        {
+          "score": 0.7814,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：弗洛勒斯岛\n\n### 简介（摘录）\n\n![叶华丽鹦鹉 / Leaf Lorikeet / Trichoglossus weberi](https://hn8i.7img.cn/images/4287c5497c2314d38010ab3c43758937.jpg)  叶华丽鹦...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 67,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.7191,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "树岛上栖息，但是目前已经绝迹\n\n地理分布：北美：古巴\n\n---\n\n## 叶华丽鹦鹉 / Leaf Lorikeet / Trichoglossus weberi\n\n- **来源链接**：`https://www.huaniao8.com/niao/42887.html`\n- **图片**：`https://hn8i.7img.cn/NDI4N2M1NDk3YzIzMTRkMzgwMTBhYjNjN...",
+          "chunk_info": {
+            "chunk_index": 66,
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "狮子山棕颈鹦鹉",
+      "query_index": 66,
+      "query_time_ms": 292.94,
+      "hits": [
+        {
+          "score": 0.8321,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "73e93da53.jpg)\n\n狮子山棕颈鹦鹉（英文名：Timneh Parrot，学名：Psittacus timneh），是鹦形目鹦鹉科非洲灰鹦鹉属的鸟类。\n\n地理分布：非洲：几内亚南部，塞拉利昂，利比里亚，和科特迪瓦西部，普林西比\n\n---\n\n## 珠色鹦哥 / Crimson-bellied Parakeet / Pyrrhura perlata",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "chunk_index": 187
+          }
+        },
+        {
+          "score": 0.8321,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "73e93da53.jpg)\n\n狮子山棕颈鹦鹉（英文名：Timneh Parrot，学名：Psittacus timneh），是鹦形目鹦鹉科非洲灰鹦鹉属的鸟类。\n\n地理分布：非洲：几内亚南部，塞拉利昂，利比里亚，和科特迪瓦西部，普林西比\n\n---\n\n## 珠色鹦哥 / Crimson-bellied Parakeet / Pyrrhura perlata",
+          "chunk_info": {
+            "chunk_index": 187,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.8179,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "n and New World Parrots / Psittacidae\n- **地理分布**：非洲：几内亚南部，塞拉利昂，利比里亚，和科特迪瓦西部，普林西比\n\n### 简介（摘录）\n\n![狮子山棕颈鹦鹉 / Timneh Parrot / Psittacus timneh](https://hn8i.7img.cn/images/37d8f6cad7d93db73fdb5d773e93da53...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222,
+            "chunk_index": 186
+          }
+        }
+      ]
+    },
+    {
+      "query": "黑凤头鹦鹉",
+      "query_index": 67,
+      "query_time_ms": 281.07,
+      "hits": [
+        {
+          "score": 0.8105,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "与公鸟尾部是一片鲜红色不同，母鸟的喙部是肉色，而公鸟是黑色，世界上的总数量超过10万只，受澳洲政府法律的保护，野外数量目前似乎算稳定，约有4种亚\n\n### 正文\n\n![黑凤头鹦鹉 / Yellow-tailed Black Cockatoo / Zanda funerea](https://hn8i.7img.cn/images/712f3d68250038713e7953e027caa1bc.j...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 185,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7947,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "rmes\n- **科**：凤头鹦鹉科 / Cockatoos / Cacatuidae\n- **地理分布**：澳洲：澳大利亚东部，东南部\n\n### 简介（摘录）\n\n![黑凤头鹦鹉 / Yellow-tailed Black Cockatoo / Zanda funerea](https://hn8i.7img.cn/images/712f3d68250038713e7953e027caa1bc.j...",
+          "chunk_info": {
+            "chunk_index": 184,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7716,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "莓及蔬菜。虽然黑冠鹦鹉已从大部份的分布地消失，但在一些保护地区仍很普遍。它们被世界自然保护联盟列为无危。科学分类  地理分布：澳洲：澳大利亚北部\n\n### 正文\n\n![黑冠鹦鹉 / Hooded Parrot / Psephotellus dissimilis](https://hn8i.7img.cn/images/3702f8c9f7295c41cbdcfc81b07e0e15.jpg)\n\n黑...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 182,
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "亚马孙鹦哥",
+      "query_index": 68,
+      "query_time_ms": 275.48,
+      "hits": [
+        {
+          "score": 0.7708,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林西南部\n\n### 简介（摘录）\n\n亚马孙鹦哥（英文名：Manu Parrotlet，学名：Nannopsittaca dachilleae），是鹦形目鹦鹉科特布伊鹦哥属的鸟类。  地理分布：南美：亚马孙雨林西南部\n\n### 正文\n\n亚马孙鹦哥（英文名：Manu Parr...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 17,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.7708,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林西南部\n\n### 简介（摘录）\n\n亚马孙鹦哥（英文名：Manu Parrotlet，学名：Nannopsittaca dachilleae），是鹦形目鹦鹉科特布伊鹦哥属的鸟类。  地理分布：南美：亚马孙雨林西南部\n\n### 正文\n\n亚马孙鹦哥（英文名：Manu Parr...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 17
+          }
+        },
+        {
+          "score": 0.7226,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "农作物区、红树林、椰子园等地。中国野外初次记录在云南西部，现国内分布于云南西部、香港（该种群为逃逸后形成的野化种群）。\n\n地理分布：远东：印度至东南亚\n\n---\n\n## 亚马孙鹦哥 / Manu Parrotlet / Nannopsittaca dachilleae\n\n- **来源链接**：`https://www.huaniao8.com/niao/48306.html`\n- **图片**：`...",
+          "chunk_info": {
+            "chunk_index": 16,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        }
+      ]
+    },
+    {
+      "query": "黄翅鹦哥",
+      "query_index": 69,
+      "query_time_ms": 273.66,
+      "hits": [
+        {
+          "score": 0.8598,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "geris chiriri](https://hn8i.7img.cn/images/6e272d7f038f7fa963395a80dc53a9a5.jpg)\n\n黄翅斑鹦哥（英文名：Yellow-chevroned Parakeet，学名：Brotogeris chiriri），是鹦形目鹦鹉科纯色鹦哥属的鸟类。\n\n地理分布：南美：东部，东南部\n\n---\n\n## 黄翅鹦哥 / Sulphur-wi...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 144,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.8016,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "flavoviridis](https://hn8i.7img.cn/images/614591decd04c4e71aa50f37c4372e9b.jpg)\n\n黄绿鹦鹉（英文名：Citrine Lorikeet，学名：Trichoglossus flavoviridis），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：澳洲：印尼苏拉威西岛，印尼苏拉群岛\n\n---\n\n## 黄翅斑鹦哥 / Ye...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 141
+          }
+        },
+        {
+          "score": 0.8006,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "区很广，栖息在南美洲安地斯山以东地区。偶尔会吵闹，喜爱与人亲近，是好奇与爱玩耍的小型鹦鹉，但成鸟较为害羞。  地理分布：中美：哥斯达黎加，巴拿马\n\n### 正文\n\n![黄翅鹦哥 / Sulphur-winged Parakeet / Pyrrhura hoffmanni](https://hn8i.7img.cn/images/e74b65ec6af5f44eb8722ee4d6c10c2a.jp...",
+          "chunk_info": {
+            "chunk_index": 147,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "翎冠鹦鹉",
+      "query_index": 70,
+      "query_time_ms": 279.84,
+      "hits": [
+        {
+          "score": 0.83,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新喀里多尼亚\n\n### 简介（摘录）\n\n![翎冠鹦鹉 / Horned Parakeet / Eunymphicus cornutus](https://hn8i.7img.cn/images/edbcd99067a92223c9c9e9c1eabac9db.jpg)  翎冠...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 64,
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7253,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "英文名：Modest Tiger Parrot，学名：Psittacella modesta），是鹦形目长尾鹦鹉科虎斑鹦鹉属的鸟类。\n\n地理分布：澳洲：新几内亚\n\n---\n\n## 翎冠鹦鹉 / Horned Parakeet / Eunymphicus cornutus\n\n- **来源链接**：`https://www.huaniao8.com/niao/81394.html`\n- **图片**：...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 63
+          }
+        },
+        {
+          "score": 0.6931,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "*：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新喀里多尼亚忠诚群岛\n\n### 简介（摘录）\n\n![乌岛翎冠鹦鹉 / Ouvea Parakeet / Eunymphicus uvaeensis](https://hn8i.7img.cn/images/f2ad34dcb42c39d0f9c319b5ae18241f.jpg)  ...",
+          "chunk_info": {
+            "chunk_index": 10,
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "鸡尾鹦鹉",
+      "query_index": 71,
+      "query_time_ms": 272.61,
+      "hits": [
+        {
+          "score": 0.7855,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "taciformes\n- **科**：凤头鹦鹉科 / Cockatoos / Cacatuidae\n- **地理分布**：澳洲：澳大利亚\n\n### 简介（摘录）\n\n![鸡尾鹦鹉 / Cockatiel / Nymphicus hollandicus](https://hn8i.7img.cn/images/1eab63a3e96b0131867d967572eeb902.jpg)  鸡尾鹦鹉（英文...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 105,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7835,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "catitho”，意思是“小型的巴丹”，因而得名。它们在全世界的总数量超过1百万只，而且数量仍继续地成长中，其族群十分稳定且安全。  地理分布：\n\n### 正文\n\n![鸡尾鹦鹉 / Cockatiel / Nymphicus hollandicus](https://hn8i.7img.cn/images/1eab63a3e96b0131867d967572eeb902.jpg)\n\n鸡尾鹦鹉（英文...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 106
+          }
+        },
+        {
+          "score": 0.7572,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "73e3.jpg)\n\n鳞颈鹦哥（英文名：Scaly-naped Amazon，学名：Amazona mercenarius），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：南美：委内瑞拉至玻利维亚\n\n---\n\n## 鸡尾鹦鹉 / Cockatiel / Nymphicus hollandicus\n\n- **来源链接**：`https://www.huaniao8.com/niao/66614.h...",
+          "chunk_info": {
+            "chunk_index": 104,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "褐胸鹦哥",
+      "query_index": 72,
+      "query_time_ms": 274.87,
+      "hits": [
+        {
+          "score": 0.7805,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "ec62.jpg)\n\n褐冠鹦哥（英文名：Brown-hooded Parrot，学名：Pyrilia haematotis），是鹦形目鹦鹉科番红头鹦哥属的鸟类。\n\n地理分布：中美，南美：墨西哥东南部至哥伦比亚西北部\n\n---\n\n## 褐喉鹦哥 / Brown-throated Parakeet / Eupsittula pertinax",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 187
+          }
+        },
+        {
+          "score": 0.7658,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "70.jpg)\n\n褐背鹦哥（英文名：Brown-backed Parrotlet，学名：Touit melanonotus），是鹦形目鹦鹉科图伊特鹦鹉属的鸟类。\n\n地理分布：南美：巴西东南部\n\n---\n\n## 褐胸鹦哥 / Flame-winged Parakeet / Pyrrhura calliptera\n\n- **来源链接**：`https://www.huaniao8.com/niao/7...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 199
+          }
+        },
+        {
+          "score": 0.7599,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "ra calliptera](https://hn8i.7img.cn/images/08a3195f3e067f727190c227afb8af79.jpg)\n\n褐胸鹦哥（英文名：Flame-winged Parakeet，学名：Pyrrhura calliptera），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。\n\n地理分布：南美：哥伦比亚中部\n\n---\n\n## 褐颈鹦鹉 / Cape Parrot /...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 201,
+            "total_chunks": 225
+          }
+        }
+      ]
+    },
+    {
+      "query": "黑嘴鹦哥",
+      "query_index": 73,
+      "query_time_ms": 273.95,
+      "hits": [
+        {
+          "score": 0.8058,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "：鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：北美：牙买加\n\n### 简介（摘录）\n\n![黑嘴鹦哥 / Black-billed Amazon / Amazona agilis](https://hn8i.7img.cn/images/bedbe4795a9010c87a01a19449ba3b9e.jpg)  黑嘴鹦哥...",
+          "chunk_info": {
+            "chunk_index": 187,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7751,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "明的橘黄色，与公鸟尾部是一片鲜红色不同，母鸟的喙部是肉色，而公鸟是黑色，世界上的总数量超过10万只，受澳洲政府法律的保护，野外数量目前似乎算稳定，约有4种亚种。\n\n地理分布：澳洲：澳大利亚东部，东南部\n\n---\n\n## 黑嘴鹦哥 / Black-billed Amazon / Amazona agilis\n\n- **来源链接**：`https://www.huaniao8.com/niao/721...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 186
+          }
+        },
+        {
+          "score": 0.743,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "elanocephalus](https://hn8i.7img.cn/images/e602481e183000826840f5a9cb35addd.jpg)\n\n黑冠鹦哥（英文名：Black-headed Parrot，学名：Pionites melanocephalus），是鹦形目鹦鹉科白腹鹦哥属的鸟类。\n\n地理分布：南美：亚马孙雨林北部\n\n---\n\n## 黑冠鹦鹉 / Hooded Parr...",
+          "chunk_info": {
+            "chunk_index": 179,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "红腹金刚鹦鹉",
+      "query_index": 74,
+      "query_time_ms": 281.88,
+      "hits": [
+        {
+          "score": 0.8468,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "aca manilatus](https://hn8i.7img.cn/images/a2e025f25d9024d495a615e49f5b481a.jpg)\n\n红腹金刚鹦鹉（英文名：Red-bellied Macaw，学名：Orthopsittaca manilatus），是鹦形目鹦鹉科红腰金刚鹦鹉属的鸟类。是小型金刚鹦鹉中最大的的种类之一，产于美洲热带地区，是色彩很漂亮的绿鹦鹉，面部无羽毛，...",
+          "chunk_info": {
+            "chunk_index": 174,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.8452,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林\n\n### 简介（摘录）\n\n![红腹金刚鹦鹉 / Red-bellied Macaw / Orthopsittaca manilatus](https://hn8i.7img.cn/images/a2e025f25d9024d495a615e49f5b481a.j...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 172,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7946,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ttaca nobilis](https://hn8i.7img.cn/images/3d9d37971d56cef5fee8c3389ca9eb52.jpg)\n\n红肩金刚鹦鹉（英文名：Red-shouldered Macaw，学名：Diopsittaca nobilis），是鹦形目鹦鹉科红肩金刚鹦鹉属的鸟类。是定居性的鹦鹉，但在有些地区会有季节性的迁徙行为，在当地是常见的鹦鹉，尤其在巴西的中部及...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 136,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "双黄头亚马逊鹦鹉",
+      "query_index": 75,
+      "query_time_ms": 283.45,
+      "hits": [
+        {
+          "score": 0.8719,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "African and New World Parrots / Psittacidae\n- **地理分布**：中美：墨西哥南部，伯利兹\n\n### 简介（摘录）\n\n![双黄头亚马逊鹦鹉 / Yellow-headed Amazon / Amazona oratrix](https://hn8i.7img.cn/images/6261894ddbe80b382c0738f7d4541d78.jpg) ...",
+          "chunk_info": {
+            "chunk_index": 56,
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.8719,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "African and New World Parrots / Psittacidae\n- **地理分布**：中美：墨西哥南部，伯利兹\n\n### 简介（摘录）\n\n![双黄头亚马逊鹦鹉 / Yellow-headed Amazon / Amazona oratrix](https://hn8i.7img.cn/images/6261894ddbe80b382c0738f7d4541d78.jpg) ...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 56
+          }
+        },
+        {
+          "score": 0.8367,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "活动，由于栖息地严重的破坏，以及人为盗捕的猖獗，使的野外数量大幅下降，双黄头亚马逊亚种已列入一级保育名单。  地理分布：中美：墨西哥南部，伯利兹\n\n### 正文\n\n![双黄头亚马逊鹦鹉 / Yellow-headed Amazon / Amazona oratrix](https://hn8i.7img.cn/images/6261894ddbe80b382c0738f7d4541d78.jpg)...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 57
+          }
+        }
+      ]
+    },
+    {
+      "query": "桃脸牡丹鹦鹉",
+      "query_index": 76,
+      "query_time_ms": 282.99,
+      "hits": [
+        {
+          "score": 0.7922,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：非洲：西南部\n\n### 简介（摘录）\n\n![桃脸牡丹鹦鹉 / Rosy-faced Lovebird / Agapornis roseicollis](https://hn8i.7img.cn/images/d0e3b376782dd973edbc4402118b6613.jp...",
+          "chunk_info": {
+            "chunk_index": 47,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.7922,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：非洲：西南部\n\n### 简介（摘录）\n\n![桃脸牡丹鹦鹉 / Rosy-faced Lovebird / Agapornis roseicollis](https://hn8i.7img.cn/images/d0e3b376782dd973edbc4402118b6613.jp...",
+          "chunk_info": {
+            "chunk_index": 47,
+            "total_chunks": 222,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.7859,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "s roseicollis](https://hn8i.7img.cn/images/d0e3b376782dd973edbc4402118b6613.jpg)\n\n桃脸牡丹鹦鹉（英文名：Rosy-faced Lovebird，学名：Agapornis roseicollis），是鹦形目长尾鹦鹉科牡丹鹦鹉属的鸟类。桃脸情侣鹦，别名小鹦，有明亮整洁的杏仁绿色全身羽毛，分布于纳米比亚南部的橘河。（又名：...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 48,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "椰果彩虹鹦鹉",
+      "query_index": 77,
+      "query_time_ms": 286.15,
+      "hits": [
+        {
+          "score": 0.8129,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "us haematodus](https://hn8i.7img.cn/images/b60f66eeffab27ff1db34a75c5251599.jpg)\n\n椰果彩虹鹦鹉（英文名：Coconut Lorikeet，学名：Trichoglossus haematodus），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：澳洲：印尼摩鹿加群岛南部，新几内亚西部，东部至新喀里多尼亚忠诚群岛\n\n-...",
+          "chunk_info": {
+            "chunk_index": 71,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.8129,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "us haematodus](https://hn8i.7img.cn/images/b60f66eeffab27ff1db34a75c5251599.jpg)\n\n椰果彩虹鹦鹉（英文名：Coconut Lorikeet，学名：Trichoglossus haematodus），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：澳洲：印尼摩鹿加群岛南部，新几内亚西部，东部至新喀里多尼亚忠诚群岛\n\n-...",
+          "chunk_info": {
+            "chunk_index": 71,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.8115,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "Parrots / Psittaculidae\n- **地理分布**：澳洲：印尼摩鹿加群岛南部，新几内亚西部，东部至新喀里多尼亚忠诚群岛\n\n### 简介（摘录）\n\n![椰果彩虹鹦鹉 / Coconut Lorikeet / Trichoglossus haematodus](https://hn8i.7img.cn/images/b60f66eeffab27ff1db34a75c5251599.j...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part02.md",
+            "chunk_index": 70,
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "军金刚鹦鹉",
+      "query_index": 78,
+      "query_time_ms": 281.64,
+      "hits": [
+        {
+          "score": 0.8481,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "litaris)、墨西哥绿金刚(Aram.mexicana)、波利维亚绿金刚(Aram.boliviana)，三种都是濒临绝种的金刚鹦鹉。  地\n\n### 正文\n\n![军金刚鹦鹉 / Military Macaw / Ara militaris](https://hn8i.7img.cn/images/e59d7d0d25af55e342797b9336290da9.jpg)\n\n军金刚鹦鹉（英文名...",
+          "chunk_info": {
+            "chunk_index": 34,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.8481,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "litaris)、墨西哥绿金刚(Aram.mexicana)、波利维亚绿金刚(Aram.boliviana)，三种都是濒临绝种的金刚鹦鹉。  地\n\n### 正文\n\n![军金刚鹦鹉 / Military Macaw / Ara militaris](https://hn8i.7img.cn/images/e59d7d0d25af55e342797b9336290da9.jpg)\n\n军金刚鹦鹉（英文名...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 34
+          }
+        },
+        {
+          "score": 0.8415,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "and New World Parrots / Psittacidae\n- **地理分布**：中美，南美：墨西哥西部， 南美西北部和西部\n\n### 简介（摘录）\n\n![军金刚鹦鹉 / Military Macaw / Ara militaris](https://hn8i.7img.cn/images/e59d7d0d25af55e342797b9336290da9.jpg)  军金刚鹦鹉（英文名...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 33
+          }
+        }
+      ]
+    },
+    {
+      "query": "小金刚鹦鹉",
+      "query_index": 79,
+      "query_time_ms": 286.79,
+      "hits": [
+        {
+          "score": 0.7297,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林，中南部\n\n### 简介（摘录）\n\n![小金刚鹦鹉 / Red-and-green Macaw / Ara chloropterus](https://hn8i.7img.cn/images/e1e485d1ebb838abe0ca664c0b58b2a3.jpg)  小金...",
+          "chunk_info": {
+            "chunk_index": 146,
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.7297,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林，中南部\n\n### 简介（摘录）\n\n![小金刚鹦鹉 / Red-and-green Macaw / Ara chloropterus](https://hn8i.7img.cn/images/e1e485d1ebb838abe0ca664c0b58b2a3.jpg)  小金...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 146
+          }
+        },
+        {
+          "score": 0.7218,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "chloropterus](https://hn8i.7img.cn/images/e1e485d1ebb838abe0ca664c0b58b2a3.jpg)\n\n小金刚鹦鹉（英文名：Red-and-green Macaw，学名：Ara chloropterus），是鹦形目鹦鹉科金刚鹦鹉属的鸟类。又叫绿翅金刚鹦鹉、红绿金刚鹦鹉。产于美洲热带地区，是色彩最漂亮、体型最大的鹦鹉之一，面部无羽毛，布满了条...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 147,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "短尾鹦鹉",
+      "query_index": 80,
+      "query_time_ms": 283.96,
+      "hits": [
+        {
+          "score": 0.7903,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "us brachyurus](https://hn8i.7img.cn/images/d34d8c91a8dd612133228a4052573543.jpg)\n\n短尾鹦哥（英文名：Short-tailed Parrot，学名：Graydidascalus brachyurus），是鹦形目鹦鹉科短尾鹦哥属的鸟类。\n\n地理分布：南美：亚马孙雨林\n\n---\n\n## 短尾鹦鹉 / Vernal Hang...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 25
+          }
+        },
+        {
+          "score": 0.7796,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：亚马孙雨林\n\n### 简介（摘录）\n\n![短尾鹦哥 / Short-tailed Parrot / Graydidascalus brachyurus](https://hn8i.7img.cn/images/d34d8c91a8dd612133228a4052573543...",
+          "chunk_info": {
+            "chunk_index": 24,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7619,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "地理分布：澳洲：澳大利亚西南部\n\n---\n\n## 短尾鹦哥 / Short-tailed Parrot / Graydidascalus brachyurus\n\n- **来源链接**：`https://www.huaniao8.com/niao/61212.html`\n- **图片**：`https://hn8i.7img.cn/ZDM0ZDhjOTFhOGRkNjEyMTMzMjI4YTQwNT...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 23,
+            "total_chunks": 220
+          }
+        }
+      ]
+    },
+    {
+      "query": "马岛小鹦鹉",
+      "query_index": 81,
+      "query_time_ms": 291.31,
+      "hits": [
+        {
+          "score": 0.819,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "Old World Parrots / Psittaculidae\n- **地理分布**：非洲：马达加斯加，科摩罗群岛，塞舌尔普拉兰岛\n\n### 简介（摘录）\n\n![马岛小鹦鹉 / Lesser Vasa Parrot / Coracopsis nigra](https://hn8i.7img.cn/images/028a3d98cb2e90c892a87b15be13e4ca.jpg)  马岛小...",
+          "chunk_info": {
+            "chunk_index": 79,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.8066,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "3e4ca.jpg)\n\n马岛小鹦鹉（英文名：Lesser Vasa Parrot，学名：Coracopsis nigra），是鹦形目长尾鹦鹉科马岛鹦鹉属的鸟类。\n\n地理分布：非洲：马达加斯加，科摩罗群岛，塞舌尔普拉兰岛\n\n---\n\n## 马岛鹦鹉 / Greater Vasa Parrot / Coracopsis vasa\n\n- **来源链接**：`https://www.huaniao8.co...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 80,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.773,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "且吸引人的鸟种。马岛鹦鹉个性温驯，和非洲的大部分鹦鹉一样，他们平时相当安静，但是接近繁殖期则会有些吵杂  地理分布：非洲：马达加斯加，科摩罗群岛\n\n### 正文\n\n![马岛鹦鹉 / Greater Vasa Parrot / Coracopsis vasa](https://hn8i.7img.cn/images/088e313ea23d2ca96a2669e22457b4a9.jpg)\n\n马岛鹦...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 82
+          }
+        }
+      ]
+    },
+    {
+      "query": "圣马塔鹦哥",
+      "query_index": 82,
+      "query_time_ms": 282.19,
+      "hits": [
+        {
+          "score": 0.8284,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "aa8.jpg)\n\n圣文森特鹦哥（英文名：St. Vincent Amazon，学名：Amazona guildingii），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：北美：圣文森特\n\n---\n\n## 圣马塔鹦哥 / Santa Marta Parakeet / Pyrrhura viridicata\n\n- **来源链接**：`https://www.huaniao8.com/niao/77...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217,
+            "chunk_index": 88
+          }
+        },
+        {
+          "score": 0.8284,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "aa8.jpg)\n\n圣文森特鹦哥（英文名：St. Vincent Amazon，学名：Amazona guildingii），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：北美：圣文森特\n\n---\n\n## 圣马塔鹦哥 / Santa Marta Parakeet / Pyrrhura viridicata\n\n- **来源链接**：`https://www.huaniao8.com/niao/77...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 88
+          }
+        },
+        {
+          "score": 0.826,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "s\n- **科**：鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：哥伦比亚北部\n\n### 简介（摘录）\n\n![圣马塔鹦哥 / Santa Marta Parakeet / Pyrrhura viridicata](https://hn8i.7img.cn/images/c13ed19fda499064861655c2...",
+          "chunk_info": {
+            "chunk_index": 89,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        }
+      ]
+    },
+    {
+      "query": "黄顶侏鹦鹉",
+      "query_index": 83,
+      "query_time_ms": 283.97,
+      "hits": [
+        {
+          "score": 0.7695,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚\n\n### 简介（摘录）\n\n![黄顶侏鹦鹉 / Yellow-capped Pygmy Parrot / Micropsitta keiensis](https://hn8i.7img.cn/images/2adfa74c522f5d72ff9374ab2fe7a...",
+          "chunk_info": {
+            "chunk_index": 160,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7603,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "itta keiensis](https://hn8i.7img.cn/images/2adfa74c522f5d72ff9374ab2fe7aa41.jpg)\n\n黄顶侏鹦鹉（英文名：Yellow-capped Pygmy Parrot，学名：Micropsitta keiensis），是鹦形目长尾鹦鹉科侏鹦鹉属的鸟类。鹦鹉科中体型最小的的鹦鹉之一，身长只有8厘米左右，厚喙具有腊膜。爪十分长，雄鸟...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 161,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7557,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "（英文名：Yellow-faced Parrotlet，学名：Forpus xanthops），是鹦形目鹦鹉科福普斯鹦哥属的鸟类。\n\n地理分布：南美：秘鲁中北部\n\n---\n\n## 黄顶侏鹦鹉 / Yellow-capped Pygmy Parrot / Micropsitta keiensis\n\n- **来源链接**：`https://www.huaniao8.com/niao/78658.htm...",
+          "chunk_info": {
+            "chunk_index": 159,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "虎皮鹦鹉",
+      "query_index": 84,
+      "query_time_ms": 275.91,
+      "hits": [
+        {
+          "score": 0.7587,
+          "source": "虎皮鹦鹉.md",
+          "content_preview": "# 虎皮鹦鹉\n\n## 特征\n\n- 体型小，额部平滑无冠羽\n- 颈部黑色斑点，翅膀有波浪纹\n- 常见绿色/蓝色羽色\n\n## 备注\n\n学名 Melopsittacus undulatus，常见宠物鸟。",
+          "chunk_info": {
+            "source": "虎皮鹦鹉.md",
+            "chunk_index": 0,
+            "total_chunks": 1
+          }
+        },
+        {
+          "score": 0.7135,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：澳大利亚\n\n### 简介（摘录）\n\n![虎皮鹦鹉 / Budgerigar / Melopsittacus undulatus](https://hn8i.7img.cn/images/4423e1660d69ff2284883af6d68dcf2f.jpg)  虎皮鹦鹉...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "chunk_index": 183,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.6992,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "。每窝产卵4-8枚。孵化期为18天。性情活泼且易于驯养，在中国是大众最喜欢的宠物鸟之一，野生种群系国家二级保护动物。  地理分布：澳洲：澳大利亚\n\n### 正文\n\n![虎皮鹦鹉 / Budgerigar / Melopsittacus undulatus](https://hn8i.7img.cn/images/4423e1660d69ff2284883af6d68dcf2f.jpg)\n\n虎皮鹦鹉...",
+          "chunk_info": {
+            "chunk_index": 184,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        }
+      ]
+    },
+    {
+      "query": "绿腰鹦哥",
+      "query_index": 85,
+      "query_time_ms": 272.48,
+      "hits": [
+        {
+          "score": 0.8066,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "ormes\n- **科**：鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：南美：北部\n\n### 简介（摘录）\n\n![绿腰鹦哥 / Green-rumped Parrotlet / Forpus passerinus](https://hn8i.7img.cn/images/0fc566749dcf34b2b314c6aab...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 44
+          }
+        },
+        {
+          "score": 0.7871,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "97.jpg)\n\n绿背玫瑰鹦鹉（英文名：Green Rosella，学名：Platycercus caledonicus），是鹦形目长尾鹦鹉科玫瑰鹦鹉属的鸟类。\n\n地理分布：澳洲：澳大利亚塔斯马尼亚州\n\n---\n\n## 绿腰鹦哥 / Green-rumped Parrotlet / Forpus passerinus\n\n- **来源链接**：`https://www.huaniao8.com/ni...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 43
+          }
+        },
+        {
+          "score": 0.757,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "rican and New World Parrots / Psittacidae\n- **地理分布**：中美：墨西哥西北部，东部，南部\n\n### 简介（摘录）\n\n![绿鹦哥 / Green Parakeet / Psittacara holochlorus](https://hn8i.7img.cn/images/c778ffc5fe65870351becb3bc25dc747.jpg)  绿鹦...",
+          "chunk_info": {
+            "chunk_index": 56,
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "灰颊鹦哥",
+      "query_index": 86,
+      "query_time_ms": 272.54,
+      "hits": [
+        {
+          "score": 0.8369,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "4d7e.jpg)\n\n灰顶鹦哥（英文名：Grey-hooded Parakeet，学名：Psilopsiagon aymara），是鹦形目鹦鹉科山鹦哥属的鸟类。\n\n地理分布：南美：玻利维亚中北部至阿根廷西北部\n\n---\n\n## 灰颊鹦哥 / Grey-cheeked Parakeet / Brotogeris pyrrhoptera",
+          "chunk_info": {
+            "chunk_index": 171,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.8369,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "4d7e.jpg)\n\n灰顶鹦哥（英文名：Grey-hooded Parakeet，学名：Psilopsiagon aymara），是鹦形目鹦鹉科山鹦哥属的鸟类。\n\n地理分布：南美：玻利维亚中北部至阿根廷西北部\n\n---\n\n## 灰颊鹦哥 / Grey-cheeked Parakeet / Brotogeris pyrrhoptera",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222,
+            "chunk_index": 171
+          }
+        },
+        {
+          "score": 0.8243,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "rican and New World Parrots / Psittacidae\n- **地理分布**：南美：厄瓜多尔西部至秘鲁西北部\n\n### 简介（摘录）\n\n![灰颊鹦哥 / Grey-cheeked Parakeet / Brotogeris pyrrhoptera](https://hn8i.7img.cn/images/aee575f9e83710d0083710110804e75f....",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 173,
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "黄冠鹦哥",
+      "query_index": 87,
+      "query_time_ms": 279.28,
+      "hits": [
+        {
+          "score": 0.7962,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "d New World Parrots / Psittacidae\n- **地理分布**：中美，南美：巴拿马西部至秘鲁东部和玻利维亚北部\n\n### 简介（摘录）\n\n![黄冠鹦哥 / Yellow-crowned Amazon / Amazona ochrocephala](https://hn8i.7img.cn/images/55ff30a98d000b4b3815aeecf93a1702.jp...",
+          "chunk_info": {
+            "chunk_index": 121,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7667,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "（英文名：Meyer’s Parrot，学名：Poicephalus meyeri），是鹦形目鹦鹉科大头鹦鹉属的鸟类。\n\n地理分布：非洲：中部，中南部\n\n---\n\n## 黄冠鹦哥 / Yellow-crowned Amazon / Amazona ochrocephala\n\n- **来源链接**：`https://www.huaniao8.com/niao/58579.html`\n- **图片**...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 120,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7569,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "geris chiriri](https://hn8i.7img.cn/images/6e272d7f038f7fa963395a80dc53a9a5.jpg)\n\n黄翅斑鹦哥（英文名：Yellow-chevroned Parakeet，学名：Brotogeris chiriri），是鹦形目鹦鹉科纯色鹦哥属的鸟类。\n\n地理分布：南美：东部，东南部\n\n---\n\n## 黄翅鹦哥 / Sulphur-wi...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "total_chunks": 222,
+            "chunk_index": 144
+          }
+        }
+      ]
+    },
+    {
+      "query": "白枕鹦鹉",
+      "query_index": 88,
+      "query_time_ms": 340.42,
+      "hits": [
+        {
+          "score": 0.7832,
+          "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：俾斯麦群岛\n\n### 简介（摘录）\n\n![白枕鹦鹉 / White-naped Lory / Lorius albidinucha](https://hn8i.7img.cn/images/71a5b5cb74c9e7f9aac0161861576d57.jpg)  白枕鹦鹉...",
+          "chunk_info": {
+            "source": "huaniao8_huaniao8_psittaciformes_part02.md",
+            "chunk_index": 212,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7832,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：俾斯麦群岛\n\n### 简介（摘录）\n\n![白枕鹦鹉 / White-naped Lory / Lorius albidinucha](https://hn8i.7img.cn/images/71a5b5cb74c9e7f9aac0161861576d57.jpg)  白枕鹦鹉...",
+          "chunk_info": {
+            "chunk_index": 212,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part02.md"
+          }
+        },
+        {
+          "score": 0.7276,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ra albipectus](https://hn8i.7img.cn/images/20c793482b5ff72055c4227a18f759a2.jpg)\n\n白颈鹦哥（英文名：White-breasted Parakeet，学名：Pyrrhura albipectus），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。\n\n地理分布：南美：厄瓜多尔东南部\n\n---\n\n## 白额绿鹦哥 / White-fro...",
+          "chunk_info": {
+            "chunk_index": 12,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220
+          }
+        }
+      ]
+    },
+    {
+      "query": "黑鹦鹉",
+      "query_index": 89,
+      "query_time_ms": 286.35,
+      "hits": [
+        {
+          "score": 0.7642,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "elanocephalus](https://hn8i.7img.cn/images/e602481e183000826840f5a9cb35addd.jpg)\n\n黑冠鹦哥（英文名：Black-headed Parrot，学名：Pionites melanocephalus），是鹦形目鹦鹉科白腹鹦哥属的鸟类。\n\n地理分布：南美：亚马孙雨林北部\n\n---\n\n## 黑冠鹦鹉 / Hooded Parr...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 179,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7397,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "s zealandicus](https://hn8i.7img.cn/images/3179d78415e57e0e45e6dd80765a77c1.jpg)\n\n黑额鹦鹉（英文名：Black-fronted Parakeet，学名：Cyanoramphus zealandicus），是鹦形目长尾鹦鹉科长尾鹦鹉属的鸟类。是塔希提岛特有及已灭绝的鹦鹉。其当地名称的意思是“数量很多的鹦鹉”。\n\n地理分...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 219,
+            "total_chunks": 222
+          }
+        },
+        {
+          "score": 0.7223,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚西部\n\n### 简介（摘录）\n\n![黑鹦鹉 / Black Lory / Chalcopsitta atra](https://hn8i.7img.cn/images/cf9b21d0bd0274a44c8eb568c7b4385b.jpg)  黑鹦鹉（英文名：Bla...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md",
+            "chunk_index": 221
+          }
+        }
+      ]
+    },
+    {
+      "query": "红胸吸蜜鹦鹉",
+      "query_index": 90,
+      "query_time_ms": 293.2,
+      "hits": [
+        {
+          "score": 0.79,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：小巽他群岛西部\n\n### 简介（摘录）\n\n![红胸吸蜜鹦鹉 / Sunset Lorikeet / Trichoglossus forsteni](https://hn8i.7img.cn/images/0669db522e1f311716f5eda1596b94d6.jpg)...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 150,
+            "total_chunks": 220
+          }
+        },
+        {
+          "score": 0.7743,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "itta bruijnii](https://hn8i.7img.cn/images/76e4fdf7774d3f9e0325c3c60cd5c00b.jpg)\n\n红胸侏鹦鹉（英文名：Red-breasted Pygmy Parrot，学名：Micropsitta bruijnii），是鹦形目长尾鹦鹉科侏鹦鹉属的鸟类。红胸侏鹦鹉，鸟纲 、鹦形目 、鹦鹉科 、侏鹦鹉属动物，分布于新几内亚。\n\n地理分...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 148
+          }
+        },
+        {
+          "score": 0.7247,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "6.jpg)\n\n红胸吸蜜鹦鹉（英文名：Sunset Lorikeet，学名：Trichoglossus forsteni），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。\n\n地理分布：澳洲：小巽他群岛西部\n\n---\n\n## 红胸辉鹦鹉 / Maroon Shining Parrot / Prosopeia tabuensis\n\n- **来源链接**：`https://www.huaniao8.com/nia...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 151,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "花头鹦鹉",
+      "query_index": 91,
+      "query_time_ms": 273.52,
+      "hits": [
+        {
+          "score": 0.817,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "- **科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：远东：东南亚\n\n### 简介（摘录）\n\n![花头鹦鹉 / Blossom-headed Parakeet / Psittacula roseata](https://hn8i.7img.cn/images/b8a95cfc3034a925b15a97b36f40243a.jpg...",
+          "chunk_info": {
+            "chunk_index": 78,
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md"
+          }
+        },
+        {
+          "score": 0.8115,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "、耕地等处，以野果、谷物为食。产于中国云南、广东、广西。为世界濒危物种其中之一，是联合国《濒危野生动物名录》其中一种。  地理分布：远东：东南亚\n\n### 正文\n\n![花头鹦鹉 / Blossom-headed Parakeet / Psittacula roseata](https://hn8i.7img.cn/images/b8a95cfc3034a925b15a97b36f40243a.jp...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225,
+            "chunk_index": 79
+          }
+        },
+        {
+          "score": 0.7366,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "itta finschii](https://hn8i.7img.cn/images/64d13f1e955e693430b805a1c818ff10.jpg)\n\n芬氏侏鹦鹉（英文名：Finsch’s Pygmy Parrot，学名：Micropsitta finschii），是鹦形目长尾鹦鹉科侏鹦鹉属的鸟类。\n\n地理分布：澳洲：所罗门群岛\n\n---\n\n## 花头鹦鹉 / Blossom-head...",
+          "chunk_info": {
+            "chunk_index": 76,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        }
+      ]
+    },
+    {
+      "query": "红斑鹦鹉",
+      "query_index": 92,
+      "query_time_ms": 279.75,
+      "hits": [
+        {
+          "score": 0.7672,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红翅鹦鹉（英文名：Red-winged Parrot，学名：Aprosmictus erythropterus），是鹦形目长尾鹦鹉科红翅鹦鹉属的鸟类。红翅鹦鹉除了在其原生地澳洲外，在国际间的养鸟业中是十分少见的种类，为相当美丽的澳洲长尾鹦鹉，公母可由外表轻易地分辨，公鸟翅膀的红羽及背上整片的黑色十分明显，母鸟的翅膀边缘则只有少部分的红色羽毛，背上也没有黑色的羽毛，且母鸟身上的绿色毛色与腰际的蓝色毛...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 124
+          }
+        },
+        {
+          "score": 0.7599,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "a rubronotata](https://hn8i.7img.cn/images/6166ece7ceb253a2f577ffa958dc7c40.jpg)\n\n红斑鹦鹉（英文名：Red-fronted Lorikeet，学名：Charmosyna rubronotata），是鹦形目长尾鹦鹉科棕榈鹦鹉属的鸟类。\n\n地理分布：澳洲：新几内亚北部，西部\n\n---\n\n## 红玫瑰鹦鹉 / Crimso...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 111,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7506,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "rus flavicans](https://hn8i.7img.cn/images/8d4c688ace81edef69b2ed02f28f56d8.jpg)\n\n红斑扇尾鹦鹉（英文名：Yellow-breasted Racket-tail，学名：Prioniturus flavicans），是鹦形目长尾鹦鹉科扇尾鹦鹉属的鸟类。\n\n地理分布：澳洲：印尼苏拉威西岛北部\n\n---\n\n## 红斑鹦鹉 /...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "total_chunks": 220,
+            "chunk_index": 108
+          }
+        }
+      ]
+    },
+    {
+      "query": "公主鹦鹉",
+      "query_index": 93,
+      "query_time_ms": 289.5,
+      "hits": [
+        {
+          "score": 0.7947,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "is alexandrae](https://hn8i.7img.cn/images/2f379d1d2b15c290d666baa42735c11c.jpg)\n\n公主鹦鹉（英文名：Princess Parrot，学名：Polytelis alexandrae），是鹦形目长尾鹦鹉科超级鹦鹉属的鸟类。公主鹦鹉，又名亚丽珊卓拉皇后鹦鹉，主要栖息於乾燥并充满刺草的地区。分布在澳洲中西部的内陆地区。\n\n地...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 29,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.7947,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "is alexandrae](https://hn8i.7img.cn/images/2f379d1d2b15c290d666baa42735c11c.jpg)\n\n公主鹦鹉（英文名：Princess Parrot，学名：Polytelis alexandrae），是鹦形目长尾鹦鹉科超级鹦鹉属的鸟类。公主鹦鹉，又名亚丽珊卓拉皇后鹦鹉，主要栖息於乾燥并充满刺草的地区。分布在澳洲中西部的内陆地区。\n\n地...",
+          "chunk_info": {
+            "chunk_index": 29,
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.7454,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "**科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：澳大利亚中部\n\n### 简介（摘录）\n\n![公主鹦鹉 / Princess Parrot / Polytelis alexandrae](https://hn8i.7img.cn/images/2f379d1d2b15c290d666baa42735c11c.jpg)  公主...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "chunk_index": 28
+          }
+        }
+      ]
+    },
+    {
+      "query": "靓鹦鹉",
+      "query_index": 94,
+      "query_time_ms": 297.84,
+      "hits": [
+        {
+          "score": 0.7221,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "*科**：长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：澳大利亚东南部\n\n### 简介（摘录）\n\n![靓鹦鹉 / Superb Parrot / Polytelis swainsonii](https://hn8i.7img.cn/images/f84268de2d7b35563bdeeef4106663fe.jpg)  靓鹦鹉（英...",
+          "chunk_info": {
+            "chunk_index": 72,
+            "total_chunks": 222,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.6858,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "ossus ornatus](https://hn8i.7img.cn/images/463b0787f44324319feb54ab0711b305.jpg)\n\n华丽鹦鹉（英文名：Ornate Lorikeet，学名：Trichoglossus ornatus），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。华丽鹦鹉是一种吸蜜鹦鹉，分布于东南亚。宋真宗曾经为一只进贡的华丽鹦鹉作画。\n\n地理分布：澳洲：印尼...",
+          "chunk_info": {
+            "chunk_index": 40,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.6858,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "ossus ornatus](https://hn8i.7img.cn/images/463b0787f44324319feb54ab0711b305.jpg)\n\n华丽鹦鹉（英文名：Ornate Lorikeet，学名：Trichoglossus ornatus），是鹦形目长尾鹦鹉科彩虹鹦鹉属的鸟类。华丽鹦鹉是一种吸蜜鹦鹉，分布于东南亚。宋真宗曾经为一只进贡的华丽鹦鹉作画。\n\n地理分布：澳洲：印尼...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "chunk_index": 40,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "红眉鹦哥",
+      "query_index": 95,
+      "query_time_ms": 297.98,
+      "hits": [
+        {
+          "score": 0.7894,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：南美：巴西东部，东南部\n\n### 简介（摘录）\n\n![红眉鹦哥 / Red-browed Amazon / Amazona rhodocorytha](https://hn8i.7img.cn/images/f0e6e0f7e469f7e195d8dba5bad87166.jpg)  ...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 115,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7801,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "7166.jpg)\n\n红眉鹦哥（英文名：Red-browed Amazon，学名：Amazona rhodocorytha），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：南美：巴西东部，东南部\n\n---\n\n## 红眶鹦哥 / Red-spectacled Amazon / Amazona pretrei\n\n- **来源链接**：`https://www.huaniao8.com/niao/78...",
+          "chunk_info": {
+            "chunk_index": 116,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.7659,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "红嘴鹦哥（英文名：Red-billed Parrot，学名：Pionus sordidus），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。“Pionus”这个属名的字源，来自希腊字PIONOS，是“丰满”（plump）的意思。栖息于森林地带、沿海低地林区、树木稀少的平原、有时候也会前往农耕区觅食。通常成对或是以小群体活动，平常在树上休憩的时候难以察觉，因为其羽色提供了良好的掩蔽，觅食的时候相当安静，有时候甚至...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 92,
+            "total_chunks": 220
+          }
+        }
+      ]
+    },
+    {
+      "query": "斑点鹦哥",
+      "query_index": 96,
+      "query_time_ms": 299.62,
+      "hits": [
+        {
+          "score": 0.7661,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "zona farinosa](https://hn8i.7img.cn/images/22dcdf24a44274a97deffdcb9d4f88ef.jpg)\n\n斑点鹦哥（英文名：Southern Mealy Amazon，学名：Amazona farinosa），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：中美，南美：巴拿马东部和哥伦比亚至玻利维亚东北部，巴西东部和圭亚那\n\n---",
+          "chunk_info": {
+            "chunk_index": 216,
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.7661,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "zona farinosa](https://hn8i.7img.cn/images/22dcdf24a44274a97deffdcb9d4f88ef.jpg)\n\n斑点鹦哥（英文名：Southern Mealy Amazon，学名：Amazona farinosa），是鹦形目鹦鹉科亚马逊鹦鹉属的鸟类。\n\n地理分布：中美，南美：巴拿马东部和哥伦比亚至玻利维亚东北部，巴西东部和圭亚那\n\n---",
+          "chunk_info": {
+            "chunk_index": 216,
+            "source": "huaniao8_psittaciformes_part01.md",
+            "total_chunks": 217
+          }
+        },
+        {
+          "score": 0.7342,
+          "source": "huaniao8_psittaciformes_part02.md",
+          "content_preview": "n and New World Parrots / Psittacidae\n- **地理分布**：南美：哥伦比亚南部，厄瓜多尔，秘鲁北部\n\n### 简介（摘录）\n\n![斑翅鹦哥 / Spot-winged Parrotlet / Touit stictopterus](https://hn8i.7img.cn/images/27528c39b91aef43f6360c7f5d921dce.jpg)...",
+          "chunk_info": {
+            "chunk_index": 2,
+            "source": "huaniao8_psittaciformes_part02.md",
+            "total_chunks": 222
+          }
+        }
+      ]
+    },
+    {
+      "query": "白颈鹦哥",
+      "query_index": 97,
+      "query_time_ms": 288.64,
+      "hits": [
+        {
+          "score": 0.8506,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "e9978a.jpg)\n\n白顶鹦哥（英文名：White-capped Parrot，学名：Pionus seniloides），是鹦形目鹦鹉科裸眼鹦哥属的鸟类。\n\n地理分布：南美：委内瑞拉西部至秘鲁西北部\n\n---\n\n## 白颈鹦哥 / White-breasted Parakeet / Pyrrhura albipectus",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 9,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.8111,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "ra albipectus](https://hn8i.7img.cn/images/20c793482b5ff72055c4227a18f759a2.jpg)\n\n白颈鹦哥（英文名：White-breasted Parakeet，学名：Pyrrhura albipectus），是鹦形目鹦鹉科小锥尾鹦鹉属的鸟类。\n\n地理分布：南美：厄瓜多尔东南部\n\n---\n\n## 白额绿鹦哥 / White-fro...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "chunk_index": 12,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.8056,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "/ African and New World Parrots / Psittacidae\n- **地理分布**：南美：厄瓜多尔东南部\n\n### 简介（摘录）\n\n![白颈鹦哥 / White-breasted Parakeet / Pyrrhura albipectus](https://hn8i.7img.cn/images/20c793482b5ff72055c4227a18f759a2.jp...",
+          "chunk_info": {
+            "chunk_index": 11,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "紫腹鹦鹉",
+      "query_index": 98,
+      "query_time_ms": 286.43,
+      "hits": [
+        {
+          "score": 0.872,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "紫腹鹦鹉（英文名：Purple-bellied Lory，学名：Lorius hypoinochrous），是鹦形目长尾鹦鹉科黑顶吸蜜鹦鹉属的鸟类。紫腹鹦鹉鸟体为红色，前额、鸟喙和眼睛之间、头顶为黑色；胸部为浅红色；上腹部为红蓝色，下腹部和大腿为蓝紫色。在飞行的时候会伴随刺耳的鸣叫，尤其在接近要降落的树上时，非常吵杂，因此很容易就可以察觉他们的踪迹。紫腹鹦鹉是一种相当独特的鹦鹉，他们不像大多数鹦鹉...",
+          "chunk_info": {
+            "chunk_index": 64,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        },
+        {
+          "score": 0.8635,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "咨讯与笼养数量实在太少。紫腹鹦鹉紫腹鹦鹉鸟体为红色，前额、鸟喙和眼睛之间、头顶为黑色；胸部为浅红色；上腹部为红蓝色，下腹部和大腿为蓝紫色。在飞行的时候会伴随刺耳的鸣叫，尤其在接近要降落的树上时，非常吵杂，因此很容易就可以察觉他们的踪迹。紫腹鹦鹉是一种相当独特的鹦鹉，他们不像大多数鹦鹉家族，他们只归类为Triclaria这个刚，此钢內并无其他成员与表亲，只有紫腹鹦鹉这唯一成员；性別可由外表轻易判定，...",
+          "chunk_info": {
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md",
+            "chunk_index": 65
+          }
+        },
+        {
+          "score": 0.7889,
+          "source": "huaniao8_psittaciformes_part03.md",
+          "content_preview": "长尾鹦鹉科 / Old World Parrots / Psittaculidae\n- **地理分布**：澳洲：新几内亚东部，俾斯麦群岛\n\n### 简介（摘录）\n\n![紫腹鹦鹉 / Purple-bellied Lory / Lorius hypoinochrous](https://hn8i.7img.cn/images/5d642fe350465d12f4985d4c2f4617ae.jpg)...",
+          "chunk_info": {
+            "chunk_index": 62,
+            "total_chunks": 220,
+            "source": "huaniao8_psittaciformes_part03.md"
+          }
+        }
+      ]
+    },
+    {
+      "query": "金刚鹦鹉",
+      "query_index": 99,
+      "query_time_ms": 287.76,
+      "hits": [
+        {
+          "score": 0.7268,
+          "source": "huaniao8_psittaciformes_part05.md",
+          "content_preview": "us auricollis](https://hn8i.7img.cn/images/67217e41aa4822589dc31542f9781464.jpg)\n\n金领金刚鹦鹉（英文名：Golden-collared Macaw，学名：Primolius auricollis），是鹦形目鹦鹉科小金刚鹦鹉属的鸟类。栖息于各种不同型态的地区，包含林地、潮湿的森林、农业耕作区、以及阿根廷热带及亚热带的潮...",
+          "chunk_info": {
+            "total_chunks": 222,
+            "chunk_index": 38,
+            "source": "huaniao8_psittaciformes_part05.md"
+          }
+        },
+        {
+          "score": 0.7148,
+          "source": "huaniao8_psittaciformes_part01.md",
+          "content_preview": "litaris)、墨西哥绿金刚(Aram.mexicana)、波利维亚绿金刚(Aram.boliviana)，三种都是濒临绝种的金刚鹦鹉。  地\n\n### 正文\n\n![军金刚鹦鹉 / Military Macaw / Ara militaris](https://hn8i.7img.cn/images/e59d7d0d25af55e342797b9336290da9.jpg)\n\n军金刚鹦鹉（英文名...",
+          "chunk_info": {
+            "chunk_index": 34,
+            "total_chunks": 217,
+            "source": "huaniao8_psittaciformes_part01.md"
+          }
+        },
+        {
+          "score": 0.7148,
+          "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+          "content_preview": "litaris)、墨西哥绿金刚(Aram.mexicana)、波利维亚绿金刚(Aram.boliviana)，三种都是濒临绝种的金刚鹦鹉。  地\n\n### 正文\n\n![军金刚鹦鹉 / Military Macaw / Ara militaris](https://hn8i.7img.cn/images/e59d7d0d25af55e342797b9336290da9.jpg)\n\n军金刚鹦鹉（英文名...",
+          "chunk_info": {
+            "total_chunks": 217,
+            "source": "huaniao8_huaniao8_psittaciformes_part01.md",
+            "chunk_index": 34
+          }
+        }
+      ]
+    },
+    {
+      "query": "褐头鹦鹉",
+      "query_index": 100,
+      "query_time_ms": 301.64,
+      "hits": [
+        {
+          "score": 0.8244,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "种类之一，共分成3种亚种，其外表差异小。分布在非洲东南部，通常筑巢于离地5-10m以上的树洞中，或是使用啄木鸟的巢穴。  地理分布：非洲：东南部\n\n### 正文\n\n![褐头鹦鹉 / Brown-headed Parrot / Poicephalus cryptoxanthus](https://hn8i.7img.cn/images/cd62b21e33c26f62d2135bfdd555d012...",
+          "chunk_info": {
+            "total_chunks": 225,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 196
+          }
+        },
+        {
+          "score": 0.8222,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "：鹦鹉科 / African and New World Parrots / Psittacidae\n- **地理分布**：非洲：东南部\n\n### 简介（摘录）\n\n![褐头鹦鹉 / Brown-headed Parrot / Poicephalus cryptoxanthus](https://hn8i.7img.cn/images/cd62b21e33c26f62d2135bfdd555d012...",
+          "chunk_info": {
+            "source": "huaniao8_psittaciformes_part04.md",
+            "chunk_index": 195,
+            "total_chunks": 225
+          }
+        },
+        {
+          "score": 0.7743,
+          "source": "huaniao8_psittaciformes_part04.md",
+          "content_preview": "ec62.jpg)\n\n褐冠鹦哥（英文名：Brown-hooded Parrot，学名：Pyrilia haematotis），是鹦形目鹦鹉科番红头鹦哥属的鸟类。\n\n地理分布：中美，南美：墨西哥东南部至哥伦比亚西北部\n\n---\n\n## 褐喉鹦哥 / Brown-throated Parakeet / Eupsittula pertinax",
+          "chunk_info": {
+            "chunk_index": 187,
+            "source": "huaniao8_psittaciformes_part04.md",
+            "total_chunks": 225
+          }
+        }
+      ]
+    }
+  ]
+}

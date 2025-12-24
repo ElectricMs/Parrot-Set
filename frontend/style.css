@@ -849,9 +849,25 @@ input:checked + .slider:before {
 .chat-input-area {
     display: flex;
     gap: 0.75rem;
-    align-items: flex-end;
+    align-items: center;
     background: white;
     padding-top: 0.5rem;
+}
+
+.chat-input-area .icon-btn {
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    background: white;
+    border-radius: var(--radius-md);
+}
+
+.chat-input-area .icon-btn:hover {
+    background: rgba(0,0,0,0.03);
+    color: var(--primary-color);
+    border-color: rgba(79, 70, 229, 0.4);
 }
 
 .chat-attachment-bar {
@@ -890,6 +906,15 @@ input:checked + .slider:before {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.chat-status {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    min-height: 1.2em;
+    user-select: none;
 }
 
 #chat-input {
@@ -1026,6 +1051,16 @@ input:checked + .slider:before {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+}
+
+.kb-status {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: #f9fafb;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.5rem 0.75rem;
 }
 
 .kb-container {
